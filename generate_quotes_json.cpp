@@ -24,9 +24,6 @@ using namespace std;
 int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(0);
-
-  freopen("C:\\Users\\Life Adventurer\\Desktop\\Develop\\Quote_Generator\\quote_input.txt", "r", stdin);
-  freopen("C:\\Users\\Life Adventurer\\Desktop\\Develop\\Quote_Generator\\quote_output.txt", "w", stdout);
   
   string quote, author;
   while(true){
