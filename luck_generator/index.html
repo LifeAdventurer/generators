@@ -14,18 +14,24 @@
       <h1>今日運勢</h1>
     </div>
     <div class="row">
-      <table>
+      {{  }}
+    </div>
+    <div class="row">
+      <table class="generate-result">
         <tr>
-          <td>宜: </td>
-          <td>忌: </td>
+          <td><b>宜:</b> {{ }} </td>
+          <td><b>忌:</b> {{ }} </td>
         </tr>
         <tr>
-          <td>宜: </td>
-          <td>忌: </td>
+          <td><b>宜:</b> {{ }} </td>
+          <td><b>忌:</b> {{ }} </td>
         </tr>
       </table>
+      <button onclick="getluck()">Generate</button>
     </div>
   </div>
+  <canvas id="Matrix"></canvas>
   <script src="./luck.js"></script>
+  <script src="./matrix.js"></script>
 </body>
 </html>
