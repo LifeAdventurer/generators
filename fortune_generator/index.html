@@ -18,26 +18,20 @@
         </div>
     </div>
     <div class="row">
-      <table>
-        <tr>
-          <td class="left-result">
-            <b>宜:</b> 
-            {{ }} 
-          </td>
-          <td class="right-result">
-            <b>忌:</b> 
-            {{ }} 
-          </td>
-        </tr>
-        <tr>
-          <td class="left-result">
-            <b>宜:</b> {{ }} 
-          </td>
-          <td class="right-result">
-            <b>忌:</b> {{ }} 
-          </td>
-        </tr>
-      </table>
+      <div class="col">
+        <p id="left-1"></p>
+      </div>
+      <div class="col">
+        <p id="right-1"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p id="left-2"></p>
+      </div>
+      <div class="col">
+        <p id="right-2"></p>
+      </div>
     </div>
     <button onclick="getLuck()">Generate</button>
   </div>
