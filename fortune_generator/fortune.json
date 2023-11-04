@@ -1,76 +1,158 @@
 {
-  "Fortunes" : [
+  "goodFortunes" : [
     {
-      "event": "睡覺" 
+      "event": "睡覺",
+      "description": "品質良好，精神煥發"
     },
     {
-      "event": "學新算法" 
+      "event": "學新算法",
+      "description": "一點就通"
     },
     {
-      "event": "開發" 
+      "event": "體育鍛鍊",
+      "description": "能量滿滿，效果顯著" 
     },
     {
-      "event": "體育鍛鍊" 
+      "event": "出遊" ,
+      "description": "好天氣，好心情"
     },
     {
-      "event": "出遊" 
+      "event": "吃大餐",
+      "description": "聯絡感情"
     },
     {
-      "event": "吃大餐" 
+      "event": "逛書店",
+      "description": "新書上架，打折推銷"
     },
     {
-      "event": "閱讀" 
+      "event": "學新技能",
+      "description": "快速上手"
     },
     {
-      "event": "學新技能"
+      "event": "唱歌",
+      "description": "被星探發掘"
     },
     {
-      "event": "唱歌"
+      "event": "上課",
+      "description": "整天不累，100% 消化"
     },
     {
-      "event": "上課"
+      "event": "洗澡",
+      "description": "重獲能量"
     },
     {
-      "event": "洗澡"
+      "event": "請教問題",
+      "description": "問題皆獲高人指點"
     },
     {
-      "event": "請教問題"
+      "event": "網購",
+      "description": "心滿商品皆促銷"
     },
     {
-      "event": "網購"
+      "event": "放假",
+      "description": "休息充電，明日再戰"
     },
     {
-      "event": "放假"
+      "event": "寫作業",
+      "description": "事半功倍"
     },
     {
-      "event": "寫作業"
+      "event": "早睡",
+      "description": "好夢連連"
     },
     {
-      "event": "早睡"
+      "event": "早起",
+      "description": "朝氣蓬勃，神采飛揚"
     },
     {
-      "event": "早起"
+      "event": "發文章",
+      "description": "瀏覽數暴增"
     },
     {
-      "event": "發文章"
+      "event": "背東西",
+      "description": "背多少都不會忘"
     },
     {
-      "event": "背東西"
+      "event": "點外賣",
+      "description": "準時到達，新鮮好吃"
     },
     {
-      "event": "點外賣"
+      "event": "做善事",
+      "description": "積善成福"
     },
     {
-      "event": "納財"
+      "event": "開電腦",
+      "description": "效率翻倍"
     },
     {
-      "event": "做善事"
+      "event": "散步",
+      "description": "空氣良好，放鬆身心"
+    }
+  ],
+  "badFortunes" : [
+    {
+      "event": "體育鍛鍊",
+      "description": "不慎受傷"
     },
     {
-      "event": "開電腦"
+      "event": "出遊",
+      "description": "天氣不晴朗"
     },
     {
-      "event": "散步"
+      "event": "吃大餐",
+      "description": "被要求請客"
+    },
+    {
+      "event": "學新技能",
+      "description": "屢試不爽，始終不懂"
+    },
+    {
+      "event": "唱歌",
+      "description": "嗓子發炎"
+    },
+    {
+      "event": "洗澡",
+      "description": "水溫不穩"
+    },
+    {
+      "event": "請教問題",
+      "description": "疑難雜症，均無解答"
+    },
+    {
+      "event": "網購",
+      "description": "錯過促銷"
+    },
+    {
+      "event": "放假",
+      "description": "隔日工作量倍增"
+    },
+    {
+      "event": "晚睡",
+      "description": "失眠，明日精神渙散"
+    },
+    {
+      "event": "晚起",
+      "description": "被老闆炒魷魚"
+    },
+    {
+      "event": "發文章",
+      "description": "搜索枯腸，不知所云"
+    },
+    {
+      "event": "背東西",
+      "description": "記憶不佳，隔天全忘"
+    },
+    {
+      "event": "點外賣",
+      "description": "路況壅塞，餐點冷掉"
+    },
+    {
+      "event": "開電腦",
+      "description": "系統癱瘓，檔案流失"
+    },
+    {
+      "event": "散步",
+      "description": "被害蟲咬傷"
     }
   ]
 }
