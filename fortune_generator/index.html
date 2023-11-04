@@ -3,34 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Luck Generator</title>
+  <title>Daily Fortune Generator</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!-- <script src="https://unpkg.com/vue@3.3.4/dist/vue.global.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div class="container text-center">
+  <div class="container">
     <div class="row">
-        <h1>今日運勢</h1>
+      <h1>今日運勢</h1>
+    </div>
+    <div class="row">
+      <p id="ip-to-fortune"></p>
+    </div>
+    <div class="row">
+      <div class="col">
         <div class="row">
-          <p id="ip-to-fortune"></p>
+          <p id="l-1-event"></p>
         </div>
+        <div class="row">
+          <p id="l-1-desc"></p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <p id="r-1-event"></p>
+        </div>
+        <div class="row">
+          <p id="r-1-desc"></p>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col">
-        <p id="left-1"></p>
+        <div class="row">
+          <p id="l-2-event"></p>
+        </div>
+        <div class="row">
+          <p id="l-2-desc"></p>
+        </div>
       </div>
       <div class="col">
-        <p id="right-1"></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <p id="left-2"></p>
-      </div>
-      <div class="col">
-        <p id="right-2"></p>
+        <div class="row">
+          <p id="r-2-event"></p>
+        </div>
+        <div class="row">
+          <p id="r-2-desc"></p>
+        </div>
       </div>
     </div>
     <button onclick="getLuck()">點擊打卡</button>
