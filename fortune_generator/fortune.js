@@ -4,12 +4,14 @@ $.getJSON("https://api.ipify.org?format=json", function(data) {
   ip = data.ip;
 })
 
-let fortunes = [];
+let goodFortunes = [];
+let badFortunes = [];
 
 fetch("fortune.json")
 .then(response => response.json())
 .then(data => {
-  fortunes = data.Fortunes;
+  goodFortunes = data.goodFortunes;
+  badFortunes = data.badFortunes;
 })
 
 const textColor = ["#e74c3c", "#e74c3c", "#e74c3c", "#70ad47", "#000000bf", "#000000bf", "#000000bf"];
@@ -31,43 +33,56 @@ function Appear() {
 
   let d = new Date();
   let seed = (num[0] >> 3) * (num[1] >> 2) + (num[2] << 1) * (num[3] >> 3) + (d.getDate() << 3) * ((d.getMonth() + 1) << 5) + d.getFullYear();
-  const len = fortunes.length;
+  const goodLen = goodFortunes.length;
+  const badLen = badFortunes.length;
 
   let status = `<span style='font-size: 60px; color: ${textColor[seed % 7]};'><b>§ ${fortuneStatus[seed % 7]} §</b></span>`;
   $('#ip-to-fortune').html(status);
 
-  let left_1, left_2, right_1, right_2;
+  let l_1_event, l_1_desc, l_2_event, l_2_desc, r_1_event, r_1_desc, r_2_event, r_2_desc;
   let l1, l2, r1, r2;
   let set = new Set();
-  l1 = seed % len;
-  set.add(l1);
-  l2 = (seed + d.getDate()) % len;
-  while(set.has(l2)) l2 = (l2 + 1) % len;
-  set.add(l2);
-  r1 = (seed + d.getMonth() << 3) % len;
-  while(set.has(r1)) r1 = (r1 + 2) % len;
-  set.add(r1);
-  r2 = (seed + (d.getFullYear() >> 5) * (d.getDate << 2)) % len;
-  while(set.has(r2)) r2 = (r2 + 1) % len;
-  left_1 = `<span style='font-size: 28px; color: #e74c3c;'><b>宜:</b> ${fortunes[l1].event}</span>`;
-  left_2 = `<span style='font-size: 28px; color: #e74c3c;'><b>宜:</b> ${fortunes[l2].event}</span>`;
-  right_1 = `<span style='font-size: 28px; color: #000000bf;'><b>忌:</b> ${fortunes[r1].event}</span>`;
-  right_2 = `<span style='font-size: 28px; color: #000000bf;'><b>忌:</b> ${fortunes[r2].event}</span>`;
+  l1 = seed % goodLen;
+  set.add(goodFortunes[l1].event);
+  l2 = (seed + d.getDate()) % goodLen;
+  while(set.has(goodFortunes[l2].event)) l2 = (l2 + 1) % goodLen;
+  set.add(goodFortunes[l2].event);
+  r1 = (seed + d.getMonth() << 3) % badLen;
+  while(set.has(badFortunes[r1].event)) r1 = (r1 + 2) % badLen;
+  set.add(badFortunes[r1].event);
+  r2 = (seed + (d.getFullYear() >> 5) * (d.getDate << 2)) % badLen;
+  while(set.has(badFortunes[r2].event)) r2 = (r2 + 1) % badLen;
+  l_1_event = `<span style='font-size: 28px; color: #e74c3c;'><b>宜:</b>${goodFortunes[l1].event}</span>`;
+  l_1_desc = `<span style='font-size: 16px; color: #7f7f7f;'>${goodFortunes[l1].description}</span>`;
+  l_2_event = `<span style='font-size: 28px; color: #e74c3c;'><b>宜:</b>${goodFortunes[l2].event}</span>`;
+  l_2_desc = `<span style='font-size: 16px; color: #7f7f7f;'>${goodFortunes[l2].description}</span>`;
+  r_1_event = `<span style='font-size: 28px; color: #000000bf;'><b>忌:</b>${badFortunes[r1].event}</span>`;
+  r_1_desc = `<span style='font-size: 16px; color: #7f7f7f;'>${badFortunes[r1].description}</span>`;
+  r_2_event = `<span style='font-size: 28px; color: #000000bf;'><b>忌:</b>${badFortunes[r2].event}</span>`;
+  r_2_desc = `<span style='font-size: 16px; color: #7f7f7f;'>${badFortunes[r2].description}</span>`;
   if(seed % 7 == 0){
     $('#right-1').html(allGood);
-    $('#left-1').html(left_1);
-    $('#left-2').html(left_2);
+    $('#l-1-event').html(l_1_event);
+    $('#l-1-desc').html(l_1_desc);
+    $('#l-2-event').html(l_2_event);
+    $('#l-2-desc').html(l_2_desc);
   }
   else if(seed % 7 == 6){
-    $('#left-1').html(allBad);
-    $('#right-1').html(right_1);
-    $('#right-2').html(right_2);
+    $('#l-1-event').html(allBad);
+    $('#r-1-event').html(r_1_event);
+    $('#r-1-desc').html(r_1_desc);
+    $('#r-2-event').html(r_2_event);
+    $('#r-2-desc').html(r_2_desc);
   }
   else{
-    $('#right-1').html(right_1);
-    $('#right-2').html(right_2);
-    $('#left-1').html(left_1);
-    $('#left-2').html(left_2);
+    $('#l-1-event').html(l_1_event);
+    $('#l-1-desc').html(l_1_desc);
+    $('#l-2-event').html(l_2_event);
+    $('#l-2-desc').html(l_2_desc);
+    $('#r-1-event').html(r_1_event);
+    $('#r-1-desc').html(r_1_desc);
+    $('#r-2-event').html(r_2_event);
+    $('#r-2-desc').html(r_2_desc);
   }
 }
 
