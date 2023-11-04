@@ -52,13 +52,13 @@ function Appear() {
   set.add(badFortunes[r1].event);
   r2 = (seed + (d.getFullYear() >> 5) * (d.getDate << 2)) % badLen;
   while(set.has(badFortunes[r2].event)) r2 = (r2 + 1) % badLen;
-  l_1_event = `<span style='font-size: 28px; color: #e74c3c;'><b>宜:</b>${goodFortunes[l1].event}</span>`;
+  l_1_event = `<span style='font-size: 28px; color: #e74c3c;'><b>宜: </b>${goodFortunes[l1].event}</span>`;
   l_1_desc = `<span style='font-size: 16px; color: #7f7f7f;'>${goodFortunes[l1].description}</span>`;
-  l_2_event = `<span style='font-size: 28px; color: #e74c3c;'><b>宜:</b>${goodFortunes[l2].event}</span>`;
+  l_2_event = `<span style='font-size: 28px; color: #e74c3c;'><b>宜: </b>${goodFortunes[l2].event}</span>`;
   l_2_desc = `<span style='font-size: 16px; color: #7f7f7f;'>${goodFortunes[l2].description}</span>`;
-  r_1_event = `<span style='font-size: 28px; color: #000000bf;'><b>忌:</b>${badFortunes[r1].event}</span>`;
+  r_1_event = `<span style='font-size: 28px; color: #000000bf;'><b>忌: </b>${badFortunes[r1].event}</span>`;
   r_1_desc = `<span style='font-size: 16px; color: #7f7f7f;'>${badFortunes[r1].description}</span>`;
-  r_2_event = `<span style='font-size: 28px; color: #000000bf;'><b>忌:</b>${badFortunes[r2].event}</span>`;
+  r_2_event = `<span style='font-size: 28px; color: #000000bf;'><b>忌: </b>${badFortunes[r2].event}</span>`;
   r_2_desc = `<span style='font-size: 16px; color: #7f7f7f;'>${badFortunes[r2].description}</span>`;
   if(seed % 7 == 0){
     $('#right-1').html(allGood);
