@@ -1,12 +1,12 @@
-* {
-  overflow: hidden;
-  text-align: center;
-}
-
 :root {
   --button-color: #79abf7;
   --button-hover-color: #4590dc;
   --white: #FFFFFF;
+}
+
+* {
+  overflow: hidden;
+  text-align: center;
 }
 
 body {
