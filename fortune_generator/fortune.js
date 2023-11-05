@@ -61,7 +61,7 @@ function Appear() {
   r_2_event = `<span style='font-size: 28px; color: #000000bf;'><b>忌: </b>${badFortunes[r2].event}</span>`;
   r_2_desc = `<span style='font-size: 16px; color: #7f7f7f;'>${badFortunes[r2].description}</span>`;
   if(seed % 7 == 0){
-    $('#right-1').html(allGood);
+    $('#r-1-event').html(allGood);
     $('#l-1-event').html(l_1_event);
     $('#l-1-desc').html(l_1_desc);
     $('#l-2-event').html(l_2_event);
