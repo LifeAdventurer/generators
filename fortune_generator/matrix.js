@@ -1,8 +1,8 @@
 const canvas = document.getElementById("Matrix")
 const context = canvas.getContext("2d")
 
-canvas.height = window.innerHeight
-canvas.width = window.innerWidth
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
 
 const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./*-+#$%^@!~?><:;[]{}\」=_αβΓγΔδεζηΘθικΛλμΞξΠπρΣσςτυΦφχΨψΩω×≦≧≠∞≒≡～∩∠∪∟⊿∫∮∵∴＄￥〒￠￡℃€℉╩◢ⅩⅨⅧⅦⅥⅤⅣⅢⅡⅠあいうえおがぎぐげござじずぜぞだぢつでづどにぬのばひぴぶへぺぼみゃょァゐゎè";
 
@@ -16,6 +16,9 @@ for(let i = 0; i < columns; ++i) {
 
 let frame = 0;
 let str;
+
+context.fillStyle = "rgba(0, 0, 0, 1)";
+context.fillRect(0, 0, canvas.width, canvas.height);
 
 function Update() {
   context.fillStyle = "rgba(0, 0, 0, 0.05)";
@@ -42,5 +45,3 @@ function Update() {
     Appear();
   }
 }
-
-Update();
