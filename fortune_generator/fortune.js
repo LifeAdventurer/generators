@@ -33,26 +33,30 @@ function Appear() {
   }
 
   let d = new Date();
-  let date = d.getDate() + 4;
-  let seed = (num[0] >> 3) * (num[1] >> 2) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * ((d.getMonth() + 1) << 5) + d.getFullYear();
+  let date = d.getDate();
+  let month = d.getMonth() + 1;
+  let year = d.getFullYear();
+  let hashDate = Math.round(Math.log10(year * ((month << 3) ^ (date << 1))));
+  let seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + year;
+  let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate;
   const goodLen = goodFortunes.length;
   const badLen = badFortunes.length;
 
-  let status = `<span style='font-size: 10vmin; color: ${textColor[seed % 7]};'><b>§ ${fortuneStatus[seed % 7]} §</b></span>`;
+  let status = `<span style='font-size: 10vmin; color: ${textColor[seed1 % 7]};'><b>§ ${fortuneStatus[seed1 % 7]} §</b></span>`;
   $('#ip-to-fortune').html(status);
 
   let l_1_event, l_1_desc, l_2_event, l_2_desc, r_1_event, r_1_desc, r_2_event, r_2_desc;
   let l1, l2, r1, r2;
   let set = new Set();
-  l1 = seed % goodLen;
+  l1 = seed1 % goodLen;
   set.add(goodFortunes[l1].event);
-  l2 = ((seed << 1) + date) % goodLen;
+  l2 = ((seed1 << 1) + date) % goodLen;
   while(set.has(goodFortunes[l2].event)) l2 = (l2 + 1) % goodLen;
   set.add(goodFortunes[l2].event);
-  r1 = ((seed >> 1) + (d.getMonth() << 3)) % badLen;
+  r1 = ((seed1 >> 1) + (d.getMonth() << 3)) % badLen;
   while(set.has(badFortunes[r1].event)) r1 = (r1 + 2) % badLen;
   set.add(badFortunes[r1].event);
-  r2 = ((seed << 3 ) + (d.getFullYear() >> 5) * (date << 2)) % badLen;
+  r2 = (((((seed1 << 3 ) + (d.getFullYear() >> 5) * (date << 2)) % badLen) * seed2) >> 6) % badLen;
   while(set.has(badFortunes[r2].event)) r2 = (r2 + 1) % badLen;
   l_1_event = `<span style='font-size: 5.3vmin; color: #e74c3c;'><b>宜: </b>${goodFortunes[l1].event}</span>`;
   l_1_desc = `<span style='font-size: 3.2vmin; color: #7f7f7f;'>${goodFortunes[l1].description}</span>`;
@@ -62,14 +66,14 @@ function Appear() {
   r_1_desc = `<span style='font-size: 3.2vmin; color: #7f7f7f;'>${badFortunes[r1].description}</span>`;
   r_2_event = `<span style='font-size: 5.3vmin; color: #000000bf;'><b>忌: </b>${badFortunes[r2].event}</span>`;
   r_2_desc = `<span style='font-size: 3.2vmin; color: #7f7f7f;'>${badFortunes[r2].description}</span>`;
-  if(seed % 7 == 0){
+  if(seed1 % 7 == 0){
     $('#r-1-event').html(allGood);
     $('#l-1-event').html(l_1_event);
     $('#l-1-desc').html(l_1_desc);
     $('#l-2-event').html(l_2_event);
     $('#l-2-desc').html(l_2_desc);
   }
-  else if(seed % 7 == 6){
+  else if(seed1 % 7 == 6){
     $('#l-1-event').html(allBad);
     $('#r-1-event').html(r_1_event);
     $('#r-1-desc').html(r_1_desc);
