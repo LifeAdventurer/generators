@@ -5,8 +5,8 @@
       "description": "品質良好，精神煥發"
     },
     {
-      "event": "學新算法",
-      "description": "一點就通"
+      "event": "喝咖啡",
+      "description": "精力充沛燃燒脂肪"
     },
     {
       "event": "體育鍛鍊",
@@ -53,10 +53,6 @@
       "description": "休息充電，明日再戰"
     },
     {
-      "event": "寫作業",
-      "description": "事半功倍"
-    },
-    {
       "event": "早睡",
       "description": "好夢連連"
     },
@@ -79,10 +75,6 @@
     {
       "event": "做善事",
       "description": "積善成福"
-    },
-    {
-      "event": "開電腦",
-      "description": "效率翻倍"
     },
     {
       "event": "散步",
@@ -132,7 +124,7 @@
     },
     {
       "event": "晚起",
-      "description": "被老闆炒魷魚"
+      "description": "整天都不順"
     },
     {
       "event": "發文章",
@@ -147,8 +139,8 @@
       "description": "路況壅塞，餐點冷掉"
     },
     {
-      "event": "開電腦",
-      "description": "系統癱瘓，檔案流失"
+      "event": "喝咖啡",
+      "description": "晚上失眠"
     },
     {
       "event": "散步",
