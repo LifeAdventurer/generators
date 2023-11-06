@@ -26,13 +26,12 @@ const allBad = `<span style='font-size: 5.8vmin; color: #e74c3c;'><b>諸事不�
 const d = new Date();
 const date = d.getDate();
 const day = d.getDay();
-console.log(day);
 const month = d.getMonth() + 1;
 const year = d.getFullYear();
 
 const showMonth = `<span style='font-size: 11.5vmin; color: #054310C9; -webkit-writing-mode: vertical-lr;'><b>${chineseMonth[month - 1] + "月"}<b></span>`;
-const showDate = `<span style='font-size: 28vmin; color: #054310C9; align-items: top;'><b>${("0" + date).substr(-2)}<b></span>`;
-const showDay = `<span style='font-size: 11.5vmin; color: #054310C9; -webkit-writing-mode: vertical-lr;'><b>${"星期" + week[day]}<b></span>`;
+const showDate = `<span style='font-size: 28vmin; color: #054310C9;'><b>${("0" + date).substr(-2)}<b></span>`;
+const showDay = `<span style='font-size: 11.5vmin; color: #054310C9; -webkit-writing-mode: vertical-lr; margin-right: 10%;'><b>${"星期" + week[day]}<b></span>`;
 
 $('#month').html(showMonth);
 $('#date').html(showDate);
