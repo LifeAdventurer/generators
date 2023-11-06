@@ -5,8 +5,24 @@
       "description": "品質良好，精神煥發"
     },
     {
+      "event": "做家務",
+      "description": "整潔使人心情愉悅"
+    },
+    {
+      "event": "冥想",
+      "description": "平靜心靈，緩解焦慮"
+    },
+    {
+      "event": "攝影",
+      "description": "捕捉到美好瞬間"
+    },
+    {
       "event": "喝咖啡",
       "description": "精力充沛燃燒脂肪"
+    },
+    {
+      "event": "朋友聚會",
+      "description": "充滿歡笑和美好回憶"
     },
     {
       "event": "體育鍛鍊",
@@ -65,10 +81,6 @@
       "description": "瀏覽數暴增"
     },
     {
-      "event": "背東西",
-      "description": "背多少都不會忘"
-    },
-    {
       "event": "點外賣",
       "description": "準時到達，新鮮好吃"
     },
@@ -85,6 +97,10 @@
     {
       "event": "體育鍛鍊",
       "description": "不慎受傷"
+    },
+    {
+      "event": "攝影",
+      "description": "照片全消失"
     },
     {
       "event": "出遊",
@@ -129,10 +145,6 @@
     {
       "event": "發文章",
       "description": "搜索枯腸，不知所云"
-    },
-    {
-      "event": "背東西",
-      "description": "記憶不佳，隔天全忘"
     },
     {
       "event": "點外賣",
