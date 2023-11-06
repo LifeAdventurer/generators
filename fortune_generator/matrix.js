@@ -1,8 +1,8 @@
 const canvas = document.getElementById("Matrix")
 const context = canvas.getContext("2d")
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
+canvas.height = window.innerHeight + 100;
+canvas.width = window.innerWidth + 5;
 
 const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./*-+#$%^@!~?><:;[]{}\」=_αβΓγΔδεζηΘθικΛλμΞξΠπρΣσςτυΦφχΨψΩω×≦≧≠∞≒≡～∩∠∪∟⊿∫∮∵∴＄￥〒￠￡℃€℉╩◢ⅩⅨⅧⅦⅥⅤⅣⅢⅡⅠあいうえおがぎぐげござじずぜぞだぢつでづどにぬのばひぴぶへぺぼみゃょァゐゎè";
 

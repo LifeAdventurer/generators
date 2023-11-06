@@ -28,8 +28,8 @@ body {
   text-align: center;
   transform: translate(-50%, -50%);
   background-color: var(--white);
-  border-radius: 30px;
-  padding: 30px;
+  border-radius: 40px;
+  padding: 10px;
 }
 
 .left-result {
