@@ -17,8 +17,8 @@ fetch("fortune.json")
 const textColor = ["#e74c3c", "#e74c3c", "#e74c3c", "#70ad47", "#000000bf", "#000000bf", "#000000bf"];
 const fortuneStatus = ["大吉", "中吉", "小吉", "中平", "凶", "小凶", "大凶"];
 
-const allGood = `<span style='font-size: 32px; color: #000000bf;'>萬事皆宜</span>`;
-const allBad = `<span style='font-size: 32px; color: #e74c3c;'>諸事不宜</span>`;
+const allGood = `<span style='font-size: 5.8vmin; color: #000000bf;'><b>萬事皆宜<b></span>`;
+const allBad = `<span style='font-size: 5.8vmin; color: #e74c3c;'><b>諸事不宜<b></span>`;
 
 function Appear() {
   $('#btn').html('打卡成功');
@@ -33,7 +33,7 @@ function Appear() {
   }
 
   let d = new Date();
-  let date = d.getDate();
+  let date = d.getDate() + 4;
   let seed = (num[0] >> 3) * (num[1] >> 2) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * ((d.getMonth() + 1) << 5) + d.getFullYear();
   const goodLen = goodFortunes.length;
   const badLen = badFortunes.length;
