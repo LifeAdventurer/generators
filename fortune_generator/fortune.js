@@ -16,7 +16,7 @@ fetch("fortune.json")
 
 const textColor = ["#e74c3c", "#e74c3c", "#e74c3c", "#5eb95e", "#000000bf", "#000000bf", "#000000bf"];
 const fortuneStatus = ["大吉", "中吉", "小吉", "中平", "凶", "小凶", "大凶"];
-const chineseMonth = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十一", "十二"];
+const chineseMonth = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
 const week = ['日', '一', '二', '三', '四', '五', '六'];
 
 const title = `<span style='font-size: 5.8vmin; color: #000000CC;'><b>今日運勢<b></span>`;
