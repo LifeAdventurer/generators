@@ -58,10 +58,11 @@ function Appear() {
   const badLen = badFortunes.length;
   const statusLen = fortuneStatus.length;
 
-  let hashDate = Math.round(Math.log10(year * ((month << 3) ^ (date << 1))));
+  let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + 1)) * (date << Math.log10(num[2])))));
   let seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + year;
   let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate;
-
+  console.log(hashDate, seed1, seed2);
+  
   let status = `<span style='font-size: 12vmin; color: ${textColor[seed1 % statusLen]};'><b>§ ${fortuneStatus[seed1 % statusLen]} §</b></span>`;
   $('#ip-to-fortune').html(status);
 
