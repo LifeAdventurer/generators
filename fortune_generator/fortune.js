@@ -37,6 +37,8 @@ $('#month').html(showMonth);
 $('#date').html(showDate);
 $('#weekday').html(showDay);
 
+let special = false;
+
 function Appear() {
   $('#title').html(title);
   $('#month').html('');
@@ -44,6 +46,10 @@ function Appear() {
   $('#weekday').html('');
 
   $('#btn').html('打卡成功');
+  if(date == 18 && month == 11){
+    special = true;
+  }
+
   let p = 0;
   let num = [0, 0, 0, 0];
   for(let i = 0; i < 14; i++) {
@@ -61,23 +67,28 @@ function Appear() {
   let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + 1)) * (date << Math.log10(num[2])))));
   let seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + year;
   let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate;
-  console.log(hashDate, seed1, seed2);
   
   let status = `<span style='font-size: 12vmin; color: ${textColor[seed1 % statusLen]};'><b>§ ${fortuneStatus[seed1 % statusLen]} §</b></span>`;
-  $('#ip-to-fortune').html(status);
+  if(special){
+    special_status = `<span style='font-size: 12vmin; color: ${textColor[0]};'><b>§ ${fortuneStatus[0]} §</b></span>`;
+    $('#ip-to-fortune').html(special_status);
+  }
+  else{
+    $('#ip-to-fortune').html(status);
+  }
 
   let l_1_event, l_1_desc, l_2_event, l_2_desc, r_1_event, r_1_desc, r_2_event, r_2_desc;
   let l1, l2, r1, r2;
   let set = new Set();
   l1 = seed1 % goodLen;
   set.add(goodFortunes[l1].event);
-  l2 = ((seed1 << 1) + date) % goodLen;
+  l2 = ((seed1 << 1) + date + goodLen) % goodLen;
   while(set.has(goodFortunes[l2].event)) l2 = (l2 + 1) % goodLen;
   set.add(goodFortunes[l2].event);
   r1 = ((seed1 >> 1) + (d.getMonth() << 3)) % badLen;
   while(set.has(badFortunes[r1].event)) r1 = (r1 + 2) % badLen;
   set.add(badFortunes[r1].event);
-  r2 = (((((seed1 << 3 ) + (d.getFullYear() >> 5) * (date << 2)) % badLen) * seed2) >> 6) % badLen;
+  r2 = ((((((seed1 << 3) + (d.getFullYear() >> 5) * (date << 2)) % badLen) * seed2) >> 6) % badLen + badLen) % badLen;
   while(set.has(badFortunes[r2].event)) r2 = (r2 + 1) % badLen;
   l_1_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${goodFortunes[l1].event}</span>`;
   l_1_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${goodFortunes[l1].description}</span>`;
@@ -87,7 +98,18 @@ function Appear() {
   r_1_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${badFortunes[r1].description}</span>`;
   r_2_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${badFortunes[r2].event}</span>`;
   r_2_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${badFortunes[r2].description}</span>`;
-  if(seed1 % statusLen == 0){
+  if(special){
+    l_1_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>參加特選</span>`;
+    l_1_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>順利上榜</span>`;
+    l_2_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>放鬆心態</span>`;
+    l_2_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>水準超常發揮</span>`;
+    $('#r-1-event').html(allGood);
+    $('#l-1-event').html(l_1_special_event);
+    $('#l-1-desc').html(l_1_special_desc);
+    $('#l-2-event').html(l_2_special_event);
+    $('#l-2-desc').html(l_2_special_desc);
+  }
+  else if(seed1 % statusLen == 0){
     $('#r-1-event').html(allGood);
     $('#l-1-event').html(l_1_event);
     $('#l-1-desc').html(l_1_desc);
