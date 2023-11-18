@@ -57,15 +57,7 @@ function Appear() {
   $('#btn').html('打卡成功');
 
   // transform ip to four numbers
-  let p = 0;
-  let num = [0, 0, 0, 0];
-  for(let i = 0; i < ip.length; i++) {
-    if(ip[i] == '.') {
-      p++;
-      continue;
-    }
-    num[p] = num[p] * 10 + parseInt(ip[i]);
-  }
+  let num = ip.split(".").map(num => parseInt(num));
   
   // some lengths
   const goodLen = goodFortunes.length;
