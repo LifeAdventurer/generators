@@ -1,0 +1,22 @@
+{
+  "special_events": [
+    {
+      "year": "2023",
+      "month": "11",
+      "date": "18",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "參加特選",
+        "l_1_desc": "順利上榜",
+        "l_2_event": "放鬆心態",
+        "l_2_desc": "實力超常發揮"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    }
+  ]
+}
