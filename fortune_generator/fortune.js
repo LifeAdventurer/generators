@@ -59,7 +59,7 @@ function Appear() {
   // transform ip to four numbers
   let p = 0;
   let num = [0, 0, 0, 0];
-  for(let i = 0; i < 14; i++) {
+  for(let i = 0; i < ip.length; i++) {
     if(ip[i] == '.') {
       p++;
       continue;
