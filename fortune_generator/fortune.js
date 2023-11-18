@@ -14,6 +14,14 @@ fetch("fortune.json")
   badFortunes = data.badFortunes;
 })
 
+let special_events = [];
+
+fetch("special.json")
+.then(response => response.json())
+.then(data => {
+  special_events = data.special_events;
+})
+
 const textColor = ["#e74c3c", "#e74c3c", "#e74c3c", "#e74c3c", "#e74c3c", "#5eb95e", "#5eb95e", "#000000bf", "#000000bf", "#000000bf"];
 const fortuneStatus = ["大吉", "中吉", "中吉", "小吉", "小吉", "中平", "中平", "凶", "凶", "大凶"];
 const chineseMonth = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
@@ -44,11 +52,7 @@ function Appear() {
   $('#month').html('');
   $('#date').html('');
   $('#weekday').html('');
-
   $('#btn').html('打卡成功');
-  if(date == 18 && month == 11){
-    special = true;
-  }
 
   let p = 0;
   let num = [0, 0, 0, 0];
@@ -63,14 +67,27 @@ function Appear() {
   const goodLen = goodFortunes.length;
   const badLen = badFortunes.length;
   const statusLen = fortuneStatus.length;
+  const specialLen = special_events.length;
+  
+  let = special_events_index = 0;
+  for(let i = 0; i < specialLen; i++){
+    if(special_events[i].year == year && special_events[i].month == month && special_events[i].date == date){
+      special = true;
+      special_events_index = i;
+      break;
+    }
+  }
 
   let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + 1)) * (date << Math.log10(num[2])))));
   let seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + year;
   let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate;
   
-  let status = `<span style='font-size: 12vmin; color: ${textColor[seed1 % statusLen]};'><b>§ ${fortuneStatus[seed1 % statusLen]} §</b></span>`;
+  let status_index = seed1 % statusLen;
+  let status = `<span style='font-size: 12vmin; color: ${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
+  
   if(special){
-    special_status = `<span style='font-size: 12vmin; color: ${textColor[0]};'><b>§ ${fortuneStatus[0]} §</b></span>`;
+    status_index = special_events[special_events_index].status_index;
+    special_status = `<span style='font-size: 12vmin; color: ${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
     $('#ip-to-fortune').html(special_status);
   }
   else{
@@ -90,6 +107,7 @@ function Appear() {
   set.add(badFortunes[r1].event);
   r2 = ((((((seed1 << 3) + (d.getFullYear() >> 5) * (date << 2)) % badLen) * seed2) >> 6) % badLen + badLen) % badLen;
   while(set.has(badFortunes[r2].event)) r2 = (r2 + 1) % badLen;
+
   l_1_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${goodFortunes[l1].event}</span>`;
   l_1_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${goodFortunes[l1].description}</span>`;
   l_2_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${goodFortunes[l2].event}</span>`;
@@ -98,16 +116,42 @@ function Appear() {
   r_1_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${badFortunes[r1].description}</span>`;
   r_2_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${badFortunes[r2].event}</span>`;
   r_2_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${badFortunes[r2].description}</span>`;
+
+  let l_1_special_event, l_1_special_desc, l_2_special_event, l_2_special_desc, r_1_special_event, r_1_special_desc, r_2_special_event, r_2_special_desc;
   if(special){
-    l_1_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>參加特選</span>`;
-    l_1_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>順利上榜</span>`;
-    l_2_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>放鬆心態</span>`;
-    l_2_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>水準超常發揮</span>`;
-    $('#r-1-event').html(allGood);
+    if(status_index == 0){
+      r_1_special_event = allGood;
+      l_1_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${special_events[special_events_index].goodFortunes.l_1_event}</span>`;
+      l_1_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].goodFortunes.l_1_desc}</span>`;
+      l_2_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${special_events[special_events_index].goodFortunes.l_2_event}</span>`;
+      l_2_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].goodFortunes.l_2_desc}</span>`;
+    }
+    else if(status_index == statusLen - 1){
+      l_1_special_event = allBad;    
+      r_1_special_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${special_events[special_events_index].badFortunes.r_1_event}</span>`;
+      r_1_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].badFortunes.r_1_desc}</span>`;
+      r_2_special_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${special_events[special_events_index].badFortunes.r_2_event}</span>`;
+      r_2_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].badFortunes.r_2_desc}</span>`;
+    }
+    else{
+      l_1_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${special_events[special_events_index].goodFortunes.l_1_event}</span>`;
+      l_1_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].goodFortunes.l_1_desc}</span>`;
+      l_2_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${special_events[special_events_index].goodFortunes.l_2_event}</span>`;
+      l_2_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].goodFortunes.l_2_desc}</span>`;
+      r_1_special_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${special_events[special_events_index].badFortunes.r_1_event}</span>`;
+      r_1_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].badFortunes.r_1_desc}</span>`;
+      r_2_special_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${special_events[special_events_index].badFortunes.r_2_event}</span>`;
+      r_2_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].badFortunes.r_2_desc}</span>`;
+    }
+    
     $('#l-1-event').html(l_1_special_event);
     $('#l-1-desc').html(l_1_special_desc);
     $('#l-2-event').html(l_2_special_event);
     $('#l-2-desc').html(l_2_special_desc);
+    $('#r-1-event').html(r_1_special_event);
+    $('#r-1-desc').html(r_1_special_desc);
+    $('#r-2-event').html(r_2_special_event);
+    $('#r-2-desc').html(r_2_special_desc);
   }
   else if(seed1 % statusLen == 0){
     $('#r-1-event').html(allGood);
