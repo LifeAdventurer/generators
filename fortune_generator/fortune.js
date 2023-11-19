@@ -49,6 +49,18 @@ $('#weekday').html(showDay);
 
 let special = false;
 
+function good_span(event){
+  return `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${event}</span>`;
+}
+
+function bad_span(event){
+  return `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${event}</span>`;
+}
+
+function desc_span(desc){
+  return `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${desc}</span>`;
+}
+
 function Appear() {
   $('#title').html(title);
   $('#month').html('');
@@ -115,40 +127,40 @@ function Appear() {
   } 
 
   // organize the stuffs below this line... 
-  l_1_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${goodFortunes[l1].event}</span>`;
-  l_1_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${goodFortunes[l1].description}</span>`;
-  l_2_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${goodFortunes[l2].event}</span>`;
-  l_2_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${goodFortunes[l2].description}</span>`;
-  r_1_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${badFortunes[r1].event}</span>`;
-  r_1_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${badFortunes[r1].description}</span>`;
-  r_2_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${badFortunes[r2].event}</span>`;
-  r_2_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${badFortunes[r2].description}</span>`;
+  l_1_event = good_span(goodFortunes[l1].event);
+  l_1_desc = desc_span(goodFortunes[l1].description); 
+  l_2_event = good_span(goodFortunes[l2].event);
+  l_2_desc = desc_span(goodFortunes[l2].description);
+  r_1_event = bad_span(badFortunes[r1].event);
+  r_1_desc = desc_span(badFortunes[r1].description);
+  r_2_event = bad_span(badFortunes[r2].event);
+  r_2_desc = desc_span(badFortunes[r2].description);
 
   let l_1_special_event, l_1_special_desc, l_2_special_event, l_2_special_desc, r_1_special_event, r_1_special_desc, r_2_special_event, r_2_special_desc;
   if(special){
     if(status_index == 0){
       r_1_special_event = allGood;
-      l_1_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${special_events[special_events_index].goodFortunes.l_1_event}</span>`;
-      l_1_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].goodFortunes.l_1_desc}</span>`;
-      l_2_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${special_events[special_events_index].goodFortunes.l_2_event}</span>`;
-      l_2_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].goodFortunes.l_2_desc}</span>`;
+      l_1_special_event = good_span(special_events[special_events_index].goodFortunes.l_1_event);
+      l_1_special_desc = desc_span(special_events[special_events_index].goodFortunes.l_1_desc);
+      l_2_special_event = good_span(special_events[special_events_index].goodFortunes.l_2_event);
+      l_2_special_desc = desc_span(special_events[special_events_index].goodFortunes.l_2_desc);
     }
     else if(status_index == statusLen - 1){
       l_1_special_event = allBad;    
-      r_1_special_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${special_events[special_events_index].badFortunes.r_1_event}</span>`;
-      r_1_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].badFortunes.r_1_desc}</span>`;
-      r_2_special_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${special_events[special_events_index].badFortunes.r_2_event}</span>`;
-      r_2_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].badFortunes.r_2_desc}</span>`;
+      r_1_special_event = bad_span(special_events[special_events_index].badFortunes.r_1_event);
+      r_1_special_desc = desc_span(special_events[special_events_index].badFortunes.r_1_desc);
+      r_2_special_event = bad_span(special_events[special_events_index].badFortunes.r_2_event);
+      r_2_special_desc = desc_span(special_events[special_events_index].badFortunes.r_2_desc);
     }
     else{
-      l_1_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${special_events[special_events_index].goodFortunes.l_1_event}</span>`;
-      l_1_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].goodFortunes.l_1_desc}</span>`;
-      l_2_special_event = `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${special_events[special_events_index].goodFortunes.l_2_event}</span>`;
-      l_2_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].goodFortunes.l_2_desc}</span>`;
-      r_1_special_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${special_events[special_events_index].badFortunes.r_1_event}</span>`;
-      r_1_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].badFortunes.r_1_desc}</span>`;
-      r_2_special_event = `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${special_events[special_events_index].badFortunes.r_2_event}</span>`;
-      r_2_special_desc = `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${special_events[special_events_index].badFortunes.r_2_desc}</span>`;
+      l_1_special_event = good_span(special_events[special_events_index].goodFortunes.l_1_event);
+      l_1_special_desc = desc_span(special_events[special_events_index].goodFortunes.l_1_desc);
+      l_2_special_event = good_span(special_events[special_events_index].goodFortunes.l_2_event);
+      l_2_special_desc = desc_span(special_events[special_events_index].goodFortunes.l_2_desc);
+      r_1_special_event = bad_span(special_events[special_events_index].badFortunes.r_1_event);
+      r_1_special_desc = desc_span(special_events[special_events_index].badFortunes.r_1_desc);
+      r_2_special_event = bad_span(special_events[special_events_index].badFortunes.r_2_event);
+      r_2_special_desc = desc_span(special_events[special_events_index].badFortunes.r_2_desc);
     }
     
     $('#l-1-event').html(l_1_special_event);
