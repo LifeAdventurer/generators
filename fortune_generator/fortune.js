@@ -1,5 +1,4 @@
 let ip;
-
 $.getJSON("https://api.ipify.org?format=json", function(data) {
   ip = data.ip;
 })
@@ -22,14 +21,19 @@ fetch("special.json")
   special_events = data.special_events;
 })
 
-const textColor = ["#e74c3c", "#e74c3c", "#e74c3c", "#e74c3c", "#e74c3c", "#5eb95e", "#5eb95e", "#000000bf", "#000000bf", "#000000bf"];
+// color adjust
+const goodColor = "#e74c3c";
+const badColor = "#000000bf";
+const descColor = "#7f7f7f";
+
+const textColor = [goodColor, goodColor, goodColor, goodColor, goodColor, "#5eb95e", "#5eb95e", badColor, badColor, badColor];
 const fortuneStatus = ["大吉", "中吉", "中吉", "小吉", "小吉", "中平", "中平", "凶", "凶", "大凶"];
 const chineseMonth = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
 const week = ['日', '一', '二', '三', '四', '五', '六'];
 
 const title = `<span style='font-size: 8vmin; color: #000000CC;'><b>今日運勢<b></span>`;
-const allGood = `<span style='font-size: 6vmin; color: #000000bf;'><b>萬事皆宜<b></span>`;
-const allBad = `<span style='font-size: 6vmin; color: #e74c3c;'><b>諸事不宜<b></span>`;
+const allGood = `<span style='font-size: 6vmin; color: ${badColor};'><b>萬事皆宜<b></span>`;
+const allBad = `<span style='font-size: 6vmin; color: ${goodColor};'><b>諸事不宜<b></span>`;
 
 // date
 const d = new Date();
@@ -50,15 +54,15 @@ $('#weekday').html(showDay);
 let special = false;
 
 function good_span(event){
-  return `<span style='font-size: 5.6vmin; color: #e74c3c;'><b>宜: </b>${event}</span>`;
+  return `<span style='font-size: 5.6vmin; color: ${goodColor};'><b>宜: </b>${event}</span>`;
 }
 
 function bad_span(event){
-  return `<span style='font-size: 5.6vmin; color: #000000bf;'><b>忌: </b>${event}</span>`;
+  return `<span style='font-size: 5.6vmin; color: ${badColor};'><b>忌: </b>${event}</span>`;
 }
 
 function desc_span(desc){
-  return `<span style='font-size: 3.5vmin; color: #7f7f7f;'>${desc}</span>`;
+  return `<span style='font-size: 3.5vmin; color: ${descColor};'>${desc}</span>`;
 }
 
 function Appear() {
@@ -104,9 +108,8 @@ function Appear() {
     $('#ip-to-fortune').html(status);
   }
 
-  let l_1_event, l_1_desc, l_2_event, l_2_desc, r_1_event, r_1_desc, r_2_event, r_2_desc;
   let l1, l2, r1, r2;
-
+  
   // make sure the events won't collide
   let set = new Set();
   l1 = (seed1 % goodLen + goodLen) % goodLen;
@@ -125,7 +128,8 @@ function Appear() {
   while(set.has(badFortunes[r2].event)){
     r2 = (r2 + 1) % badLen;
   } 
-
+  
+  let l_1_event, l_1_desc, l_2_event, l_2_desc, r_1_event, r_1_desc, r_2_event, r_2_desc;
   // organize the stuffs below this line... 
   l_1_event = good_span(goodFortunes[l1].event);
   l_1_desc = desc_span(goodFortunes[l1].description); 
@@ -136,41 +140,42 @@ function Appear() {
   r_2_event = bad_span(badFortunes[r2].event);
   r_2_desc = desc_span(badFortunes[r2].description);
 
-  let l_1_special_event, l_1_special_desc, l_2_special_event, l_2_special_desc, r_1_special_event, r_1_special_desc, r_2_special_event, r_2_special_desc;
   if(special){
+    // instead clear variable name, use short variable name for here... cuz it's too repetitive
+    let Data = special_events[special_events_index];
     if(status_index == 0){
-      r_1_special_event = allGood;
-      l_1_special_event = good_span(special_events[special_events_index].goodFortunes.l_1_event);
-      l_1_special_desc = desc_span(special_events[special_events_index].goodFortunes.l_1_desc);
-      l_2_special_event = good_span(special_events[special_events_index].goodFortunes.l_2_event);
-      l_2_special_desc = desc_span(special_events[special_events_index].goodFortunes.l_2_desc);
+      r_1_event = allGood;
+      l_1_event = good_span(Data.goodFortunes.l_1_event);
+      l_1_desc = desc_span(Data.goodFortunes.l_1_desc);
+      l_2_event = good_span(Data.goodFortunes.l_2_event);
+      l_2_desc = desc_span(Data.goodFortunes.l_2_desc);
     }
     else if(status_index == statusLen - 1){
-      l_1_special_event = allBad;    
-      r_1_special_event = bad_span(special_events[special_events_index].badFortunes.r_1_event);
-      r_1_special_desc = desc_span(special_events[special_events_index].badFortunes.r_1_desc);
-      r_2_special_event = bad_span(special_events[special_events_index].badFortunes.r_2_event);
-      r_2_special_desc = desc_span(special_events[special_events_index].badFortunes.r_2_desc);
+      l_1_event = allBad;
+      r_1_event = bad_span(Data.badFortunes.r_1_event);
+      r_1_desc = desc_span(Data.badFortunes.r_1_desc);
+      r_2_event = bad_span(Data.badFortunes.r_2_event);
+      r_2_desc = desc_span(Data.badFortunes.r_2_desc);
     }
     else{
-      l_1_special_event = good_span(special_events[special_events_index].goodFortunes.l_1_event);
-      l_1_special_desc = desc_span(special_events[special_events_index].goodFortunes.l_1_desc);
-      l_2_special_event = good_span(special_events[special_events_index].goodFortunes.l_2_event);
-      l_2_special_desc = desc_span(special_events[special_events_index].goodFortunes.l_2_desc);
-      r_1_special_event = bad_span(special_events[special_events_index].badFortunes.r_1_event);
-      r_1_special_desc = desc_span(special_events[special_events_index].badFortunes.r_1_desc);
-      r_2_special_event = bad_span(special_events[special_events_index].badFortunes.r_2_event);
-      r_2_special_desc = desc_span(special_events[special_events_index].badFortunes.r_2_desc);
+      l_1_event = good_span(Data.goodFortunes.l_1_event);
+      l_1_desc = desc_span(Data.goodFortunes.l_1_desc);
+      l_2_event = good_span(Data.goodFortunes.l_2_event);
+      l_2_desc = desc_span(Data.goodFortunes.l_2_desc);
+      r_1_event = bad_span(Data.badFortunes.r_1_event);
+      r_1_desc = desc_span(Data.badFortunes.r_1_desc);
+      r_2_event = bad_span(Data.badFortunes.r_2_event);
+      r_2_desc = desc_span(Data.badFortunes.r_2_desc);
     }
     
-    $('#l-1-event').html(l_1_special_event);
-    $('#l-1-desc').html(l_1_special_desc);
-    $('#l-2-event').html(l_2_special_event);
-    $('#l-2-desc').html(l_2_special_desc);
-    $('#r-1-event').html(r_1_special_event);
-    $('#r-1-desc').html(r_1_special_desc);
-    $('#r-2-event').html(r_2_special_event);
-    $('#r-2-desc').html(r_2_special_desc);
+    $('#l-1-event').html(l_1_event);
+    $('#l-1-desc').html(l_1_desc);
+    $('#l-2-event').html(l_2_event);
+    $('#l-2-desc').html(l_2_desc);
+    $('#r-1-event').html(r_1_event);
+    $('#r-1-desc').html(r_1_desc);
+    $('#r-2-event').html(r_2_event);
+    $('#r-2-desc').html(r_2_desc);
   }
   else if(seed1 % statusLen == 0){
     $('#r-1-event').html(allGood);
