@@ -145,27 +145,21 @@ function Appear() {
     let Data = special_events[special_events_index];
     if(status_index == 0){
       r_1_event = allGood;
-      l_1_event = good_span(Data.goodFortunes.l_1_event);
-      l_1_desc = desc_span(Data.goodFortunes.l_1_desc);
-      l_2_event = good_span(Data.goodFortunes.l_2_event);
-      l_2_desc = desc_span(Data.goodFortunes.l_2_desc);
     }
-    else if(status_index == statusLen - 1){
-      l_1_event = allBad;
+    else{
       r_1_event = bad_span(Data.badFortunes.r_1_event);
       r_1_desc = desc_span(Data.badFortunes.r_1_desc);
       r_2_event = bad_span(Data.badFortunes.r_2_event);
       r_2_desc = desc_span(Data.badFortunes.r_2_desc);
+    }
+    if(status_index == statusLen - 1){
+      l_1_event = allBad;
     }
     else{
       l_1_event = good_span(Data.goodFortunes.l_1_event);
       l_1_desc = desc_span(Data.goodFortunes.l_1_desc);
       l_2_event = good_span(Data.goodFortunes.l_2_event);
       l_2_desc = desc_span(Data.goodFortunes.l_2_desc);
-      r_1_event = bad_span(Data.badFortunes.r_1_event);
-      r_1_desc = desc_span(Data.badFortunes.r_1_desc);
-      r_2_event = bad_span(Data.badFortunes.r_2_event);
-      r_2_desc = desc_span(Data.badFortunes.r_2_desc);
     }
     
     $('#l-1-event').html(l_1_event);
@@ -177,29 +171,26 @@ function Appear() {
     $('#r-2-event').html(r_2_event);
     $('#r-2-desc').html(r_2_desc);
   }
-  else if(seed1 % statusLen == 0){
-    $('#r-1-event').html(allGood);
-    $('#l-1-event').html(l_1_event);
-    $('#l-1-desc').html(l_1_desc);
-    $('#l-2-event').html(l_2_event);
-    $('#l-2-desc').html(l_2_desc);
-  }
-  else if(seed1 % statusLen == statusLen - 1){
-    $('#l-1-event').html(allBad);
-    $('#r-1-event').html(r_1_event);
-    $('#r-1-desc').html(r_1_desc);
-    $('#r-2-event').html(r_2_event);
-    $('#r-2-desc').html(r_2_desc);
-  }
   else{
-    $('#l-1-event').html(l_1_event);
-    $('#l-1-desc').html(l_1_desc);
-    $('#l-2-event').html(l_2_event);
-    $('#l-2-desc').html(l_2_desc);
-    $('#r-1-event').html(r_1_event);
-    $('#r-1-desc').html(r_1_desc);
-    $('#r-2-event').html(r_2_event);
-    $('#r-2-desc').html(r_2_desc);
+    if(seed1 % statusLen == 0){
+      $('#r-1-event').html(allGood);
+      
+    }
+    else{
+      $('#r-1-event').html(r_1_event);
+      $('#r-1-desc').html(r_1_desc);
+      $('#r-2-event').html(r_2_event);
+      $('#r-2-desc').html(r_2_desc);
+    }
+    if(seed1 % statusLen == statusLen - 1){
+      $('#l-1-event').html(allBad);
+    }
+    else{
+      $('#l-1-event').html(l_1_event);
+      $('#l-1-desc').html(l_1_desc);
+      $('#l-2-event').html(l_2_event);
+      $('#l-2-desc').html(l_2_desc);
+    }
   }
 }
 
