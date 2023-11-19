@@ -24,16 +24,18 @@ fetch("special.json")
 // color adjust
 const goodColor = "#e74c3c";
 const badColor = "#000000bf";
+const middleColor = "#5eb95e";
 const descColor = "#7f7f7f";
+const dateColor = "#054310C9";
 
-const textColor = [goodColor, goodColor, goodColor, goodColor, goodColor, "#5eb95e", "#5eb95e", badColor, badColor, badColor];
-const fortuneStatus = ["大吉", "中吉", "中吉", "小吉", "小吉", "中平", "中平", "凶", "凶", "大凶"];
+const textColor = [goodColor, goodColor, goodColor, goodColor, goodColor, middleColor, badColor, badColor];
+const fortuneStatus = ["大吉", "中吉", "小吉", "吉", "末吉", "中平", "凶", "大凶"];
 const chineseMonth = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
 const week = ['日', '一', '二', '三', '四', '五', '六'];
 
-const title = `<span style='font-size: 8vmin; color: #000000CC;'><b>今日運勢<b></span>`;
-const allGood = `<span style='font-size: 6vmin; color: ${badColor};'><b>萬事皆宜<b></span>`;
-const allBad = `<span style='font-size: 6vmin; color: ${goodColor};'><b>諸事不宜<b></span>`;
+const title = `<span style='font-size:8vmin; color:#000000CC;'><b>今日運勢<b></span>`;
+const allGood = `<span style='font-size:6vmin; color:${badColor};'><b>萬事皆宜<b></span>`;
+const allBad = `<span style='font-size:6vmin; color:${goodColor};'><b>諸事不宜<b></span>`;
 
 // date
 const d = new Date();
@@ -43,9 +45,9 @@ const month = d.getMonth() + 1;
 const year = d.getFullYear();
 
 // before press button
-const showMonth = `<span style='font-size: 10vmin; color: #054310C9; -webkit-writing-mode: vertical-lr;'><b>${chineseMonth[month - 1] + "月"}<b></span>`;
-const showDate = `<span style='font-size: 25vmin; color: #054310C9;'><b>${("0" + date).substr(-2)}<b></span>`;
-const showDay = `<span style='font-size: 10vmin; color: #054310C9; -webkit-writing-mode: vertical-lr; margin-right: 10%;'><b>${"星期" + week[day]}<b></span>`;
+const showMonth = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr;'><b>${chineseMonth[month - 1] + "月"}<b></span>`;
+const showDate = `<span style='font-size:25vmin; color:${dateColor};'><b>${("0" + date).substr(-2)}<b></span>`;
+const showDay = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr; margin-right:10%;'><b>${"星期" + week[day]}<b></span>`;
 
 $('#month').html(showMonth);
 $('#date').html(showDate);
@@ -54,15 +56,15 @@ $('#weekday').html(showDay);
 let special = false;
 
 function good_span(event){
-  return `<span style='font-size: 5.6vmin; color: ${goodColor};'><b>宜: </b>${event}</span>`;
+  return `<span style='font-size:5.6vmin; color:${goodColor};'><b>宜: </b>${event}</span>`;
 }
 
 function bad_span(event){
-  return `<span style='font-size: 5.6vmin; color: ${badColor};'><b>忌: </b>${event}</span>`;
+  return `<span style='font-size:5.6vmin; color:${badColor};'><b>忌: </b>${event}</span>`;
 }
 
 function desc_span(desc){
-  return `<span style='font-size: 3.5vmin; color: ${descColor};'>${desc}</span>`;
+  return `<span style='font-size:3.5vmin; color:${descColor};'>${desc}</span>`;
 }
 
 function Appear() {
@@ -97,11 +99,11 @@ function Appear() {
   let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate;
   
   let status_index = seed1 % statusLen;
-  let status = `<span style='font-size: 12vmin; color: ${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
+  let status = `<span style='font-size:12vmin; color:${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
   
   if(special){
     status_index = special_events[special_events_index].status_index;
-    let special_status = `<span style='font-size: 12vmin; color: ${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
+    let special_status = `<span style='font-size:12vmin; color:${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
     $('#ip-to-fortune').html(special_status);
   }
   else{
@@ -174,7 +176,6 @@ function Appear() {
   else{
     if(seed1 % statusLen == 0){
       $('#r-1-event').html(allGood);
-      
     }
     else{
       $('#r-1-event').html(r_1_event);
