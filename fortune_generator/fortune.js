@@ -51,7 +51,20 @@ let special_events_index = 0;
 
 // init page
 async function init_page(){
+  // fetch fortune.json and special.json
   await fetch_data();
+
+  // hide the elements of show fortune page
+  $('#ip-to-fortune').hide();
+  $('#l-1-event').hide();
+  $('#l-1-desc').hide();
+  $('#l-2-event').hide();
+  $('#l-2-desc').hide();
+  $('#r-1-event').hide();
+  $('#r-1-desc').hide();
+  $('#r-2-event').hide();
+  $('#r-2-desc').hide();
+
   // show date before button pressed
   const showMonth = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr;'><b>${chineseMonth[month - 1] + "月"}<b></span>`;
   const showDate = `<span style='font-size:25vmin; color:${dateColor};'><b>${("0" + date).substr(-2)}<b></span>`;
@@ -86,6 +99,7 @@ async function init_page(){
     $('#upcoming-event-1').html(upcoming_event_1);
   }
   if(eventIndex_2 != -1){
+    // define the date right now and the special event date
     const startDate = new Date(`${year}-${month}-${date}`);
     const endDate = new Date(`${special_events[eventIndex_2].year}-${special_events[eventIndex_2].month}-${special_events[eventIndex_2].date}`);
 
@@ -118,6 +132,16 @@ function Appear() {
   $('#upcoming-event-1').hide();
   $('#upcoming-event-2').hide();
   $('#btn').html('打卡成功');
+  // toggle the elements on show status page
+  $('#ip-to-fortune').toggle();
+  $('#l-1-event').toggle();
+  $('#l-1-desc').toggle();
+  $('#l-2-event').toggle();
+  $('#l-2-desc').toggle();
+  $('#r-1-event').toggle();
+  $('#r-1-desc').toggle();
+  $('#r-2-event').toggle();
+  $('#r-2-desc').toggle();
 
   // transform ip to four numbers
   let num = ip.split(".").map(num => parseInt(num));
