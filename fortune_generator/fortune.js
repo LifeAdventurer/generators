@@ -119,7 +119,6 @@ function Appear() {
   }
 
   let l1, l2, r1, r2;
-  
   // make sure the events won't collide
   let set = new Set();
   l1 = (seed1 % goodLen + goodLen) % goodLen;
@@ -182,7 +181,7 @@ function Appear() {
     $('#r-2-desc').html(r_2_desc);
   }
   else{
-    if(seed1 % statusLen == 0){
+    if(status_index == 0){
       $('#r-1-event').html(allGood);
     }
     else{
@@ -191,7 +190,7 @@ function Appear() {
       $('#r-2-event').html(r_2_event);
       $('#r-2-desc').html(r_2_desc);
     }
-    if(seed1 % statusLen == statusLen - 1){
+    if(status_index == statusLen - 1){
       $('#l-1-event').html(allBad);
     }
     else{
