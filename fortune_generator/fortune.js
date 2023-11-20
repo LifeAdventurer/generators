@@ -46,6 +46,16 @@ const day = d.getDay();
 const month = d.getMonth() + 1;
 const year = d.getFullYear();
 
+function daysDiff(eventIndex){
+  // define the date right now and the special event date
+  const startDate = new Date(`${year}-${month}-${date}`);
+  const endDate = new Date(`${special_events[eventIndex].year}-${special_events[eventIndex].month}-${special_events[eventIndex].date}`);
+
+  // calculate the difference in milliseconds and convert it to days
+  const timeDiff = (endDate - startDate) / (1000 * 60 * 60 * 24);
+  return timeDiff;
+}
+
 let special = false;
 let special_events_index = 0;
 
@@ -77,36 +87,24 @@ async function init_page(){
   let eventIndex_1 = -1, eventIndex_2 = -1;
   // check if there is special event today
   for(let i = 0; i < special_events.length; i++){
-    if((special_events[i].year + special_events[i].month * 40 + special_events[i].date) > (year + month * 40 + date)){
+    if(daysDiff(i) > 0){
       if(eventIndex_1 == -1) eventIndex_1 = i;
       else if(eventIndex_2 == - 1) eventIndex_2 = i;
     }
-    if(special_events[i].year == year && special_events[i].month == month && special_events[i].date == date){
+    else if(daysDiff(i) == 0){
       special = true;
       special_events_index = i;
     }
   }
 
   if(eventIndex_1 != -1){
-    // define the date right now and the special event date
-    const startDate = new Date(`${year}-${month}-${date}`);
-    const endDate = new Date(`${special_events[eventIndex_1].year}-${special_events[eventIndex_1].month}-${special_events[eventIndex_1].date}`);
-
-    // calculate the difference in milliseconds and convert it to days
-    const timeDiff = (endDate - startDate) / (1000 * 60 * 60 * 24);
-
-    let upcoming_event_1 = `<span style='font-size:5vmin; color:${descColor};'><b>距離${special_events[eventIndex_1].event}還剩${timeDiff}天<b></span>`;
+    let days = daysDiff(eventIndex_1);
+    let upcoming_event_1 = `<span style='font-size:5vmin; color:${descColor};'><b>距離${special_events[eventIndex_1].event}還剩${days}天<b></span>`;
     $('#upcoming-event-1').html(upcoming_event_1);
   }
   if(eventIndex_2 != -1){
-    // define the date right now and the special event date
-    const startDate = new Date(`${year}-${month}-${date}`);
-    const endDate = new Date(`${special_events[eventIndex_2].year}-${special_events[eventIndex_2].month}-${special_events[eventIndex_2].date}`);
-
-    // calculate the difference in milliseconds and convert it to days
-    const timeDiff = (endDate - startDate) / (1000 * 60 * 60 * 24);
-
-    let upcoming_event_2 = `<span style='font-size:5vmin; color:${descColor};'><b>距離${special_events[eventIndex_2].event}還剩${timeDiff}天<b></span>`;
+    let days = daysDiff(eventIndex_2);
+    let upcoming_event_2 = `<span style='font-size:5vmin; color:${descColor};'><b>距離${special_events[eventIndex_2].event}還剩${days}天<b></span>`;
     $('#upcoming-event-2').html(upcoming_event_2);
   }
 
