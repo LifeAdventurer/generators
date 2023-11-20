@@ -7,6 +7,7 @@ let goodFortunes = [];
 let badFortunes = [];
 let special_events = [];
 
+// using async and await to prevent fetching the data too late...
 async function fetch_data(){
   await fetch("fortune.json")
   .then(response => response.json())
@@ -47,6 +48,8 @@ const year = d.getFullYear();
 
 let special = false;
 let special_events_index = 0;
+
+// init page
 async function init_page(){
   await fetch_data();
   // show date before button pressed
@@ -66,26 +69,20 @@ async function init_page(){
     }
   }
 
+  // show special event if today is a special day
   if(special){
     let special_event_today = `<span style='font-size:10vmin; color:${descColor};'><b>今日是${special_events[special_events_index].event}<b></span>`;
     $('#special-day').html(special_event_today);
   }
 }
 
-
-function good_span(event){
-  return `<span style='font-size:5.6vmin; color:${goodColor};'><b>宜: </b>${event}</span>`;
-}
-
-function bad_span(event){
-  return `<span style='font-size:5.6vmin; color:${badColor};'><b>忌: </b>${event}</span>`;
-}
-
-function desc_span(desc){
-  return `<span style='font-size:3.5vmin; color:${descColor};'>${desc}</span>`;
-}
+// event bar
+const good_span = event => `<span style='font-size:5.6vmin; color:${goodColor};'><b>宜: </b>${event}</span>`;
+const bad_span = event => `<span style='font-size:5.6vmin; color:${badColor};'><b>忌: </b>${event}</span>`;
+const desc_span = desc => `<span style='font-size:3.5vmin; color:${descColor};'>${desc}</span>`;
 
 function Appear() {
+  //change page
   $('#title').html(title);
   $('#month').html('');
   $('#date').html('');
@@ -106,6 +103,7 @@ function Appear() {
   let seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + year;
   let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate;
   
+  // decide the status
   let status_index = ((seed1 + seed2) % statusLen + statusLen) % statusLen;
   let status = `<span style='font-size:12vmin; color:${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
   
@@ -118,36 +116,34 @@ function Appear() {
     $('#ip-to-fortune').html(status);
   }
 
-  let l1, l2, r1, r2;
   // make sure the events won't collide
   let set = new Set();
-  l1 = (seed1 % goodLen + goodLen) % goodLen;
+  let l1 = (seed1 % goodLen + goodLen) % goodLen;
   set.add(goodFortunes[l1].event);
-  l2 = (((seed1 << 1) + date) % goodLen + goodLen) % goodLen;
+  let l2 = (((seed1 << 1) + date) % goodLen + goodLen) % goodLen;
   while(set.has(goodFortunes[l2].event)){
     l2 = (l2 + 1) % goodLen;
   } 
   set.add(goodFortunes[l2].event);
-  r1 = (((seed1 >> 1) + (d.getMonth() << 3)) % badLen + badLen) % badLen;
+  let r1 = (((seed1 >> 1) + (d.getMonth() << 3)) % badLen + badLen) % badLen;
   while(set.has(badFortunes[r1].event)){
     r1 = (r1 + 2) % badLen;
   } 
   set.add(badFortunes[r1].event);
-  r2 = ((((((seed1 << 3) + (d.getFullYear() >> 5) * (date << 2)) % badLen) * seed2) >> 6) % badLen + badLen) % badLen;
+  let r2 = ((((((seed1 << 3) + (d.getFullYear() >> 5) * (date << 2)) % badLen) * seed2) >> 6) % badLen + badLen) % badLen;
   while(set.has(badFortunes[r2].event)){
     r2 = (r2 + 1) % badLen;
   } 
   
-  let l_1_event, l_1_desc, l_2_event, l_2_desc, r_1_event, r_1_desc, r_2_event, r_2_desc;
   // organize the stuffs below this line... 
-  l_1_event = good_span(goodFortunes[l1].event);
-  l_1_desc = desc_span(goodFortunes[l1].description); 
-  l_2_event = good_span(goodFortunes[l2].event);
-  l_2_desc = desc_span(goodFortunes[l2].description);
-  r_1_event = bad_span(badFortunes[r1].event);
-  r_1_desc = desc_span(badFortunes[r1].description);
-  r_2_event = bad_span(badFortunes[r2].event);
-  r_2_desc = desc_span(badFortunes[r2].description);
+  let l_1_event = good_span(goodFortunes[l1].event);
+  let l_1_desc = desc_span(goodFortunes[l1].description); 
+  let l_2_event = good_span(goodFortunes[l2].event);
+  let l_2_desc = desc_span(goodFortunes[l2].description);
+  let r_1_event = bad_span(badFortunes[r1].event);
+  let r_1_desc = desc_span(badFortunes[r1].description);
+  let r_2_event = bad_span(badFortunes[r2].event);
+  let r_2_desc = desc_span(badFortunes[r2].description);
 
   if(special){
     // instead clear variable name, use short variable name for here... cuz it's too repetitive
