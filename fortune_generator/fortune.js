@@ -61,17 +61,44 @@ async function init_page(){
   $('#date').html(showDate);
   $('#weekday').html(showDay);
   
+  let eventIndex_1 = -1, eventIndex_2 = -1;
   // check if there is special event today
   for(let i = 0; i < special_events.length; i++){
+    if((special_events[i].year + special_events[i].month * 40 + special_events[i].date) > (year + month * 40 + date)){
+      if(eventIndex_1 == -1) eventIndex_1 = i;
+      else if(eventIndex_2 == - 1) eventIndex_2 = i;
+    }
     if(special_events[i].year == year && special_events[i].month == month && special_events[i].date == date){
       special = true;
       special_events_index = i;
     }
   }
 
+  if(eventIndex_1 != -1){
+    // define the date right now and the special event date
+    const startDate = new Date(`${year}-${month}-${date}`);
+    const endDate = new Date(`${special_events[eventIndex_1].year}-${special_events[eventIndex_1].month}-${special_events[eventIndex_1].date}`);
+
+    // calculate the difference in milliseconds and convert it to days
+    const timeDiff = (endDate - startDate) / (1000 * 60 * 60 * 24);
+
+    let upcoming_event_1 = `<span style='font-size:5vmin; color:${descColor};'><b>距離${special_events[eventIndex_1].event}還剩${timeDiff}天<b></span>`;
+    $('#upcoming-event-1').html(upcoming_event_1);
+  }
+  if(eventIndex_2 != -1){
+    const startDate = new Date(`${year}-${month}-${date}`);
+    const endDate = new Date(`${special_events[eventIndex_2].year}-${special_events[eventIndex_2].month}-${special_events[eventIndex_2].date}`);
+
+    // calculate the difference in milliseconds and convert it to days
+    const timeDiff = (endDate - startDate) / (1000 * 60 * 60 * 24);
+
+    let upcoming_event_2 = `<span style='font-size:5vmin; color:${descColor};'><b>距離${special_events[eventIndex_2].event}還剩${timeDiff}天<b></span>`;
+    $('#upcoming-event-2').html(upcoming_event_2);
+  }
+
   // show special event if today is a special day
   if(special){
-    let special_event_today = `<span style='font-size:10vmin; color:${descColor};'><b>今日是${special_events[special_events_index].event}<b></span>`;
+    let special_event_today = `<span style='font-size:9vmin; color:${descColor};'><b>今日是${special_events[special_events_index].event}<b></span>`;
     $('#special-day').html(special_event_today);
   }
 }
@@ -84,10 +111,12 @@ const desc_span = desc => `<span style='font-size:3.5vmin; color:${descColor};'>
 function Appear() {
   //change page
   $('#title').html(title);
-  $('#month').html('');
-  $('#date').html('');
-  $('#weekday').html('');
-  $('#special-day').html('');
+  $('#month').hide();
+  $('#date').hide();
+  $('#weekday').hide();
+  $('#special-day').hide();
+  $('#upcoming-event-1').hide();
+  $('#upcoming-event-2').hide();
   $('#btn').html('打卡成功');
 
   // transform ip to four numbers
