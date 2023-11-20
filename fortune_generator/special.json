@@ -2,16 +2,70 @@
   "special_events": [
     {
       "year": "2023",
-      "month": "11",
-      "date": "18",
+      "month": "12",
+      "date": "22",
       "status_index": "0",
       "goodFortunes": {
-        "l_1_event": "參加特選",
-        "l_1_desc": "順利上榜",
-        "l_2_event": "放鬆心態",
-        "l_2_desc": "實力超常發揮"
+        "l_1_event": "吃湯圓",
+        "l_1_desc": "團團圓圓",
+        "l_2_event": "保暖",
+        "l_2_desc": "冬至到了"
       },
       "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "year": "2023",
+      "month": "12",
+      "date": "24",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "除舊佈新",
+        "l_1_desc": "平安祥和",
+        "l_2_event": "交換禮物",
+        "l_2_desc": "獲得真心的祝福"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "year": "2023",
+      "month": "12",
+      "date": "25",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "家庭聚會",
+        "l_1_desc": "一起團圓吃火雞大餐",
+        "l_2_event": "注意保暖",
+        "l_2_desc": "冬至到了"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "year": "2024",
+      "month": "1",
+      "date": "1",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "早起",
+        "l_1_desc": "心情愉悅迎接新年",
+        "l_2_event": "大掃除",
+        "l_2_desc": "新年新氣象"
+      },
+      "badFortunes": {  
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
