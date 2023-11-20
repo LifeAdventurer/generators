@@ -5,21 +5,22 @@ $.getJSON("https://api.ipify.org?format=json", function(data) {
 
 let goodFortunes = [];
 let badFortunes = [];
-
-fetch("fortune.json")
-.then(response => response.json())
-.then(data => {
-  goodFortunes = data.goodFortunes;
-  badFortunes = data.badFortunes;
-})
-
 let special_events = [];
 
-fetch("special.json")
-.then(response => response.json())
-.then(data => {
-  special_events = data.special_events;
-})
+async function fetch_data(){
+  await fetch("fortune.json")
+  .then(response => response.json())
+  .then(data => {
+    goodFortunes = data.goodFortunes;
+    badFortunes = data.badFortunes;
+  })
+
+  await fetch("special.json")
+  .then(response => response.json())
+  .then(data => {
+    special_events = data.special_events;
+  })
+}
 
 // color adjust
 const goodColor = "#e74c3c";
@@ -44,16 +45,33 @@ const day = d.getDay();
 const month = d.getMonth() + 1;
 const year = d.getFullYear();
 
-// before press button
-const showMonth = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr;'><b>${chineseMonth[month - 1] + "月"}<b></span>`;
-const showDate = `<span style='font-size:25vmin; color:${dateColor};'><b>${("0" + date).substr(-2)}<b></span>`;
-const showDay = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr; margin-right:10%;'><b>${"星期" + week[day]}<b></span>`;
-
-$('#month').html(showMonth);
-$('#date').html(showDate);
-$('#weekday').html(showDay);
-
 let special = false;
+let special_events_index = 0;
+async function init_page(){
+  await fetch_data();
+  // show date before button pressed
+  const showMonth = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr;'><b>${chineseMonth[month - 1] + "月"}<b></span>`;
+  const showDate = `<span style='font-size:25vmin; color:${dateColor};'><b>${("0" + date).substr(-2)}<b></span>`;
+  const showDay = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr; margin-right:10%;'><b>${"星期" + week[day]}<b></span>`;
+
+  $('#month').html(showMonth);
+  $('#date').html(showDate);
+  $('#weekday').html(showDay);
+  
+  // check if there is special event today
+  for(let i = 0; i < special_events.length; i++){
+    if(special_events[i].year == year && special_events[i].month == month && special_events[i].date == date){
+      special = true;
+      special_events_index = i;
+    }
+  }
+
+  if(special){
+    let special_event_today = `<span style='font-size:10vmin; color:${descColor};'><b>今日是${special_events[special_events_index].event}<b></span>`;
+    $('#special-day').html(special_event_today);
+  }
+}
+
 
 function good_span(event){
   return `<span style='font-size:5.6vmin; color:${goodColor};'><b>宜: </b>${event}</span>`;
@@ -72,6 +90,7 @@ function Appear() {
   $('#month').html('');
   $('#date').html('');
   $('#weekday').html('');
+  $('#special-day').html('');
   $('#btn').html('打卡成功');
 
   // transform ip to four numbers
@@ -81,17 +100,6 @@ function Appear() {
   const goodLen = goodFortunes.length;
   const badLen = badFortunes.length;
   const statusLen = fortuneStatus.length;
-  const specialLen = special_events.length;
-  
-  // check if there is special event to today
-  let = special_events_index = 0;
-  for(let i = 0; i < specialLen; i++){
-    if(special_events[i].year == year && special_events[i].month == month && special_events[i].date == date){
-      special = true;
-      special_events_index = i;
-      break;
-    }
-  }
 
   // TODO: improve the hash process
   let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + 1)) * (date << Math.log10(num[2])))));
@@ -100,7 +108,6 @@ function Appear() {
   
   let status_index = ((seed1 + seed2) % statusLen + statusLen) % statusLen;
   let status = `<span style='font-size:12vmin; color:${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
-  
   
   if(special){
     status_index = special_events[special_events_index].status_index;
@@ -199,3 +206,5 @@ function Appear() {
 function getLuck() {
   Update();
 }
+
+init_page();
