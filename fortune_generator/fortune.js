@@ -98,8 +98,9 @@ function Appear() {
   let seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + year;
   let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate;
   
-  let status_index = seed1 % statusLen;
+  let status_index = ((seed1 + seed2) % statusLen + statusLen) % statusLen;
   let status = `<span style='font-size:12vmin; color:${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
+  
   
   if(special){
     status_index = special_events[special_events_index].status_index;
