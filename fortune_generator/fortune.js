@@ -132,15 +132,15 @@ function Appear() {
   $('#upcoming-event-2').hide();
   $('#btn').html('打卡成功');
   // toggle the elements on show status page
-  $('#ip-to-fortune').toggle();
-  $('#l-1-event').toggle();
-  $('#l-1-desc').toggle();
-  $('#l-2-event').toggle();
-  $('#l-2-desc').toggle();
-  $('#r-1-event').toggle();
-  $('#r-1-desc').toggle();
-  $('#r-2-event').toggle();
-  $('#r-2-desc').toggle();
+  $('#ip-to-fortune').show();
+  $('#l-1-event').show();
+  $('#l-1-desc').show();
+  $('#l-2-event').show();
+  $('#l-2-desc').show();
+  $('#r-1-event').show();
+  $('#r-1-desc').show();
+  $('#r-2-event').show();
+  $('#r-2-desc').show();
 
   // transform ip to four numbers
   let num = ip.split(".").map(num => parseInt(num));
