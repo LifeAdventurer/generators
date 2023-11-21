@@ -97,6 +97,7 @@ async function init_page(){
     }
   }
 
+  // if there is upcoming event then show
   if(eventIndex_1 != -1){
     let days = daysDiff(eventIndex_1);
     let upcoming_event_1 = `<span style='font-size:5vmin; color:${descColor};'><b>距離${special_events[eventIndex_1].event}還剩${days}天<b></span>`;
@@ -150,7 +151,7 @@ function Appear() {
   const statusLen = fortuneStatus.length;
 
   // TODO: improve the hash process
-  let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + 1)) * (date << Math.log10(num[2])))));
+  let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + day - 1)) * (date << Math.log10(num[2] << day)))));
   let seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + (year * day) >> 2;
   let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate + (date * day) >> 1;
   
