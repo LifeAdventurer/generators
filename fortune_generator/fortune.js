@@ -35,9 +35,9 @@ const fortuneStatus = ["大吉", "中吉", "小吉", "吉", "末吉", "中平", 
 const chineseMonth = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
 const week = ['日', '一', '二', '三', '四', '五', '六'];
 
-const title = `<span style='font-size:8vmin; color:#000000CC;'><b>今日運勢<b></span>`;
-const allGood = `<span style='font-size:6vmin; color:${badColor};'><b>萬事皆宜<b></span>`;
-const allBad = `<span style='font-size:6vmin; color:${goodColor};'><b>諸事不宜<b></span>`;
+const title = `<span style='font-size:8vmin; color:#000000CC;'></b>今日運勢<b></span>`;
+const allGood = `<span style='font-size:6vmin; color:${badColor};'></b>萬事皆宜<b></span>`;
+const allBad = `<span style='font-size:6vmin; color:${goodColor};'></b>諸事不宜<b></span>`;
 
 // date
 const d = new Date();
@@ -76,8 +76,8 @@ async function init_page(){
   $('#r-2-desc').hide();
 
   // show date before button pressed
-  const showMonth = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr;'><b>${chineseMonth[month - 1] + "月"}<b></span>`;
-  const showDate = `<span style='font-size:25vmin; color:${dateColor};'><b>${("0" + date).substr(-2)}<b></span>`;
+  const showMonth = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr;'><b>${chineseMonth[month - 1] + "月"}</b></span>`;
+  const showDate = `<span style='font-size:25vmin; color:${dateColor};'><b>${("0" + date).substr(-2)}</b></span>`;
   const showDay = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr; margin-right:10%;'><b>${"星期" + week[day]}<b></span>`;
 
   $('#month').html(showMonth);
@@ -100,12 +100,12 @@ async function init_page(){
   // if there is upcoming event then show
   if(eventIndex_1 != -1){
     let days = daysDiff(eventIndex_1);
-    let upcoming_event_1 = `<span style='font-size:5vmin; color:${descColor};'><b>距離${special_events[eventIndex_1].event}還剩${days}天<b></span>`;
+    let upcoming_event_1 = `<span style='font-size:5vmin; color:${descColor};'>距離<b>${special_events[eventIndex_1].event}</b>還剩<b>${days}</b>天</span>`; 
     $('#upcoming-event-1').html(upcoming_event_1);
   }
   if(eventIndex_2 != -1){
     let days = daysDiff(eventIndex_2);
-    let upcoming_event_2 = `<span style='font-size:5vmin; color:${descColor};'><b>距離${special_events[eventIndex_2].event}還剩${days}天<b></span>`;
+    let upcoming_event_2 = `<span style='font-size:5vmin; color:${descColor};'>距離<b>${special_events[eventIndex_2].event}</b>還剩<b>${days}</b>天</span>`;
     $('#upcoming-event-2').html(upcoming_event_2);
   }
 
