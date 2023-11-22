@@ -1,8 +1,8 @@
 const canvas = document.getElementById("Matrix")
 const context = canvas.getContext("2d")
 
-canvas.height = window.innerHeight
-canvas.width = window.innerWidth
+canvas.height = window.innerHeight + 100;
+canvas.width = window.innerWidth + 5;
 
 const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./*-+#$%^@!~?><:;[]{}\」=_αβΓγΔδεζηΘθικΛλμΞξΠπρΣσςτυΦφχΨψΩω×≦≧≠∞≒≡～∩∠∪∟⊿∫∮∵∴＄￥〒￠￡℃€℉╩◢ⅩⅨⅧⅦⅥⅤⅣⅢⅡⅠあいうえおがぎぐげござじずぜぞだぢつでづどにぬのばひぴぶへぺぼみゃょァゐゎè";
 
@@ -15,11 +15,18 @@ for(let i = 0; i < columns; ++i) {
 }
 
 let frame = 0;
+let str;
 
-function Update(str) {
+context.fillStyle = "rgba(0, 0, 0, 1)";
+context.fillRect(0, 0, canvas.width, canvas.height);
+
+function Update() {
   context.fillStyle = "rgba(0, 0, 0, 0.05)";
   context.fillRect(0, 0, canvas.width, canvas.height);
-
+  if(frame == 0){
+    let a = parseInt(Math.random() * 255);
+    str = `rgba(${a}, ${Math.abs(a - 127)}, ${Math.abs(a - 255)}, 0.9)`;
+  }
   context.fillStyle = str;
   context.font = fontSize + "px monospace";
   
@@ -32,11 +39,9 @@ function Update(str) {
     charArr[i]++;
   }
   frame++;
-  if(frame <= 40 * (Math.floor(Math.random() * 10) + 3)) requestAnimationFrame(Update(str)); // 40 frames a cycle
+  if(frame <= 40 * (Math.floor(Math.random() * 10) + 3)) requestAnimationFrame(Update); // 40 frames a cycle
   else{
     frame = 0;
     Appear();
   }
 }
-
-//Update();
