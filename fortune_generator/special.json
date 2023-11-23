@@ -1,6 +1,25 @@
 {
   "special_events": [
     {
+      "event": "感恩節",
+      "year": "2023",
+      "month": "12",
+      "date": "23",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "家人團聚",
+        "l_1_desc": "分享寶貴時光",
+        "l_2_event": "吃火雞大餐",
+        "l_2_desc": "Happy Thanksgiving!"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
       "event": "冬至",
       "year": "2023",
       "month": "12",
