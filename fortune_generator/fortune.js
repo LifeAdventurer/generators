@@ -28,7 +28,9 @@ const goodColor = "#e74c3c";
 const badColor = "#000000bf";
 const middleColor = "#5eb95e";
 const descColor = "#7f7f7f";
-const dateColor = "#054310C9";
+const dateColor = "#096e1bC9";
+const specialEventColor = "#3e4fbb";
+const daystoSpecialEvent = "#485ccd";
 
 const textColor = [goodColor, goodColor, goodColor, goodColor, goodColor, middleColor, badColor, badColor];
 const fortuneStatus = ["大吉", "中吉", "小吉", "吉", "末吉", "中平", "凶", "大凶"];
@@ -96,22 +98,21 @@ async function init_page(){
       special_events_index = i;
     }
   }
-
   // if there is upcoming event then show
   if(eventIndex_1 != -1){
     let days = daysDiff(eventIndex_1);
-    let upcoming_event_1 = `<span style='font-size:5vmin; color:${descColor};'>距離<b>${special_events[eventIndex_1].event}</b>還剩<b>${days}</b>天</span>`; 
+    let upcoming_event_1 = `<span style='font-size:5vmin; color:${descColor};'>距離<b style='color:${specialEventColor}'>${special_events[eventIndex_1].event}</b>還剩<b style='color:${daystoSpecialEvent}'>${days}</b>天</span>`; 
     $('#upcoming-event-1').html(upcoming_event_1);
   }
   if(eventIndex_2 != -1){
     let days = daysDiff(eventIndex_2);
-    let upcoming_event_2 = `<span style='font-size:5vmin; color:${descColor};'>距離<b>${special_events[eventIndex_2].event}</b>還剩<b>${days}</b>天</span>`;
+    let upcoming_event_2 = `<span style='font-size:5vmin; color:${descColor};'>距離<b style='color:${specialEventColor}'>${special_events[eventIndex_2].event}</b>還剩<b  style='color:${daystoSpecialEvent}'>${days}</b>天</span>`;
     $('#upcoming-event-2').html(upcoming_event_2);
   }
 
   // show special event if today is a special day
   if(special){
-    let special_event_today = `<span style='font-size:9vmin; color:${descColor};'><b>今日是${special_events[special_events_index].event}<b></span>`;
+    let special_event_today = `<span style='font-size:9vmin; color:${descColor};'>今日是<b style='color:${goodColor};'>${special_events[special_events_index].event}</b></span>`;
     $('#special-day').html(special_event_today);
   }
 }
