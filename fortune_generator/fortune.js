@@ -141,6 +141,10 @@ function Appear() {
   $('#r-1-desc').show();
   $('#r-2-event').show();
   $('#r-2-desc').show();
+  // disable the btn
+  $('#btn').click(() => {
+    $(this).prop('disabled', true);
+  });
 
   // transform ip to four numbers
   let num = ip.split(".").map(num => parseInt(num));
