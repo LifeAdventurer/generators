@@ -204,32 +204,23 @@ function Appear() {
     // instead clear variable name, use short variable name for here... cuz it's too repetitive
     let Data = special_events[special_events_index];
     if(status_index == 0){
-      r_1_event = allGood;
+      $('#r-1-event').html(allGood);
     }
     else{
-      r_1_event = bad_span(Data.badFortunes.r_1_event);
-      r_1_desc = desc_span(Data.badFortunes.r_1_desc);
-      r_2_event = bad_span(Data.badFortunes.r_2_event);
-      r_2_desc = desc_span(Data.badFortunes.r_2_desc);
+      $('#r-1-event').html(bad_span(Data.badFortunes.r_1_event));
+      $('#r-1-desc').html(desc_span(Data.badFortunes.r_1_desc));
+      $('#r-2-event').html(bad_span(Data.badFortunes.r_2_event));
+      $('#r-2-desc').html(desc_span(Data.badFortunes.r_2_desc));
     }
     if(status_index == statusLen - 1){
-      l_1_event = allBad;
+      $('#l-1-event').html(allBad);
     }
     else{
-      l_1_event = good_span(Data.goodFortunes.l_1_event);
-      l_1_desc = desc_span(Data.goodFortunes.l_1_desc);
-      l_2_event = good_span(Data.goodFortunes.l_2_event);
-      l_2_desc = desc_span(Data.goodFortunes.l_2_desc);
+      $('#l-1-event').html(good_span(Data.goodFortunes.l_1_event));
+      $('#l-1-desc').html(desc_span(Data.goodFortunes.l_1_desc));
+      $('#l-2-event').html(good_span(Data.goodFortunes.l_2_event));
+      $('#l-2-desc').html(desc_span(Data.goodFortunes.l_2_desc));
     }
-    
-    $('#l-1-event').html(l_1_event);
-    $('#l-1-desc').html(l_1_desc);
-    $('#l-2-event').html(l_2_event);
-    $('#l-2-desc').html(l_2_desc);
-    $('#r-1-event').html(r_1_event);
-    $('#r-1-desc').html(r_1_desc);
-    $('#r-2-event').html(r_2_event);
-    $('#r-2-desc').html(r_2_desc);
   }
   else{
     if(status_index == 0){
