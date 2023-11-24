@@ -11,3 +11,8 @@ h1 {
 .container {
   margin-top: 30px;
 }
+
+.card-footer {
+  background-color: #343a40;
+  color: #adb5bd; 
+}
