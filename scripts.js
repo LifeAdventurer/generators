@@ -16,7 +16,7 @@ async function get_generator_card_footer(){
   const repoOwner = 'LifeAdventurer'; 
   const repoName = 'generators'; 
   for(let folderIndex = 1; folderIndex <= folderPaths.length; folderIndex++){
-    let folderPath = folderPaths[folderIndex];
+    let folderPath = folderPaths[folderIndex - 1];
     const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?path=${folderPath}`;
     console.log(apiUrl);
 
