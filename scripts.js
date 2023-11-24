@@ -9,15 +9,14 @@ async function fetch_folders(){
     // console.log(folderPaths);
   })
 }
-  
-const repoOwner = 'LifeAdventurer'; 
-const repoName = 'generators'; 
 
-async function generator_card_footer(){
+async function get_generator_card_footer(){
   await fetch_folders()
   // console.log(folderPaths);
-  for(let i = 0; i < folderPaths.length; i++){
-    let folderPath = folderPaths[i];
+  const repoOwner = 'LifeAdventurer'; 
+  const repoName = 'generators'; 
+  for(let folderIndex = 0; folderIndex <= folderPaths.length; folderIndex++){
+    let folderPath = folderPaths[folderIndex];
     const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?path=${folderPath}`;
     console.log(apiUrl);
 
@@ -31,14 +30,14 @@ async function generator_card_footer(){
       const timeDifference = currentTimeStamp - commitTimeStamp;
       
       // console.log(timeSinceLastUpdate);
-      $(`#last-update-${i + 1}`).html(`Last updated ${formatTimeDifference(timeDifference)} ago`)
+      $(`#last-update-${folderIndex}`).html(`Last updated ${format_time_difference(timeDifference)} ago`)
     })
-    .catch(error => console.error('Error fetching data:', error));
+    // .catch(error => console.error('Error fetching data:', error));
   }
 }
 
 // determine whether it is seconds, minutes, hours, or days ago
-function formatTimeDifference(seconds) {
+function format_tim_difference(seconds) {
   const minutes = Math.floor(seconds / 60);
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
@@ -57,4 +56,4 @@ function formatTimeDifference(seconds) {
   }
 }
 
-generator_card_footer()
+get_generator_card_footer()
