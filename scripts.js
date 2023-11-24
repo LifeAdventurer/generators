@@ -37,7 +37,7 @@ async function get_generator_card_footer(){
 }
 
 // determine whether it is seconds, minutes, hours, or days ago
-function format_tim_difference(seconds) {
+function format_time_difference(seconds) {
   const minutes = Math.floor(seconds / 60);
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
