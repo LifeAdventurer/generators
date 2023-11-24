@@ -16,3 +16,13 @@ h1 {
   background-color: #343a40;
   color: #adb5bd; 
 }
+
+#footer-author {
+  text-align: right;
+}
+
+#footer-author-icon {
+  width: 4%;
+  border-radius: 50%;
+  overflow: hidden;
+}
