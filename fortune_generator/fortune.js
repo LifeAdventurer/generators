@@ -67,15 +67,7 @@ async function init_page(){
   await fetch_data();
 
   // hide the elements of show fortune page
-  $('#ip-to-fortune').hide();
-  $('#l-1-event').hide();
-  $('#l-1-desc').hide();
-  $('#l-2-event').hide();
-  $('#l-2-desc').hide();
-  $('#r-1-event').hide();
-  $('#r-1-desc').hide();
-  $('#r-2-event').hide();
-  $('#r-2-desc').hide();
+  $('#result-page').hide();
 
   // show date before button pressed
   const showMonth = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr;'><b>${chineseMonth[month - 1] + "月"}</b></span>`;
@@ -123,27 +115,13 @@ const bad_span = event => `<span style='font-size:5.6vmin; color:${badColor};'><
 const desc_span = desc => `<span style='font-size:3.5vmin; color:${descColor};'>${desc}</span>`;
 
 function Appear() {
-  //change page
   $('#title').html(title);
-  $('#month').hide();
-  $('#date').hide();
-  $('#weekday').hide();
-  $('#special-day').hide();
-  $('#upcoming-event-1').hide();
-  $('#upcoming-event-2').hide();
   $('#btn').html('打卡成功');
-  // toggle the elements on show status page
-  $('#ip-to-fortune').show();
-  $('#l-1-event').show();
-  $('#l-1-desc').show();
-  $('#l-2-event').show();
-  $('#l-2-desc').show();
-  $('#r-1-event').show();
-  $('#r-1-desc').show();
-  $('#r-2-event').show();
-  $('#r-2-desc').show();
   // disable the btn
   $('#btn').attr("disabled", "disabled");
+  //change page
+  $('#init-page').hide();
+  $('#result-page').show();
 
   // transform ip to four numbers
   let num = ip.split(".").map(num => parseInt(num));

@@ -16,68 +16,74 @@
       <p id="title"></p>
     </div>
     <!-- init page start -->
-    <div class="row">
-      <div class="col-3">
-        <p id="month"></p>
+    <div id="init-page">
+      <div class="row">
+        <div class="col-3">
+          <p id="month"></p>
+        </div>
+        <div class="col-6">
+          <p id="date"></p>
+        </div>
+        <div class="col-3">
+          <p id="weekday"></p>
+        </div>
       </div>
-      <div class="col-6">
-        <p id="date"></p>
+      <div class="row">
+        <div class="col">
+          <p id="special-day"></p>
+        </div>
       </div>
-      <div class="col-3">
-        <p id="weekday"></p>
+      <div class="row">
+        <p id="upcoming-event-1"></p>
       </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <p id="special-day"></p>
+      <div class="row">
+        <p id="upcoming-event-2"></p>
       </div>
-    </div>
-    <div class="row">
-      <p id="upcoming-event-1"></p>
-    </div>
-    <div class="row">
-      <p id="upcoming-event-2"></p>
     </div>
     <!-- init page end -->
-    <div class="row">
-      <p id="ip-to-fortune"></p>
+    <!-- page after button clicked start -->
+    <div id="result-page">
+      <div class="row">
+        <p id="ip-to-fortune"></p>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <p id="l-1-event"></p>
+          </div>
+          <div class="row">
+            <p id="l-1-desc"></p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <p id="r-1-event"></p>
+          </div>
+          <div class="row">
+            <p id="r-1-desc"></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <p id="l-2-event"></p>
+          </div>
+          <div class="row">
+            <p id="l-2-desc"></p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <p id="r-2-event"></p>
+          </div>
+          <div class="row">
+            <p id="r-2-desc"></p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <div class="row">
-          <p id="l-1-event"></p>
-        </div>
-        <div class="row">
-          <p id="l-1-desc"></p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="row">
-          <p id="r-1-event"></p>
-        </div>
-        <div class="row">
-          <p id="r-1-desc"></p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="row">
-          <p id="l-2-event"></p>
-        </div>
-        <div class="row">
-          <p id="l-2-desc"></p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="row">
-          <p id="r-2-event"></p>
-        </div>
-        <div class="row">
-          <p id="r-2-desc"></p>
-        </div>
-      </div>
-    </div>
+    <!-- page after button click end -->
     <button id="btn" onclick="getLuck()">點擊打卡</button>
   </div>
   <canvas id="Matrix"></canvas>
