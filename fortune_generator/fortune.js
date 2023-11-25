@@ -37,9 +37,9 @@ const fortuneStatus = ["大吉", "中吉", "小吉", "吉", "末吉", "中平", 
 const chineseMonth = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
 const week = ['日', '一', '二', '三', '四', '五', '六'];
 
-const title = `<span style='font-size:8vmin; color:#000000CC;'></b>今日運勢<b></span>`;
-const allGood = `<span style='font-size:6vmin; color:${badColor};'></b>萬事皆宜<b></span>`;
-const allBad = `<span style='font-size:6vmin; color:${goodColor};'></b>諸事不宜<b></span>`;
+const title = `<span style='font-size:8vmin; color:#000000CC;'><b>今日運勢</b></span>`;
+const allGood = `<span style='font-size:6vmin; color:${badColor};'><b>萬事皆宜</b></span>`;
+const allBad = `<span style='font-size:6vmin; color:${goodColor};'><b>諸事不宜</b></span>`;
 
 // date
 const d = new Date();
@@ -80,7 +80,7 @@ async function init_page(){
   // show date before button pressed
   const showMonth = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr;'><b>${chineseMonth[month - 1] + "月"}</b></span>`;
   const showDate = `<span style='font-size:25vmin; color:${dateColor};'><b>${("0" + date).substr(-2)}</b></span>`;
-  const showDay = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr; margin-right:10%;'><b>${"星期" + week[day]}<b></span>`;
+  const showDay = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr; margin-right:10%;'><b>${"星期" + week[day]}</b></span>`;
 
   $('#month').html(showMonth);
   $('#date').html(showDate);
