@@ -206,11 +206,19 @@ function Appear() {
     if(status_index == 0){
       $('#r-1-event').html(allGood);
     }
-    else{
+    else{ 
       $('#r-1-event').html(bad_span(Data.badFortunes.r_1_event));
       $('#r-1-desc').html(desc_span(Data.badFortunes.r_1_desc));
       $('#r-2-event').html(bad_span(Data.badFortunes.r_2_event));
       $('#r-2-desc').html(desc_span(Data.badFortunes.r_2_desc));
+      if(Data.badFortunes.r_1_event.length == 0){
+        $('#r-1-event').html(bad_span(r_1_event));
+        $('#r-1-desc').html(desc_span(r_1_desc));
+      }
+      if(Data.badFortunes.r_2_event.length == 0){
+        $('#r-2-event').html(bad_span(r_2_event));
+        $('#r-2-desc').html(desc_span(r_2_desc));
+      }
     }
     if(status_index == statusLen - 1){
       $('#l-1-event').html(allBad);
@@ -220,6 +228,14 @@ function Appear() {
       $('#l-1-desc').html(desc_span(Data.goodFortunes.l_1_desc));
       $('#l-2-event').html(good_span(Data.goodFortunes.l_2_event));
       $('#l-2-desc').html(desc_span(Data.goodFortunes.l_2_desc));
+      if(Data.goodFortunes.l_1_event.length == 0){
+        $('#l-1-event').html(l_1_event);
+        $('#l-1-desc').html(l_1_desc);
+      }
+      if(Data.goodFortunes.l_2_event.length == 0){
+        $('#l-2-event').html(l_2_event);
+        $('#l-2-desc').html(l_2_desc);
+      }
     }
   }
   else{
