@@ -54,7 +54,7 @@ function daysDiff(eventIndex){
   const endDate = new Date(`${special_events[eventIndex].year}-${special_events[eventIndex].month}-${special_events[eventIndex].date}`);
 
   // calculate the difference in milliseconds and convert it to days
-  const timeDiff = (endDate - startDate) / (1000 * 60 * 60 * 24);
+  const timeDiff = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
   return timeDiff;
 }
 
