@@ -20,6 +20,44 @@
       }
     },
     {
+      "event": "棉花糖日",
+      "year": "2023",
+      "month": "12",
+      "date": "7",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "吃棉花糖",
+        "l_1_desc": "慶祝棉花糖日",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "貓奴日",
+      "year": "2023",
+      "month": "12",
+      "date": "15",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "嚕貓",
+        "l_1_desc": "撫平傷心的心情",
+        "l_2_event": "喝咖啡",
+        "l_2_desc": "到貓咪咖啡店去喝咖啡"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
       "event": "冬至",
       "year": "2023",
       "month": "12",
