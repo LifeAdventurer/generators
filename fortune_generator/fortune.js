@@ -58,6 +58,17 @@ function daysDiff(eventIndex){
   return timeDiff;
 }
 
+// pre-search jquery - save to a variable to improve performance
+const J_l_1_event = $('#l-1-event');
+const J_l_1_desc = $('#l-1-desc');
+const J_l_2_event= $('#l-2-event');
+const J_l_2_desc = $('#l-2-desc');
+const J_r_1_event = $('#r-1-event');
+const J_r_1_desc = $('#r-1-desc');
+const J_r_2_event= $('#r-2-event');
+const J_r_2_desc = $('#r-2-desc');
+const J_ip_to_fortune = $('#ip-to-fortune');
+
 let special = false;
 let special_events_index = 0;
 
@@ -143,10 +154,10 @@ function Appear() {
   if(special){
     status_index = special_events[special_events_index].status_index;
     let special_status = `<span style='font-size:12vmin; color:${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
-    $('#ip-to-fortune').html(special_status);
+    J_ip_to_fortune.html(special_status);
   }
   else{
-    $('#ip-to-fortune').html(status);
+    J_ip_to_fortune.html(status);
   }
 
   // make sure the events won't collide
@@ -177,63 +188,63 @@ function Appear() {
   let r_1_desc = desc_span(badFortunes[r1].description);
   let r_2_event = bad_span(badFortunes[r2].event);
   let r_2_desc = desc_span(badFortunes[r2].description);
-
+  
   if(special){
     // instead clear variable name, use short variable name for here... cuz it's too repetitive
     let Data = special_events[special_events_index];
     if(status_index == 0){
-      $('#r-1-event').html(allGood);
+      J_r_1_event.html(allGood);
     }
     else{ 
-      $('#r-1-event').html(bad_span(Data.badFortunes.r_1_event));
-      $('#r-1-desc').html(desc_span(Data.badFortunes.r_1_desc));
-      $('#r-2-event').html(bad_span(Data.badFortunes.r_2_event));
-      $('#r-2-desc').html(desc_span(Data.badFortunes.r_2_desc));
+      J_r_1_event.html(bad_span(Data.badFortunes.r_1_event));
+      J_r_1_desc.html(desc_span(Data.badFortunes.r_1_desc));
+      J_r_2_event.html(bad_span(Data.badFortunes.r_2_event));
+      J_r_2_desc.html(desc_span(Data.badFortunes.r_2_desc));
       if(Data.badFortunes.r_1_event.length == 0){
-        $('#r-1-event').html(r_1_event);
-        $('#r-1-desc').html(r_1_desc);
+        J_r_1_event.html(r_1_event);
+        J_r_1_desc.html(r_1_desc);
       }
       if(Data.badFortunes.r_2_event.length == 0){
-        $('#r-2-event').html(r_2_event);
-        $('#r-2-desc').html(r_2_desc);
+        J_r_2_event.html(r_2_event);
+        J_r_2_desc.html(r_2_desc);
       }
     }
     if(status_index == statusLen - 1){
-      $('#l-1-event').html(allBad);
+      J_l_1_event.html(allBad);
     }
     else{
-      $('#l-1-event').html(good_span(Data.goodFortunes.l_1_event));
-      $('#l-1-desc').html(desc_span(Data.goodFortunes.l_1_desc));
-      $('#l-2-event').html(good_span(Data.goodFortunes.l_2_event));
-      $('#l-2-desc').html(desc_span(Data.goodFortunes.l_2_desc));
+      J_l_1_event.html(good_span(Data.goodFortunes.l_1_event));
+      J_l_1_desc.html(desc_span(Data.goodFortunes.l_1_desc));
+      J_l_2_event.html(good_span(Data.goodFortunes.l_2_event));
+      J_l_2_desc.html(desc_span(Data.goodFortunes.l_2_desc));
       if(Data.goodFortunes.l_1_event.length == 0){
-        $('#l-1-event').html(l_1_event);
-        $('#l-1-desc').html(l_1_desc);
+        J_l_1_event.html(l_1_event);
+        J_l_1_desc.html(l_1_desc);
       }
       if(Data.goodFortunes.l_2_event.length == 0){
-        $('#l-2-event').html(l_2_event);
-        $('#l-2-desc').html(l_2_desc);
+        J_l_2_event.html(l_2_event);
+        J_l_2_desc.html(l_2_desc);
       }
     }
   }
   else{
     if(status_index == 0){
-      $('#r-1-event').html(allGood);
+      J_r_1_event.html(allGood);
     }
     else{
-      $('#r-1-event').html(r_1_event);
-      $('#r-1-desc').html(r_1_desc);
-      $('#r-2-event').html(r_2_event);
-      $('#r-2-desc').html(r_2_desc);
+      J_r_1_event.html(r_1_event);
+      J_r_1_desc.html(r_1_desc);
+      J_r_2_event.html(r_2_event);
+      J_r_2_desc.html(r_2_desc);
     }
     if(status_index == statusLen - 1){
-      $('#l-1-event').html(allBad);
+      J_l_1_event.html(allBad);
     }
     else{
-      $('#l-1-event').html(l_1_event);
-      $('#l-1-desc').html(l_1_desc);
-      $('#l-2-event').html(l_2_event);
-      $('#l-2-desc').html(l_2_desc);
+      J_l_1_event.html(l_1_event);
+      J_l_1_desc.html(l_1_desc);
+      J_l_2_event.html(l_2_event);
+      J_l_2_desc.html(l_2_desc);
     }
   }
 }
