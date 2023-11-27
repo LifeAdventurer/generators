@@ -83,7 +83,7 @@ async function init_page(){
   for(let i = 0; i < special_events.length; i++){
     if(daysDiff(i) > 0){
       if(eventIndex_1 == -1) eventIndex_1 = i;
-      else if(eventIndex_2 == - 1) eventIndex_2 = i;
+      else if(eventIndex_2 == -1) eventIndex_2 = i;
     }
     else if(daysDiff(i) == 0){
       special = true;
