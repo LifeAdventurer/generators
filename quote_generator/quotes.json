@@ -2,91 +2,113 @@
   "quotes" : [
     {
       "quote": "To AC is human. To AK divine.",
-      "author": "Moon"
+      "author": "Moon",
+      "id": 1
     },
     {
       "quote": "Life is like riding a bicycle. To keep your balance, you must keep moving.",
-      "author": "Albert Einstein"
+      "author": "Albert Einstein",
+      "id": 2
     },
     {
       "quote": "A dream is what makes people love life even when it is painful.",
-      "author": "Theodore Zeldin"
+      "author": "Theodore Zeldin",
+      "id": 3
     },
     {
       "quote": "Don’t quit. Suffer now and live the rest of your life as a champion.",
-      "author": "Muhammad Ali"
+      "author": "Muhammad Ali",
+      "id": 4
     },
     {
       "quote": "Though nobody can go back and make a new beginning… Anyone can start over and make a new ending.",
-      "author": "Chico Xavier"
+      "author": "Chico Xavier",
+      "id": 5
     },
     {
       "quote": "Be happy for this moment. This moment is your life.",
-      "author": "Omar Khayyam"
+      "author": "Omar Khayyam",
+      "id": 6
     },
     {
       "quote": "Life is not a problem to be solved, but a reality to be experienced.",
-      "author": "Soren Kierkegaard"
+      "author": "Soren Kierkegaard",
+      "id": 7
     },
     {
       "quote": "All the waters of the world find one another again, and very road leads us wanderers too back home.",
-      "author": "Hermann Hesse"
+      "author": "Hermann Hesse",
+      "id": 8
     },
     {
       "quote": "Time does not pass, it continues.",
-      "author": "Marty Rubin"
+      "author": "Marty Rubin",
+      "id": 9
     },
     {
       "quote": "Be both soft and wild. Just like the Moon. Or the storm. Or the sea.",
-      "author": "Victoria Erickson"
+      "author": "Victoria Erickson",
+      "id": 10
     },
     {
       "quote": "Pain is a part of growing up. It is how we learn...",
-      "author": "Dan Brown"
+      "author": "Dan Brown",
+      "id": 11
     },
     {
       "quote": "Beneath the winter, you can feel the bone structure of the landscape, and the whole story doesn't show.",
-      "author": "Andrew Wyeth"
+      "author": "Andrew Wyeth",
+      "id": 12
     }, 
     {
       "quote": "I had been educated in the rhythms of the mountain, in which change was never fundamental, only cyclical.",
-      "author": "Tara Westover"
+      "author": "Tara Westover",
+      "id": 13
     }, 
     {
       "quote": "When you look at the stars, if feels like you are not from any particular piece of land, but from the solar system.",
-      "author": "Kalpana Chawla"
+      "author": "Kalpana Chawla",
+      "id": 14
     }, 
     {
       "quote": "Not all those who wander are lost.",
-      "author": "J. R. R. Tolkien"
+      "author": "J. R. R. Tolkien",
+      "id": 15
     }, 
     {
       "quote": "What then is time? If no one asks me, I know what it is. If I wish to explain it to him who asks, I do not know.",
-      "author": "Saint Augustine"
+      "author": "Saint Augustine",
+      "id": 16
     }, 
     {
       "quote": "Change your opinions, keep to your principles; change your leaves, keep intact your roots.",
-      "author": "Victor Hugo"
+      "author": "Victor Hugo",
+      "id": 17
     }, 
     {
       "quote": "Patience is not simply the ability to wait, it's how we behave while we're waiting.",
-      "author": "Joyce Meyer"
+      "author": "Joyce Meyer",
+      "id": 18
     }, 
     {
       "quote": "A rolling stone gathers no moss, but it gains a certain polish.",
-      "author": "Oliver Herford"
+      "author": "Oliver Herford",
+      "id": 19
     }, 
     {
       "quote": "I decided to fly through the air, live in the sunlight and enjoy life as much as I could.",
-      "author": "Evel Knievel"
+      "author": "Evel Knievel",
+      "id": 20
     }, 
     {
       "quote": "Be a life long or short, its completeness depends on what it was lived for.",
-      "author": "David Starr Jordan"
+      "author": "David Starr Jordan",
+      "id": 21
     },
     {
       "quote": "There are two ways to live: you can live as if nothing is a miracle; you can live as if everything is a miracle.",
-      "author": "Albert Einstein"
+      "author": "Albert Einstein",
+      "id": 22
     }
   ]
 }
