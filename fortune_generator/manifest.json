@@ -6,27 +6,27 @@
     "theme_color": "#1a1b1e",
     "icons": [
         {
-            "src": "../images/lifeadventurer-192*192.png",
+            "src": "../images/lifeadventurer-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "../images/lifeadventurer-512*512.png",
+            "src": "../images/lifeadventurer-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "../images/lifeadventurer-180*180.png",
+            "src": "../images/lifeadventurer-180x180.png",
             "sizes": "180x180",
             "type": "image/png"
         },
         {
-            "src": "../images/lifeadventurer-270*270.png",
+            "src": "../images/lifeadventurer-270x270.png",
             "sizes": "270x270",
             "type": "image/png"
         }
     ],
-    "start_url": "/index.html",
+    "start_url": "/generators/fortune_generator/index.html",
     "display": "standalone",
     "orientation": "portrait"
 }
