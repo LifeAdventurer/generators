@@ -1,0 +1,32 @@
+{
+    "short_name": "Fontune Generator",
+    "name": "Fontune Generator",
+    "description": "Get your daily fortune with just a click.",
+    "background_color": "#1a1b1e",
+    "theme_color": "#1a1b1e",
+    "icons": [
+        {
+            "src": "../images/lifeadventurer.jpg",
+            "sizes": "192x192",
+            "type": "image/jpg"
+        },
+        {
+            "src": "../images/lifeadventurer.jpg",
+            "sizes": "512x512",
+            "type": "image/jpg"
+        },
+        {
+            "src": "../images/lifeadventurer.jpg",
+            "sizes": "180x180",
+            "type": "image/jpg"
+        },
+        {
+            "src": "../images/lifeadventurer.jpg",
+            "sizes": "270x270",
+            "type": "image/jpg"
+        }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "orientation": "portrait"
+}
