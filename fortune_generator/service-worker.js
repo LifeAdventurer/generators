@@ -54,7 +54,7 @@ self.addEventListener('install', event => {
   //pre-cache files
   event.waitUntil(
     caches.open(pre_cache_file_version).then(cache => {
-      // cache.addAll(ASSETS);
+      cache.addAll(ASSETS);
     })
   );
 });
