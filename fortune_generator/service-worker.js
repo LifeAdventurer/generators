@@ -24,10 +24,6 @@ const NEED_UPDATE = [
   'https://api.ipify.org/?format=json',
 ]
 
-/**
- * 
- */
-
 let limit_cache_size = (name, size) => {
   caches.open(name).then(cache => {
     cache.keys().then(key => {
@@ -38,11 +34,10 @@ let limit_cache_size = (name, size) => {
   });
 };
 
-
 let is_in_array = (str, array) => {
   let path = '';
   
-  // Check domain of request is same of current domain.
+  // Check the request's domain is the same as the current domain.
   if (str.indexOf(self.origin) === 0) {
     path = str.substring(self.origin.length); // Remove https://lifeadventurer.github.io
   } else {
@@ -56,7 +51,7 @@ let is_in_array = (str, array) => {
 self.addEventListener('install', event => {
   self.skipWaiting();
 
-  // pre cache files
+  //pre-cache files
   event.waitUntil(
     caches.open(pre_cache_file_version).then(cache => {
       // cache.addAll(ASSETS);
@@ -80,7 +75,7 @@ self.addEventListener('activate', event => {
 // fetch event
 self.addEventListener('fetch', event => {
   if (is_in_array(event.request.url, ASSETS)) {
-    // Cache only strategy    
+    // cache only strategy    
 
     event.respondWith(
       caches.match(event.request.url)
