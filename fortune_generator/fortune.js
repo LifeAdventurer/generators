@@ -1,19 +1,27 @@
 let ip = null;
-$.getJSON("https://api.ipify.org?format=json", function(data) {
-  ip = data.ip;
-})
+fetch("https://api.ipify.org?format=json").then(response => {
+  if (response.ok) {
+    return response.json();
+  }
 
-if ('caches' in window) {
-  caches.match('https://api.ipify.org?format=json').then(response => {
-    if (response) {
-      return response.json();
-    }
-  }).then(data => {
-    if (ip === null) {
-      ip = JSON.parse(data).ip;
-    }
-  });
-}
+  throw new Error("Network response was not ok.");
+}).then(res => {
+  ip = res.ip;
+
+}).catch(err => {
+  if ('caches' in window) {
+    caches.match('https://api.ipify.org?format=json').then(response => {
+      if (response) {
+        return response.json();
+      }
+    }).then(data => {
+      if (ip === null && data !== undefined) {
+        ip = JSON.parse(data).ip;
+      }
+    });
+  }
+});
+
 
 let goodFortunes = [];
 let badFortunes = [];
