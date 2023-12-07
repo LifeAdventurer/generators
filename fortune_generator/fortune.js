@@ -1,7 +1,19 @@
-let ip;
+let ip = null;
 $.getJSON("https://api.ipify.org?format=json", function(data) {
   ip = data.ip;
 })
+
+if ('caches' in window) {
+  caches.match('https://api.ipify.org?format=json').then(response => {
+    if (response) {
+      return response.json();
+    }
+  }).then(data => {
+    if (ip === null) {
+      ip = JSON.parse(data).ip;
+    }
+  });
+}
 
 let goodFortunes = [];
 let badFortunes = [];
