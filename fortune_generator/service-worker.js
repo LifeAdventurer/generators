@@ -1,4 +1,4 @@
-let pre_cache_file_version = 'pre-v1.0.0';
+let pre_cache_file_version = 'pre-v1.0.1';
 let auto_cache_file_version = 'auto-v1.0.0'
 
 const ASSETS = [
@@ -6,7 +6,7 @@ const ASSETS = [
   '/generators/images/lifeadventurer-512x512.png',
   '/generators/images/lifeadventurer-180x180.png',
   '/generators/images/lifeadventurer-270x270.png',
-  '/generators/images/lifeadventurer.jpg',
+  '/generators/images/lifeadventurer_rounded_logo.png',
 
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css',
   'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'
@@ -36,7 +36,7 @@ let limit_cache_size = (name, size) => {
 
 let is_in_array = (str, array) => {
   let path = '';
-  
+
   // Check the request's domain is the same as the current domain.
   if (str.indexOf(self.origin) === 0) {
     path = str.substring(self.origin.length); // Remove https://lifeadventurer.github.io
@@ -47,7 +47,7 @@ let is_in_array = (str, array) => {
   return array.indexOf(path) > -1;
 }
 
-// install 
+// install
 self.addEventListener('install', event => {
   self.skipWaiting();
 
@@ -75,7 +75,7 @@ self.addEventListener('activate', event => {
 // fetch event
 self.addEventListener('fetch', event => {
   if (is_in_array(event.request.url, ASSETS)) {
-    // cache only strategy    
+    // cache only strategy
 
     event.respondWith(
       caches.match(event.request.url)
@@ -86,7 +86,7 @@ self.addEventListener('fetch', event => {
         if (response.ok) {
           const cache = await caches.open(auto_cache_file_version);
           cache.put(event.request.url, response.clone());
-          return response; 
+          return response;
         }
 
         throw new Error("Network response was not ok.");
