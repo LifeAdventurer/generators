@@ -26,7 +26,7 @@ fetch("https://api.ipify.org?format=json").then(response => {
 let goodFortunes = [];
 let badFortunes = [];
 let special_events = [];
-var is_already_gen_fortune = false;
+var fortune_generated = false;
 
 // using async and await to prevent fetching the data too late...
 async function fetch_data(){
@@ -145,7 +145,7 @@ async function init_page(){
     let now_date = new Date();
     let last_date = new Date(last_date_str);
     if (now_date.getFullYear() === last_date.getFullYear() && now_date.getMonth() === last_date.getMonth() && now_date.getDate() === last_date.getDate()) {
-      is_already_gen_fortune = true;
+      fortune_generated = true;
       Appear();
     }
   }
@@ -175,7 +175,7 @@ function Appear() {
   let seed1 = -1;
   let seed2 = -1;
 
-  if (!is_already_gen_fortune) {
+  if (fortune_generated == false) {
     // transform ip to four numbers
     let num = ip.split(".").map(num => parseInt(num));
 
