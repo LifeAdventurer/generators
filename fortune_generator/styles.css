@@ -1,8 +1,15 @@
 :root {
-  --button-color: #79abf7;
-  --button-hover-color: #4590dc;
-  --white: #FFFFFF;
+  --button-color: #73a3eb;
+  --button-hover-color: #459aef;
+  --bg-color: #FFFFFF;
 }
+
+.dark-mode {
+  --button-color: #5d99f4;
+  --button-hover-color: #9ac6f1;
+  --bg-color: #1e1d24;
+}
+
 
 * {
   overflow: hidden;
@@ -27,7 +34,7 @@ body {
   z-index: 1;
   text-align: center;
   transform: translate(-50%, -50%);
-  background-color: var(--white);
+  background-color: var(--bg-color);
   border-radius: 40px;
   padding: 10px;
 }
@@ -42,7 +49,7 @@ body {
 
 button {
   background-color: var(--button-color);
-  color: var(--white);
+  color: var(--bg-color);
   z-index: 2;
   font-size: 20px;
   border: none;
@@ -58,4 +65,12 @@ button:hover {
 
 #Matrix {
   z-index: 0;
+}
+
+#dark-mode-icon {
+  margin-top: 15px;
+  font-size: 2.4rem;
+  color: var(--white-color);
+  cursor: pointer;
+  opacity: 85%;
 }
