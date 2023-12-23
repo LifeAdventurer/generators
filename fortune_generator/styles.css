@@ -2,12 +2,28 @@
   --button-color: #73a3eb;
   --button-hover-color: #459aef;
   --bg-color: #FFFFFF;
+  --good-fortune-color: #e74c3c;
+  --bad-fortune-color: #000000bf;
+  --middle-fortune-color: #5eb95e;
+  --desc-color: #7f7f7f;
+  --date-color: #096e1bC9;
+  --special-event-color: #3e4fbb;
+  --days-to-special-event-color: #485ccd;
+  
 }
 
 .dark-mode {
   --button-color: #5d99f4;
   --button-hover-color: #9ac6f1;
   --bg-color: #1e1d24;
+  --good-fortune-color: #e74c3c;
+  --bad-fortune-color: #dc3939d9;
+  --middle-fortune-color: #5eb95e;
+  --desc-color: #7f7f7f;
+  --date-color: #096e1bC9;
+  --special-event-color: #3e4fbb;
+  --days-to-special-event-color: #485ccd;
+  --dark-mode-icon-color: #ffffff;
 }
 
 
@@ -40,11 +56,11 @@ body {
 }
 
 .left-result {
-  color: #e74c3c !important;
+  color: var(--good-fortune-color) !important;
 }
 
 .right-result {
-  color: #000000bf !important;
+  color: var(--bad-fortune-color) !important;
 }
 
 button {
@@ -70,7 +86,7 @@ button:hover {
 #dark-mode-icon {
   margin-top: 15px;
   font-size: 2.4rem;
-  color: var(--white-color);
+  color: var(--dark-mode-icon-color);
   cursor: pointer;
   opacity: 85%;
 }
