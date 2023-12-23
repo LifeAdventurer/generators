@@ -60,7 +60,7 @@ body {
 button {
   background-color: var(--button-color);
   color: var(--bg-color);
-  font-size: 16px;
+  font-size: 25px;
   border: none;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   padding: 17px 20px;
