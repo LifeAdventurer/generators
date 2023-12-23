@@ -9,7 +9,7 @@
   --date-color: #096e1bC9;
   --special-event-color: #3e4fbb;
   --days-to-special-event-color: #485ccd;
-  
+  --title-color: #000000CC;
 }
 
 .dark-mode {
@@ -17,13 +17,13 @@
   --button-hover-color: #9ac6f1;
   --bg-color: #1e1d24;
   --good-fortune-color: #e74c3c;
-  --bad-fortune-color: #c1c1c1d9;
+  --bad-fortune-color: #d4d4d4d9;
   --middle-fortune-color: #57c857;
   --desc-color: #838282;
-  --date-color: #2fc64aed;
-  --special-event-color: #3e4fbb;
-  --days-to-special-event-color: #485ccd;
+  --date-color: #0ed64aed;
+  --special-event-color: #6477f3;
   --dark-mode-icon-color: #ffffff;
+  --title-color: #cdcdcd;
 }
 
 
@@ -73,6 +73,14 @@ body {
 
 .date-color {
   color: var(--date-color);
+}
+
+.title {
+  color: var(--title-color);
+}
+
+.special-event {
+  color: var(--special-event-color);
 }
 
 button {

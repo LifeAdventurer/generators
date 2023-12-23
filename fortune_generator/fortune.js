@@ -43,16 +43,12 @@ async function fetch_data(){
   })
 }
 
-// color adjust
-const specialEventColor = "#3e4fbb";
-const daystoSpecialEvent = "#485ccd";
-
 const textColorClass = ["good-fortune", "good-fortune", "good-fortune", "good-fortune", "good-fortune", "middle-fortune", "bad-fortune", "bad-fortune"];
 const fortuneStatus = ["大吉", "中吉", "小吉", "吉", "末吉", "中平", "凶", "大凶"];
 const chineseMonth = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
 const week = ['日', '一', '二', '三', '四', '五', '六'];
 
-const title = `<span style="font-size:8vmin; color:#000000CC;"><b>今日運勢</b></span>`;
+const title = `<span class="title" style="font-size:8vmin;"><b>今日運勢</b></span>`;
 const allGood = `<span class="bad-fortune" style="font-size:6vmin;"><b>萬事皆宜</b></span>`;
 const allBad = `<span class="good-fortune" style="font-size:6vmin;"><b>諸事不宜</b></span>`;
 
@@ -119,12 +115,12 @@ async function init_page(){
   // if there is upcoming event then show
   if(eventIndex_1 != -1){
     let days = daysDiff(eventIndex_1);
-    let upcoming_event_1 = `<span class="desc" style="font-size:5vmin;">距離<b style="color:${specialEventColor}">${special_events[eventIndex_1].event}</b>還剩<b style="color:${daystoSpecialEvent}">${days}</b>天</span>`; 
+    let upcoming_event_1 = `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${special_events[eventIndex_1].event}</b>還剩<b class="special-event">${days}</b>天</span>`; 
     $('#upcoming-event-1').html(upcoming_event_1);
   }
   if(eventIndex_2 != -1){
     let days = daysDiff(eventIndex_2);
-    let upcoming_event_2 = `<span class="desc" style="font-size:5vmin;">距離<b style="color:${specialEventColor}">${special_events[eventIndex_2].event}</b>還剩<b  style="color:${daystoSpecialEvent}">${days}</b>天</span>`;
+    let upcoming_event_2 = `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${special_events[eventIndex_2].event}</b>還剩<b class="special-event">${days}</b>天</span>`;
     $('#upcoming-event-2').html(upcoming_event_2);
   }
 
