@@ -44,22 +44,17 @@ async function fetch_data(){
 }
 
 // color adjust
-const goodColor = "#e74c3c";
-const badColor = "#000000bf";
-const middleColor = "#5eb95e";
-const descColor = "#7f7f7f";
-const dateColor = "#096e1bC9";
 const specialEventColor = "#3e4fbb";
 const daystoSpecialEvent = "#485ccd";
 
-const textColor = [goodColor, goodColor, goodColor, goodColor, goodColor, middleColor, badColor, badColor];
+const textColorClass = ["good-fortune", "good-fortune", "good-fortune", "good-fortune", "good-fortune", "middle-fortune", "bad-fortune", "bad-fortune"];
 const fortuneStatus = ["大吉", "中吉", "小吉", "吉", "末吉", "中平", "凶", "大凶"];
 const chineseMonth = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
 const week = ['日', '一', '二', '三', '四', '五', '六'];
 
-const title = `<span style='font-size:8vmin; color:#000000CC;'><b>今日運勢</b></span>`;
-const allGood = `<span style='font-size:6vmin; color:${badColor};'><b>萬事皆宜</b></span>`;
-const allBad = `<span style='font-size:6vmin; color:${goodColor};'><b>諸事不宜</b></span>`;
+const title = `<span style="font-size:8vmin; color:#000000CC;"><b>今日運勢</b></span>`;
+const allGood = `<span class="bad-fortune" style="font-size:6vmin;"><b>萬事皆宜</b></span>`;
+const allBad = `<span class="good-fortune" style="font-size:6vmin;"><b>諸事不宜</b></span>`;
 
 // date
 const d = new Date();
@@ -101,9 +96,9 @@ async function init_page(){
   $('#result-page').hide();
 
   // show date before button pressed
-  const showMonth = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr;'><b>${chineseMonth[month - 1] + "月"}</b></span>`;
-  const showDate = `<span style='font-size:25vmin; color:${dateColor};'><b>${("0" + date).substr(-2)}</b></span>`;
-  const showDay = `<span style='font-size:10vmin; color:${dateColor}; -webkit-writing-mode:vertical-lr; margin-right:10%;'><b>${"星期" + week[day]}</b></span>`;
+  const showMonth = `<span class="date-color" style="font-size:10vmin; -webkit-writing-mode:vertical-lr;"><b>${chineseMonth[month - 1] + "月"}</b></span>`;
+  const showDate = `<span class="date-color" style="font-size:25vmin;"><b>${("0" + date).substr(-2)}</b></span>`;
+  const showDay = `<span class="date-color" style="font-size:10vmin; -webkit-writing-mode:vertical-lr; margin-right:10%;"><b>${"星期" + week[day]}</b></span>`;
 
   $('#month').html(showMonth);
   $('#date').html(showDate);
@@ -124,26 +119,26 @@ async function init_page(){
   // if there is upcoming event then show
   if(eventIndex_1 != -1){
     let days = daysDiff(eventIndex_1);
-    let upcoming_event_1 = `<span style='font-size:5vmin; color:${descColor};'>距離<b style='color:${specialEventColor}'>${special_events[eventIndex_1].event}</b>還剩<b style='color:${daystoSpecialEvent}'>${days}</b>天</span>`; 
+    let upcoming_event_1 = `<span class="desc" style="font-size:5vmin;">距離<b style="color:${specialEventColor}">${special_events[eventIndex_1].event}</b>還剩<b style="color:${daystoSpecialEvent}">${days}</b>天</span>`; 
     $('#upcoming-event-1').html(upcoming_event_1);
   }
   if(eventIndex_2 != -1){
     let days = daysDiff(eventIndex_2);
-    let upcoming_event_2 = `<span style='font-size:5vmin; color:${descColor};'>距離<b style='color:${specialEventColor}'>${special_events[eventIndex_2].event}</b>還剩<b  style='color:${daystoSpecialEvent}'>${days}</b>天</span>`;
+    let upcoming_event_2 = `<span class="desc" style="font-size:5vmin;">距離<b style="color:${specialEventColor}">${special_events[eventIndex_2].event}</b>還剩<b  style="color:${daystoSpecialEvent}">${days}</b>天</span>`;
     $('#upcoming-event-2').html(upcoming_event_2);
   }
 
   // show special event if today is a special day
   if(special){
-    let special_event_today = `<span style='font-size:9vmin; color:${descColor};'>今日是<b style='color:${goodColor};'>${special_events[special_events_index].event}</b></span>`;
+    let special_event_today = `<span class="desc" style="font-size:9vmin;">今日是<b class="good-fortune">${special_events[special_events_index].event}</b></span>`;
     $('#special-day').html(special_event_today);
   }
 }
 
 // event bar
-const good_span = event => `<span style='font-size:5.6vmin; color:${goodColor};'><b>宜: </b>${event}</span>`;
-const bad_span = event => `<span style='font-size:5.6vmin; color:${badColor};'><b>忌: </b>${event}</span>`;
-const desc_span = desc => `<span style='font-size:3.5vmin; color:${descColor};'>${desc}</span>`;
+const good_span = event => `<span class="good-fortune" style="font-size:5.6vmin;"><b>宜: </b>${event}</span>`;
+const bad_span = event => `<span class="bad-fortune" style="font-size:5.6vmin;"><b>忌: </b>${event}</span>`;
+const desc_span = desc => `<span class="desc" style="font-size:3.5vmin;">${desc}</span>`;
 
 function Appear() {
   $('#title').html(title);
@@ -169,11 +164,11 @@ function Appear() {
   
   // decide the status
   let status_index = ((seed1 + seed2) % statusLen + statusLen) % statusLen;
-  let status = `<span style='font-size:12vmin; color:${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
+  let status = `<span class=${textColorClass[status_index]} style="font-size:12vmin;"><b>§ ${fortuneStatus[status_index]} §</b></span>`;
   
   if(special){
     status_index = special_events[special_events_index].status_index;
-    let special_status = `<span style='font-size:12vmin; color:${textColor[status_index]};'><b>§ ${fortuneStatus[status_index]} §</b></span>`;
+    let special_status = `<span class=${textColorClass[status_index]} style="font-size:12vmin;"><b>§ ${fortuneStatus[status_index]} §</b></span>`;
     J_ip_to_fortune.html(special_status);
   }
   else{
