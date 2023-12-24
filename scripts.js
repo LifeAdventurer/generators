@@ -57,3 +57,10 @@ function format_time_difference(seconds) {
 }
 
 get_generator_card_footer()
+
+let darkModeIcon = document.querySelector('#dark-mode-icon');
+
+darkModeIcon.onclick = () => {
+    darkModeIcon.classList.toggle('bx-sun');
+    document.body.classList.toggle('dark-mode');
+};
