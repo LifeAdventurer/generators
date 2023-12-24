@@ -1,11 +1,18 @@
+:root {
+  --bg-color: #ffffff;
+  --title-color: #363636;
+  --card-footer-color: #343a40;
+  --card-footer-text-color: #adb5bd;
+}
+
 body {
-  background-color: #ffffff;
+  background-color: var(--bg-color);
 }
 
 h1 {
   align-items: center;
   text-align: center;
-  color: #363636;
+  color: var(--title-color);
 }
 
 .container {
@@ -13,8 +20,8 @@ h1 {
 }
 
 .card-footer {
-  background-color: #343a40;
-  color: #adb5bd; 
+  background-color: var(--card-footer-color);
+  color: var(--card-footer-text-color); 
 }
 
 #footer-author {
