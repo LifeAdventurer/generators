@@ -15,9 +15,9 @@ const ASSETS = [
 const NEED_UPDATE = [
   '/generators/fortune_generator/',
   '/generators/fortune_generator/index.html',
-  '/generators/fortune_generator/styles.css',
-  '/generators/fortune_generator/fortune.js',
-  '/generators/fortune_generator/matrix.js',
+  '/generators/fortune_generator/css/styles.css',
+  '/generators/fortune_generator/js/fortune.js',
+  '/generators/fortune_generator/js/matrix.js',
   '/generators/fortune_generator/special.json',
   '/generators/fortune_generator/fortune.json',
   '/generators/fortune_generator/manifest.json',
