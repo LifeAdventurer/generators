@@ -26,6 +26,7 @@ fetch("https://api.ipify.org?format=json").then(response => {
 let goodFortunes = [];
 let badFortunes = [];
 let special_events = [];
+var fortune_generated = false;
 
 // using async and await to prevent fetching the data too late...
 async function fetch_data(){
@@ -99,7 +100,7 @@ async function init_page(){
   $('#month').html(showMonth);
   $('#date').html(showDate);
   $('#weekday').html(showDay);
-  
+ 
   let eventIndex_1 = -1, eventIndex_2 = -1;
   // check if there is special event today
   for(let i = 0; i < special_events.length; i++){
@@ -129,6 +130,16 @@ async function init_page(){
     let special_event_today = `<span class="desc" style="font-size:9vmin;">今日是<b class="good-fortune">${special_events[special_events_index].event}</b></span>`;
     $('#special-day').html(special_event_today);
   }
+
+  let last_date_str = localStorage.getItem('last_date');
+  if (last_date_str !== null && last_date_str !== undefined) {
+    let now_date = new Date();
+    let last_date = new Date(last_date_str);
+    if (now_date.getFullYear() === last_date.getFullYear() && now_date.getMonth() === last_date.getMonth() && now_date.getDate() === last_date.getDate()) {
+      fortune_generated = true;
+      Appear();
+    }
+  }
 }
 
 // event bar
@@ -144,22 +155,39 @@ function Appear() {
   //change page
   $('#init-page').hide();
   $('#result-page').show();
-
-  // transform ip to four numbers
-  let num = ip.split(".").map(num => parseInt(num));
   
   // some lengths
   const goodLen = goodFortunes.length;
   const badLen = badFortunes.length;
   const statusLen = fortuneStatus.length;
+ 
+  let status_index = -1;
+  let seed1 = -1;
+  let seed2 = -1;
 
-  // TODO: improve the hash process
-  let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + day - 1)) * (date << Math.log10(num[2] << day)))));
-  let seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + (year * day) >> 2;
-  let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate + (date * day) >> 1;
+  if (fortune_generated == false) {
+    // transform ip to four numbers
+    let num = ip.split(".").map(num => parseInt(num));
+
+    // TODO: improve the hash process
+    let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + day - 1)) * (date << Math.log10(num[2] << day)))));
+    seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + (year * day) >> 2;
+    seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 2) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate + (date * day) >> 1;
+
+    // decide the status
+    status_index = ((seed1 + seed2) % statusLen + statusLen) % statusLen;
+
+    // update last record
+    localStorage.setItem('last_date', d.toISOString());
+    localStorage.setItem('last_status_index', status_index.toString());
+    localStorage.setItem('last_seed1', seed1.toString());
+    localStorage.setItem('last_seed2', seed2.toString());
+  } else {
+    status_index = parseInt(localStorage.getItem('last_status_index'));
+    seed1 = parseInt(localStorage.getItem('last_seed1'));
+    seed2 = parseInt(localStorage.getItem('last_seed2'));
+  }
   
-  // decide the status
-  let status_index = ((seed1 + seed2) % statusLen + statusLen) % statusLen;
   let status = `<span class=${textColorClass[status_index]} style="font-size:12vmin;"><b>§ ${fortuneStatus[status_index]} §</b></span>`;
   
   if(special){
@@ -189,7 +217,7 @@ function Appear() {
   while(set.has(badFortunes[r2].event)){
     r2 = (r2 + 1) % badLen;
   } 
-  
+
   // organize the stuffs below this line... 
   let l_1_event = good_span(goodFortunes[l1].event);
   let l_1_desc = desc_span(goodFortunes[l1].description); 
@@ -199,14 +227,14 @@ function Appear() {
   let r_1_desc = desc_span(badFortunes[r1].description);
   let r_2_event = bad_span(badFortunes[r2].event);
   let r_2_desc = desc_span(badFortunes[r2].description);
-  
+
   if(special){
     // instead clear variable name, use short variable name for here... cuz it's too repetitive
     let Data = special_events[special_events_index];
     if(status_index == 0){
       J_r_1_event.html(allGood);
     }
-    else{ 
+    else{
       J_r_1_event.html(bad_span(Data.badFortunes.r_1_event));
       J_r_1_desc.html(desc_span(Data.badFortunes.r_1_desc));
       J_r_2_event.html(bad_span(Data.badFortunes.r_2_event));
