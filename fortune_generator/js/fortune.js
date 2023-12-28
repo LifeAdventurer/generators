@@ -30,14 +30,14 @@ var fortune_generated = false;
 
 // using async and await to prevent fetching the data too late...
 async function fetch_data(){
-  await fetch("fortune.json")
+  await fetch("./json/fortune.json")
   .then(response => response.json())
   .then(data => {
     goodFortunes = data.goodFortunes;
     badFortunes = data.badFortunes;
   })
 
-  await fetch("special.json")
+  await fetch("./json/special.json")
   .then(response => response.json())
   .then(data => {
     special_events = data.special_events;
