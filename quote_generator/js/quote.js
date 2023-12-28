@@ -4,7 +4,7 @@ const buttonElement = document.querySelector("button");
 
 let quotes = [];
 
-fetch("../json/quotes.json")
+fetch("./json/quotes.json")
 .then(response => response.json())
 .then(data => {
   quotes = data.quotes;
