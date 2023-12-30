@@ -29,7 +29,7 @@ let special_events = [];
 var fortune_generated = false;
 
 // using async and await to prevent fetching the data too late...
-async function fetch_data(){
+async function fetch_data() {
   await fetch("./json/fortune.json")
   .then(response => response.json())
   .then(data => {
@@ -60,7 +60,7 @@ const day = d.getDay();
 const month = d.getMonth() + 1;
 const year = d.getFullYear();
 
-function daysDiff(eventIndex){
+function daysDiff(eventIndex) {
   // define the date right now and the special event date
   const startDate = new Date(`${year}-${month}-${date}`);
   const endDate = new Date(`${special_events[eventIndex].year}-${special_events[eventIndex].month}-${special_events[eventIndex].date}`);
@@ -85,7 +85,7 @@ let special = false;
 let special_events_index = 0;
 
 // init page
-async function init_page(){
+async function init_page() {
   // fetch fortune.json and special.json
   await fetch_data();
 
@@ -103,30 +103,33 @@ async function init_page(){
  
   let eventIndex_1 = -1, eventIndex_2 = -1;
   // check if there is special event today
-  for(let i = 0; i < special_events.length; i++){
-    if(daysDiff(i) > 0){
-      if(eventIndex_1 == -1) eventIndex_1 = i;
-      else if(eventIndex_2 == -1) eventIndex_2 = i;
+  for (let i = 0; i < special_events.length; i++) {
+    if (daysDiff(i) > 0) {
+      if (eventIndex_1 == -1) {
+        eventIndex_1 = i;
+      } else if (eventIndex_2 == -1) {
+        eventIndex_2 = i;
+      }
     }
-    else if(daysDiff(i) == 0){
+    else if (daysDiff(i) == 0) {
       special = true;
       special_events_index = i;
     }
   }
   // if there is upcoming event then show
-  if(eventIndex_1 != -1){
+  if (eventIndex_1 != -1) {
     let days = daysDiff(eventIndex_1);
     let upcoming_event_1 = `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${special_events[eventIndex_1].event}</b>還剩<b class="special-event">${days}</b>天</span>`; 
     $('#upcoming-event-1').html(upcoming_event_1);
   }
-  if(eventIndex_2 != -1){
+  if (eventIndex_2 != -1) {
     let days = daysDiff(eventIndex_2);
     let upcoming_event_2 = `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${special_events[eventIndex_2].event}</b>還剩<b class="special-event">${days}</b>天</span>`;
     $('#upcoming-event-2').html(upcoming_event_2);
   }
 
   // show special event if today is a special day
-  if(special){
+  if (special) {
     let special_event_today = `<span class="desc" style="font-size:9vmin;">今日是<b class="good-fortune">${special_events[special_events_index].event}</b></span>`;
     $('#special-day').html(special_event_today);
   }
@@ -135,6 +138,7 @@ async function init_page(){
   if (last_date_str !== null && last_date_str !== undefined) {
     let now_date = new Date();
     let last_date = new Date(last_date_str);
+    
     if (now_date.getFullYear() === last_date.getFullYear() && now_date.getMonth() === last_date.getMonth() && now_date.getDate() === last_date.getDate()) {
       fortune_generated = true;
       Appear();
@@ -190,12 +194,12 @@ function Appear() {
   
   let status = `<span class=${textColorClass[status_index]} style="font-size:12vmin;"><b>§ ${fortuneStatus[status_index]} §</b></span>`;
   
-  if(special){
+  if (special) {
     status_index = special_events[special_events_index].status_index;
     let special_status = `<span class=${textColorClass[status_index]} style="font-size:12vmin;"><b>§ ${fortuneStatus[status_index]} §</b></span>`;
     J_ip_to_fortune.html(special_status);
   }
-  else{
+  else {
     J_ip_to_fortune.html(status);
   }
 
@@ -204,17 +208,17 @@ function Appear() {
   let l1 = (seed1 % goodLen + goodLen) % goodLen;
   set.add(goodFortunes[l1].event);
   let l2 = (((seed1 << 1) + date) % goodLen + goodLen) % goodLen;
-  while(set.has(goodFortunes[l2].event)){
+  while (set.has(goodFortunes[l2].event)) {
     l2 = (l2 + 1) % goodLen;
   } 
   set.add(goodFortunes[l2].event);
   let r1 = (((seed1 >> 1) + (d.getMonth() << 3)) % badLen + badLen) % badLen;
-  while(set.has(badFortunes[r1].event)){
+  while (set.has(badFortunes[r1].event)) {
     r1 = (r1 + 2) % badLen;
   } 
   set.add(badFortunes[r1].event);
   let r2 = ((((((seed1 << 3) + (d.getFullYear() >> 5) * (date << 2)) % badLen) * seed2) >> 6) % badLen + badLen) % badLen;
-  while(set.has(badFortunes[r2].event)){
+  while (set.has(badFortunes[r2].event)) {
     r2 = (r2 + 1) % badLen;
   } 
 
@@ -228,58 +232,57 @@ function Appear() {
   let r_2_event = bad_span(badFortunes[r2].event);
   let r_2_desc = desc_span(badFortunes[r2].description);
 
-  if(special){
+  if (special) {
     // instead clear variable name, use short variable name for here... cuz it's too repetitive
     let Data = special_events[special_events_index];
-    if(status_index == 0){
+    if (status_index == 0) {
       J_r_1_event.html(allGood);
-    }
-    else{
+    } else {
       J_r_1_event.html(bad_span(Data.badFortunes.r_1_event));
       J_r_1_desc.html(desc_span(Data.badFortunes.r_1_desc));
       J_r_2_event.html(bad_span(Data.badFortunes.r_2_event));
       J_r_2_desc.html(desc_span(Data.badFortunes.r_2_desc));
-      if(Data.badFortunes.r_1_event.length == 0){
+      
+      if (Data.badFortunes.r_1_event.length == 0) {
         J_r_1_event.html(r_1_event);
         J_r_1_desc.html(r_1_desc);
       }
-      if(Data.badFortunes.r_2_event.length == 0){
+      if (Data.badFortunes.r_2_event.length == 0) {
         J_r_2_event.html(r_2_event);
         J_r_2_desc.html(r_2_desc);
       }
     }
-    if(status_index == statusLen - 1){
+    if (status_index == statusLen - 1) {
       J_l_1_event.html(allBad);
-    }
-    else{
+    } else {
       J_l_1_event.html(good_span(Data.goodFortunes.l_1_event));
       J_l_1_desc.html(desc_span(Data.goodFortunes.l_1_desc));
       J_l_2_event.html(good_span(Data.goodFortunes.l_2_event));
       J_l_2_desc.html(desc_span(Data.goodFortunes.l_2_desc));
-      if(Data.goodFortunes.l_1_event.length == 0){
+      
+      if (Data.goodFortunes.l_1_event.length == 0) {
         J_l_1_event.html(l_1_event);
         J_l_1_desc.html(l_1_desc);
       }
-      if(Data.goodFortunes.l_2_event.length == 0){
+      if (Data.goodFortunes.l_2_event.length == 0) {
         J_l_2_event.html(l_2_event);
         J_l_2_desc.html(l_2_desc);
       }
     }
   }
   else{
-    if(status_index == 0){
+    if (status_index == 0) {
       J_r_1_event.html(allGood);
-    }
-    else{
+    } else {
       J_r_1_event.html(r_1_event);
       J_r_1_desc.html(r_1_desc);
       J_r_2_event.html(r_2_event);
       J_r_2_desc.html(r_2_desc);
     }
-    if(status_index == statusLen - 1){
+
+    if (status_index == statusLen - 1) {
       J_l_1_event.html(allBad);
-    }
-    else{
+    } else {
       J_l_1_event.html(l_1_event);
       J_l_1_desc.html(l_1_desc);
       J_l_2_event.html(l_2_event);

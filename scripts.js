@@ -1,7 +1,7 @@
 // fetch all folder paths of the generators from `folders.json`
 let folderPaths = []
 
-async function fetch_folders(){
+async function fetch_folders() {
   await fetch('./folders.json')
   .then(response => response.json())
   .then(data => {
@@ -10,12 +10,12 @@ async function fetch_folders(){
   })
 }
 
-async function get_generator_card_footer(){
+async function get_generator_card_footer() {
   await fetch_folders()
   // console.log(folderPaths);
   const repoOwner = 'LifeAdventurer'; 
   const repoName = 'generators'; 
-  for(let folderIndex = 1; folderIndex <= folderPaths.length; folderIndex++){
+  for (let folderIndex = 1; folderIndex <= folderPaths.length; folderIndex++) {
     let folderPath = folderPaths[folderIndex - 1];
     const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?path=${folderPath}`;
     console.log(apiUrl);
@@ -42,16 +42,13 @@ function format_time_difference(seconds) {
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
 
-  if(days > 0){
+  if (days > 0) {
     return `${days} day${days > 1 ? 's' : ''}`;
-  } 
-  else if(hours > 0){
+  } else if(hours > 0) {
     return `${hours} hour${hours > 1 ? 's' : ''}`;    
-  } 
-  else if(minutes > 0){
+  } else if(minutes > 0) {
     return `${minutes} minute${minutes > 1 ? 's' : ''}`;
-  } 
-  else{
+  } else {
     return `${seconds} second${seconds > 1 ? 's' : ''}`;
   }
 }
