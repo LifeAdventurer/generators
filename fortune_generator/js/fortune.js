@@ -100,32 +100,28 @@ async function init_page() {
   $('#month').html(showMonth);
   $('#date').html(showDate);
   $('#weekday').html(showDay);
- 
-  let eventIndex_1 = -1, eventIndex_2 = -1;
+  
+  let showSpecialEventCount = 2, eventIndexPtr = 0;
+  let eventIndexList = Array(showSpecialEventCount).fill(-1);
   // check if there is special event today
   for (let i = 0; i < special_events.length; i++) {
     if (daysDiff(i) > 0) {
-      if (eventIndex_1 == -1) {
-        eventIndex_1 = i;
-      } else if (eventIndex_2 == -1) {
-        eventIndex_2 = i;
+      if (eventIndexPtr < showSpecialEventCount && eventIndexList[eventIndexPtr] == -1) {
+        eventIndexList[eventIndexPtr] = i;
+        eventIndexPtr++;
       }
-    }
-    else if (daysDiff(i) == 0) {
+    } else if (daysDiff(i) == 0) {
       special = true;
       special_events_index = i;
     }
   }
   // if there is upcoming event then show
-  if (eventIndex_1 != -1) {
-    let days = daysDiff(eventIndex_1);
-    let upcoming_event_1 = `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${special_events[eventIndex_1].event}</b>還剩<b class="special-event">${days}</b>天</span>`; 
-    $('#upcoming-event-1').html(upcoming_event_1);
-  }
-  if (eventIndex_2 != -1) {
-    let days = daysDiff(eventIndex_2);
-    let upcoming_event_2 = `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${special_events[eventIndex_2].event}</b>還剩<b class="special-event">${days}</b>天</span>`;
-    $('#upcoming-event-2').html(upcoming_event_2);
+  for (let eventIndex = 0; eventIndex < showSpecialEventCount; eventIndex++) {
+    if (eventIndexList[eventIndex] != -1) {
+      let days = daysDiff(eventIndexList[eventIndex]);
+      let upcoming_event = `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${special_events[eventIndexList[eventIndex]].event}</b>還剩<b class="special-event">${days}</b>天</span>`; 
+      $(`#upcoming-event-${eventIndex + 1}`).html(upcoming_event)
+    }
   }
 
   // show special event if today is a special day
