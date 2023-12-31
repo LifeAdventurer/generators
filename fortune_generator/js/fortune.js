@@ -8,7 +8,7 @@ fetch("https://api.ipify.org?format=json").then(response => {
 }).then(res => {
   ip = res.ip;
 
-}).catch(err => {
+}).catch(error => {
   if ('caches' in window) {
     caches.match('https://api.ipify.org?format=json').then(response => {
       if (response) {
@@ -66,7 +66,7 @@ function daysDiff(eventIndex) {
   const endDate = new Date(`${special_events[eventIndex].year}-${special_events[eventIndex].month}-${special_events[eventIndex].date}`);
 
   // calculate the difference in milliseconds and convert it to days
-  const timeDiff = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+  const timeDiff = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
   return timeDiff;
 }
 
