@@ -13,7 +13,7 @@
 }
 
 .dark-mode {
-  --bg-color: #000000dd;
+  --bg-color: #212121;
   --title-color: #ffffffd8;
   --dark-mode-icon-color: #efefef;
   /* button */
@@ -37,6 +37,12 @@
   /* color: var(--button-text-color); */
 }
 
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--bg-color);
 }
@@ -51,42 +57,69 @@ h5 {
   color: var(--title-color);
 }
 
-.card {
-  background-color: var(--card-bg-color);
+.row {
+  display: flex;
+  align-items: center;
 }
 
-.card-title, .card-text {
-  color: var(--card-title-color);
+.row h1 {
+  margin-top: 15px;
+}
+
+#dark-mode-icon {
+  display: flex;
+  margin-top: 13px;
+  margin-left: -120px;
+  justify-content: center;
+  font-size: 2.4rem;
+  color: var(--dark-mode-icon-color);
+  cursor: pointer;
+  opacity: 85%;
 }
 
 .container {
   margin-top: 30px;
 }
 
+.card-body {
+  height: 170px;
+}
+
+.card {
+  background-color: var(--card-bg-color);
+}
+
+.card-title,
+.card-text {
+  color: var(--card-title-color);
+}
+
 .card-footer {
   background-color: var(--card-footer-color);
-  color: var(--card-footer-text-color); 
+  color: var(--card-footer-text-color);
 }
 
 #footer-author {
-  text-align: right;
+  margin-top: 15px;
+  text-align: center;
+  background-color: var(--bg-color);
+}
+
+#footer-author h5 a {
+  text-decoration: none;
 }
 
 #footer-author-icon {
+  margin-left: 10px;
   width: 4%;
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
   overflow: hidden;
 }
 
-.row {
-  display: flex;
-}
-
-#dark-mode-icon {
-  margin-left: 25px;
-  margin-top: 15px;
-  font-size: 2.4rem;
-  color: var(--dark-mode-icon-color);
-  cursor: pointer;
-  opacity: 85%;
+@media only screen and (max-width: 1200px) {
+  #dark-mode-icon {
+    margin-left: 0px;
+  }
 }
