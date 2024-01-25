@@ -189,6 +189,25 @@
         "r_2_event": "",
         "r_2_desc": ""
       }
+    },
+    {
+      "event": "國際資料隱私日",
+      "year": "2024",
+      "month": "1",
+      "date": "28",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "整理資料",
+        "l_1_desc": "注意在線資料安全",
+        "l_2_event": "注意隱私",
+        "l_2_desc": "謹慎上網"
+      },
+      "badFortunes": {  
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
     }
   ]
 }
