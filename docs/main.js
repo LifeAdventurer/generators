@@ -1,12 +1,5 @@
 var fs = require('fs')
 
-let num = [26, 236, 238, 27];
-const dates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 30];
-const statusLen = 8;
-var buckets = {};
-let day = 0;
-var cnt = 0;
-
 const goodFortunes = [
     {
       "event": "睡覺",
@@ -171,68 +164,97 @@ const badFortunes =  [
 
 const badLen = badFortunes.length;
 const goodLen = goodFortunes.length;
+let num = null;
+const dates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 30];
+const statusLen = 8;
+var buckets = {};
+let day = 0;
+var run_cnt = 0;
 
-while (cnt != 2000) {
-        let n1 = parseInt(Math.random() * 255 + 1);
-        let n2 = parseInt(Math.random() * 255 + 1);
-        let n3 = parseInt(Math.random() * 255 + 1);
-        let n4 = parseInt(Math.random() * 255 + 1);
+while (run_cnt != 2000) {
+    let n1 = parseInt(Math.random() * 255 + 1);
+    let n2 = parseInt(Math.random() * 255 + 1);
+    let n3 = parseInt(Math.random() * 255 + 1);
+    let n4 = parseInt(Math.random() * 255 + 1);
 
-        if (!check(n1, n2, n3, n4)) continue;
+    if (!check_ip_valid(n1, n2, n3, n4)) continue;
 
-        // buckets[`${n1}.${n2}.${n3}.${n4}`] = [0, 0, 0, 0, 0, 0, 0, 0];
-        buckets[`${n1}.${n2}.${n3}.${n4}`] = [0, 0, 0, 0];
-        for (let i = 1; i <= 12; i++) {
-            for (let j = 1; j <= dates[i - 1]; j++) {
-                day %= 7;
-                run(2023, i, j, day, [n1, n2, n3, n4]);
-                day++;
-            }
+    let index = `${n1}.${n2}.${n3}.${n4}`;
+    // buckets[`${n1}.${n2}.${n3}.${n4}`] = [0, 0, 0, 0, 0, 0, 0, 0];
+    buckets[`${n1}.${n2}.${n3}.${n4}`] = [0, 0, 0, 0];
+    for (let i = 1; i <= 12; i++) {
+        for (let j = 1; j <= dates[i - 1]; j++) {
+            day %= 7;
+            run(2023, i, j, day, [n1, n2, n3, n4]);
+            day++;
         }
+    }
 
-        cnt++;
+    run_cnt++;
 }
 
 fs.writeFile('./res.txt', JSON.stringify(buckets), err => {
     console.log(err);
 });
 
-function check(n1, n2, n3, n4) {
+function check_ip_valid(n1, n2, n3, n4) {
     if (n1 > 255 || n2 > 255 || n3 > 255 || n4 > 255) return false;
 
-
+    // private network
     if (n1 === 10) return false;
 
+    // Carrier-grade NAT
+    if (n1 == 100 && n2 == 64) return false;
+
+    // localhost
     if (n1 === 127 && n2 === 0 && n3 === 0) return false;
 
+    // link-local address
     if (n1 == 169 && n2 == 254) return false;
 
+    // private network
     if (n1 === 172) if (n2 >= 16 && n2 <= 31) return false;
 
     if (n1 === 192) {
-        if (n2 === 168) return false;
-        if (n2 === 0 && n3 === 0) return false;
-        if (n2 === 0 && n3 === 2) return false;
-        if (n2 === 88 && n3 === 99) return false;
+        if (n2 === 168) return false; // private network
+        if (n2 === 0 && n3 === 0) return false; // IANA RFC 5735
+        if (n2 === 0 && n3 === 2) return false; // TEST-NET-1 RFC 5735
+        if (n2 === 88 && n3 === 99) return false; // 6to4
     }
+
+    if (n1 == 198) {
+        if (n2 == 18) return false; // RFC 2544
+        if (n2 == 51 && n3 == 100) return false; // TEST-NET-2 RFC 5735
+    }
+
+    if (n1 == 203 && n3 == 113) return false; // TEST-NET-3 RFC 5735
+
+    // class D network
+    if (n1 == 224) return false;
+
+    // class E network
+    if (n1 == 255) return false;
 
     return true;
 }
 
+// calculate hash and write result
 function run(year, month, date, day, ip) {
     let num = ip;
     let index = `${ip[0]}.${ip[1]}.${ip[2]}.${ip[3]}`;
     let d = new Date(year, month, date);
 
+    // original hash function
     let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + day - 1)) * (date << Math.log10(num[2] << day)))));
     let seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + ((year * day) >> 2);
     let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + (year >> hashDate) + ((date * day) >> 1);
 
     // decide the status
     let status_index = ((seed1 + seed2) % statusLen + statusLen) % statusLen;
-    // buckets[index][Math.max(status_index - parseInt(day / Math.PI), 0)]++;
-    // buckets[index][status_index]++;
+    // buckets[index][Math.max(status_index - parseInt(day / Math.PI), 0)]++; // old hash
+    // buckets[index][status_index]++; // current hash
 
+    // make sure the events won't collide
     let set = new Set();
     let l1 = (seed1 % goodLen + goodLen) % goodLen;
     let l2 = (((seed1 << 1) + date) % goodLen + goodLen) % goodLen;
