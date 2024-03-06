@@ -22,6 +22,8 @@
 # 當天宜忌出現分佈統計
 ### 2000個IP 共兩組
 
+統計方法：隨機2000個IP在同一天內出現的宜忌項目總數和
+
 ![宜](./good_fortune_statistics.png)
 ![忌](./bad_fortune_statistics.png)
 
