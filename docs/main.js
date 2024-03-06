@@ -172,16 +172,6 @@ const badFortunes =  [
 const badLen = badFortunes.length;
 const goodLen = goodFortunes.length;
 
-for (let n1 = 1; n1 <= 255; n1++) {
-    for (let n2 = 1; n2 <= 255; n2++) {
-     for (let n3 = 1; n3 <= 255; n3++) {
-         for (let n4 = 1; n4 <= 254; n4++) {
-
-         }
-     }
-    }
-}
-
 while (cnt != 2000) {
         let n1 = parseInt(Math.random() * 255 + 1);
         let n2 = parseInt(Math.random() * 255 + 1);
