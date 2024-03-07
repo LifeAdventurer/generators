@@ -242,7 +242,6 @@ function check_ip_valid(n1, n2, n3, n4) {
 function run(year, month, date, day, ip) {
     let num = ip;
     let index = `${ip[0]}.${ip[1]}.${ip[2]}.${ip[3]}`;
-    let d = new Date(year, month, date);
 
     // original hash function
     let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + day - 1)) * (date << Math.log10(num[2] << day)))));
@@ -266,12 +265,12 @@ function run(year, month, date, day, ip) {
     set.add(goodFortunes[l1].event);
     set.add(goodFortunes[l2].event);
 
-    let r1 = (((seed1 >> 1) + (d.getMonth() << 3)) % badLen + badLen) % badLen;
+    let r1 = (((seed1 >> 1) + (month << 3)) % badLen + badLen) % badLen;
     while (set.has(badFortunes[r1].event)) {
         r1 = (r1 + 2) % badLen;
     }
     set.add(badFortunes[r1].event);
-    let r2 = ((((((seed1 << 3) + (d.getFullYear() >> 5) * (date << 2)) % badLen) * seed2) >> 6) % badLen + badLen) % badLen;
+    let r2 = ((((((seed1 << 3) + (year >> 5) * (date << 2)) % badLen) * seed2) >> 6) % badLen + badLen) % badLen;
     while (set.has(badFortunes[r2].event)) {
         r2 = (r2 + 1) % badLen;
     }
