@@ -1,4 +1,4 @@
-let pre_cache_file_version = 'pre-v1.0.0';
+let pre_cache_file_version = 'pre-v1.1.0';
 let auto_cache_file_version = 'auto-v1.0.0'
 
 const ASSETS = [
