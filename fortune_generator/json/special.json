@@ -208,6 +208,63 @@
         "r_2_event": "",
         "r_2_desc": ""
       }
+    },
+    {
+      "event": "植樹節",
+      "year": "2024",
+      "month": "3",
+      "date": "12",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "植樹造林",
+        "l_1_desc": "保護生態、美化環境",
+        "l_2_event": "節能減碳",
+        "l_2_desc": "延長資源壽命"
+      },
+      "badFortunes": {  
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "白色情人節",
+      "year": "2024",
+      "month": "3",
+      "date": "14",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "送禮物",
+        "l_1_desc": "表達愛意和感激之情",
+        "l_2_event": "觀星",
+        "l_2_desc": "仰望星空，共描明月"
+      },
+      "badFortunes": {  
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界森林日",
+      "year": "2024",
+      "month": "3",
+      "date": "21",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "環境教育",
+        "l_1_desc": "提升對自然的敬重",
+        "l_2_event": "節約用水",
+        "l_2_desc": "保護生態系統穩定"
+      },
+      "badFortunes": {  
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
     }
   ]
 }
