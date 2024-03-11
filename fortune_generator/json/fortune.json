@@ -157,6 +157,10 @@
     {
       "event": "散步",
       "description": "被害蟲咬傷"
+    },
+    {
+      "event": "吃冰",
+      "description": "受寒感冒，咳嗽不止"
     }
   ]
 }
