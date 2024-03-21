@@ -26,9 +26,11 @@ const NEED_UPDATE = [
 
 let limit_cache_size = (name, size) => {
   caches.open(name).then(cache => {
-    cache.keys().then(key => {
-      if (key.length > size) {
-        cache.delete(key[0]).then(limit_cache_size(name, size));
+    cache.keys().then(keys => {
+      if (keys.length > size) {
+        cache.delete(keys[0]).then(() => {
+          limit_cache_size(name, size)
+        });
       }
     });
   });
