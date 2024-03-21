@@ -6,19 +6,16 @@ async function fetch_folders() {
   .then(response => response.json())
   .then(data => {
     folderPaths = data.folder_paths;
-    // console.log(folderPaths);
   })
 }
 
 async function get_generator_card_footer() {
   await fetch_folders()
-  // console.log(folderPaths);
   const repoOwner = 'LifeAdventurer'; 
   const repoName = 'generators'; 
   for (let folderIndex = 1; folderIndex <= folderPaths.length; folderIndex++) {
     let folderPath = folderPaths[folderIndex - 1];
     const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?path=${folderPath}`;
-    console.log(apiUrl);
 
     fetch(apiUrl)
     .then(response => response.json())
@@ -29,7 +26,6 @@ async function get_generator_card_footer() {
       const currentTimeStamp = Math.floor(new Date().getTime() / 1000);
       const timeDifference = currentTimeStamp - commitTimeStamp;
       
-      // console.log(timeSinceLastUpdate);
       $(`#last-update-${folderIndex}`).html(`Last updated ${format_time_difference(timeDifference)} ago`)
     })
     // .catch(error => console.error('Error fetching data:', error));

@@ -4,7 +4,7 @@ const context = canvas.getContext("2d")
 canvas.height = window.innerHeight + 100;
 canvas.width = window.innerWidth + 5;
 
-const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./*-+#$%^@!~?><:;[]{}\」=_αβΓγΔδεζηΘθικΛλμΞξΠπρΣσςτυΦφχΨψΩω×≦≧≠∞≒≡～∩∠∪∟⊿∫∮∵∴＄￥〒￠￡℃€℉╩◢ⅩⅨⅧⅦⅥⅤⅣⅢⅡⅠあいうえおがぎぐげござじずぜぞだぢつでづどにぬのばひぴぶへぺぼみゃょァゐゎè";
+const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./*-+#$%^@!~?><:;[]{}=_αβΓγΔδεζηΘθικΛλμΞξΠπρΣσςτυΦφχΨψΩω×≦≧≠∞≒≡～∩∠∪∟⊿∫∮∵∴＄￥〒￠￡℃€℉╩◢ⅩⅨⅧⅦⅥⅤⅣⅢⅡⅠあいうえおがぎぐげござじずぜぞだぢつでづどにぬのばひぴぶへぺぼみゃょァゐゎè";
 
 const fontSize = 16;
 const columns = canvas.width / fontSize; 

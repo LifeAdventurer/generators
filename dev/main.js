@@ -1,4 +1,4 @@
-var fs = require('fs')
+const fs = require('fs')
 
 const goodFortunes = [
     {
@@ -167,9 +167,9 @@ const goodLen = goodFortunes.length;
 let num = null;
 const dates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 30];
 const statusLen = 8;
-var buckets = {};
+let buckets = {};
 let day = 0;
-var run_cnt = 0;
+let run_cnt = 0;
 
 while (run_cnt != 2000) {
     let n1 = parseInt(Math.random() * 255 + 1);
@@ -180,7 +180,6 @@ while (run_cnt != 2000) {
     if (!check_ip_valid(n1, n2, n3, n4)) continue;
 
     let index = `${n1}.${n2}.${n3}.${n4}`;
-    // buckets[`${n1}.${n2}.${n3}.${n4}`] = [0, 0, 0, 0, 0, 0, 0, 0];
     buckets[index] = [0, 0, 0, 0];
     for (let i = 1; i <= 12; i++) {
         for (let j = 1; j <= dates[i - 1]; j++) {
@@ -247,11 +246,6 @@ function run(year, month, date, day, ip) {
     let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + day - 1)) * (date << Math.log10(num[2] << day)))));
     let seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + ((year * day) >> 2);
     let seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 3) + (date << (hashDate - 1)) * (month << 4) + (year >> hashDate) + ((date * day) >> 1);
-
-    // decide the status
-    let status_index = ((seed1 + seed2) % statusLen + statusLen) % statusLen;
-    // buckets[index][Math.max(status_index - parseInt(day / Math.PI), 0)]++; // old hash
-    // buckets[index][status_index]++; // current hash
 
     // make sure the events won't collide
     let set = new Set();

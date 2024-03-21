@@ -26,7 +26,7 @@ fetch("https://api.ipify.org?format=json").then(response => {
 let goodFortunes = [];
 let badFortunes = [];
 let special_events = [];
-var fortune_generated = false;
+let fortune_generated = false;
 
 // using async and await to prevent fetching the data too late...
 async function fetch_data() {
@@ -165,7 +165,7 @@ function Appear() {
   let seed1 = -1;
   let seed2 = -1;
 
-  if (fortune_generated == false) {
+  if (!fortune_generated) {
     // transform ip to four numbers
     let num = ip.split(".").map(num => parseInt(num));
 
