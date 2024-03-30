@@ -62,8 +62,8 @@ const year = d.getFullYear();
 
 function daysDiff(eventIndex) {
   // define the date right now and the special event date
-  const startDate = new Date(year, month, date);
-  const endDate = new Date(special_events[eventIndex].year, special_events[eventIndex].month, special_events[eventIndex].date);
+  const startDate = new Date(year, month - 1, date);
+  const endDate = new Date(special_events[eventIndex].year, special_events[eventIndex].month - 1, special_events[eventIndex].date);
 
   // calculate the difference in milliseconds and convert it to days
   const timeDiff = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
