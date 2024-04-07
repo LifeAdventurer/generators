@@ -291,4 +291,22 @@ function getLuck() {
   Update();
 }
 
+function copyResultImageToClipboard() {
+  let result = document.querySelector('#result-page');
+
+  let title = document.createElement('div');
+  title.classList.add('row');
+  title.appendChild(document.querySelector('#title').cloneNode(true));
+  result.insertBefore(title, result.firstChild);
+
+  htmlToImage.toBlob(result, {
+    skipFonts: true,
+    preferredFontFormat: 'woff2',
+    backgroundColor: 'white',
+  }).then(blob => {
+    navigator.clipboard.write([new ClipboardItem({ [blob.type]: blob })]);
+    result.removeChild(title);
+  });
+}
+
 init_page();
