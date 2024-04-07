@@ -291,4 +291,26 @@ function getLuck() {
   Update();
 }
 
+function copyResultImageToClipboard() {
+  try {
+    let $title = $('#title').clone().wrap('<div class="row"></div>');
+    $('#result-page').prepend($title.parent());
+
+    const backgroundColor = getComputedStyle($('.container')[0]).backgroundColor;
+    htmlToImage.toBlob($('#result-page')[0], {
+      skipFonts: true,
+      preferredFontFormat: 'woff2',
+      backgroundColor: backgroundColor, // Set background color dynamically
+    }).then(blob => {
+      navigator.clipboard.write([new ClipboardItem({ [blob.type]: blob })]);
+      $title.parent().remove();
+    }).catch(error => {
+      console.error('Error converting result page to image:', error);
+      $title.parent().remove();
+    });
+  } catch(error) {
+    console.error('Error copying result image to clipboard:', error);
+  }
+}
+
 init_page();

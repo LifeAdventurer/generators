@@ -12,6 +12,9 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js" integrity="sha512-7tWCgq9tTYS/QkGVyKrtLpqAoMV9XIUxoou+sPUypsaZx56cYR/qio84fPK9EvJJtKvJEwt7vkn6je5UVzGevw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="./css/styles.css">
   <script>
     if ('serviceWorker' in navigator) {
@@ -95,8 +98,9 @@
     <!-- page after button click end -->
 
     <div class="row">
-      <button class="col-4 offset-4" id="btn" onclick="getLuck()">點擊打卡</button>
-      <div class="col-2 offset-2 bx bx-moon" id="dark-mode-icon"></div>
+      <i class="col-2 bx bx-moon" id="dark-mode-icon"></i>
+      <button class="col-4 offset-2 bi bi-files" id="btn" onclick="getLuck()">點擊打卡</button>
+      <i class="col-2 offset-2 fas fa-clone" id="copy-result" onclick="copyResultImageToClipboard()"></i>
     </div>
 
   </div>
