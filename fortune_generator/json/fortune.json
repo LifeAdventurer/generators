@@ -91,6 +91,26 @@
     {
       "event": "散步",
       "description": "空氣良好，放鬆身心"
+    },
+    {
+      "event": "觀星",
+      "description": "欣賞星空，享受寧靜"
+    },
+    {
+      "event": "野餐",
+      "description": "在大自然中享受美食"
+    },
+    {
+      "event": "釣魚",
+      "description": "大收穫!!"
+    },
+    {
+      "event": "烹飪",
+      "description": "陶冶情操"
+    },
+    {
+      "event": "爬山",
+      "description": "跳戰自我，促進健康"
     }
   ],
   "badFortunes" : [
@@ -161,6 +181,14 @@
     {
       "event": "吃冰",
       "description": "受寒感冒，咳嗽不止"
+    },
+    {
+      "event": "爬山",
+      "description": "遇到地震..."
+    },
+    {
+      "event": "觀星",
+      "description": "光害嚴重，烏雲密布"
     }
   ]
 }
