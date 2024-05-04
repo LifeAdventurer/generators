@@ -493,6 +493,63 @@
         "r_2_event": "",
         "r_2_desc": ""
       }
+    },
+    {
+      "event": "巧克力日",
+      "year": "2024",
+      "month": "7",
+      "date": "07",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "送巧克力",
+        "l_1_desc": "共享巧克力盛宴",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "宅宅日",
+      "year": "2024",
+      "month": "7",
+      "date": "13",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "觀影",
+        "l_1_desc": "看心愛的電影或影集",
+        "l_2_event": "閱讀",
+        "l_2_desc": "享受片刻的寧靜"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際冷笑話日",
+      "year": "2024",
+      "month": "7",
+      "date": "24",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "講冷笑話",
+        "l_1_desc": "一起嘻嘻哈哈",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
     }
   ]
 }
