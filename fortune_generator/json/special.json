@@ -436,6 +436,63 @@
         "r_2_event": "",
         "r_2_desc": ""
       }
+    },
+    {
+      "event": "世界環境日",
+      "year": "2024",
+      "month": "6",
+      "date": "05",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "少用塑膠",
+        "l_1_desc": "選擇可重複使用的替代品",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界獻血者日",
+      "year": "2024",
+      "month": "6",
+      "date": "05",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "捐血",
+        "l_1_desc": "捐出血液和血漿，分享生命要時常",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "夏至",
+      "year": "2024",
+      "month": "6",
+      "date": "20",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "觀賞日出和日落",
+        "l_1_desc": "享受一年最長的白天",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
     }
   ]
 }
