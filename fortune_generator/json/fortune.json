@@ -1,194 +1,318 @@
 {
-  "goodFortunes" : [
-    {
-      "event": "睡覺",
-      "description": "品質良好，精神煥發"
-    },
+  "goodFortunes": [
     {
       "event": "做家務",
-      "description": "整潔使人心情愉悅"
+      "description": [
+        "整潔使人心情愉悅",
+        "增加運動量",
+        "培養責任感",
+        "增加成就感"
+      ]
     },
     {
       "event": "冥想",
-      "description": "平靜心靈，緩解焦慮"
+      "description": [
+        "平靜心靈，緩解焦慮",
+        "調節情緒",
+        "改善睡眠",
+        "提高專注",
+        "減輕壓力"
+      ]
     },
     {
       "event": "攝影",
-      "description": "捕捉到美好瞬間"
+      "description": [
+        "捕捉到美好瞬間",
+        "激發想像力"
+      ]
     },
     {
       "event": "喝咖啡",
-      "description": "精力充沛燃燒脂肪"
+      "description": [
+        "精力充沛",
+        "燃燒脂肪"
+      ]
     },
     {
       "event": "朋友聚會",
-      "description": "充滿歡笑和美好回憶"
+      "description": [
+        "充滿歡笑和美好回憶",
+        "提升情感連結",
+        "緩解壓力"
+      ]
     },
     {
       "event": "體育鍛鍊",
-      "description": "能量滿滿，效果顯著" 
-    },
-    {
-      "event": "出遊" ,
-      "description": "好天氣，好心情"
-    },
-    {
-      "event": "吃大餐",
-      "description": "聯絡感情"
-    },
-    {
-      "event": "逛書店",
-      "description": "新書上架，打折推銷"
-    },
-    {
-      "event": "學新技能",
-      "description": "快速上手"
-    },
-    {
-      "event": "唱歌",
-      "description": "被星探發掘"
-    },
-    {
-      "event": "上課",
-      "description": "整天不累，100% 消化"
-    },
-    {
-      "event": "洗澡",
-      "description": "重獲能量"
-    },
-    {
-      "event": "請教問題",
-      "description": "問題皆獲高人指點"
-    },
-    {
-      "event": "網購",
-      "description": "心儀商品皆促銷"
-    },
-    {
-      "event": "放假",
-      "description": "休息充電，明日再戰"
-    },
-    {
-      "event": "早睡",
-      "description": "好夢連連"
-    },
-    {
-      "event": "早起",
-      "description": "朝氣蓬勃，神采飛揚"
-    },
-    {
-      "event": "發文章",
-      "description": "瀏覽數暴增"
-    },
-    {
-      "event": "點外賣",
-      "description": "準時到達，新鮮好吃"
-    },
-    {
-      "event": "做善事",
-      "description": "積善成福"
-    },
-    {
-      "event": "散步",
-      "description": "空氣良好，放鬆身心"
-    },
-    {
-      "event": "觀星",
-      "description": "欣賞星空，享受寧靜"
-    },
-    {
-      "event": "野餐",
-      "description": "在大自然中享受美食"
-    },
-    {
-      "event": "釣魚",
-      "description": "大收穫!!"
-    },
-    {
-      "event": "烹飪",
-      "description": "陶冶情操"
-    },
-    {
-      "event": "爬山",
-      "description": "跳戰自我，促進健康"
-    }
-  ],
-  "badFortunes" : [
-    {
-      "event": "體育鍛鍊",
-      "description": "不慎受傷"
-    },
-    {
-      "event": "攝影",
-      "description": "照片全消失"
+      "description": [
+        "能量滿滿，效果顯著",
+        "塑造身材",
+        "增強心肺功能"
+      ]
     },
     {
       "event": "出遊",
-      "description": "天氣不晴朗"
+      "description": [
+        "好天氣，好心情"
+      ]
     },
     {
       "event": "吃大餐",
-      "description": "被要求請客"
+      "description": [
+        "聯絡感情"
+      ]
+    },
+    {
+      "event": "逛書店",
+      "description": [
+        "新書上架，打折推銷"
+      ]
     },
     {
       "event": "學新技能",
-      "description": "屢試不爽，始終不懂"
+      "description": [
+        "快速上手"
+      ]
     },
     {
       "event": "唱歌",
-      "description": "嗓子發炎"
+      "description": [
+        "被星探發掘"
+      ]
+    },
+    {
+      "event": "上課",
+      "description": [
+        "整天不累，100% 消化"
+      ]
     },
     {
       "event": "洗澡",
-      "description": "水溫不穩"
+      "description": [
+        "重獲能量",
+        "身心舒暢"
+      ]
     },
     {
       "event": "請教問題",
-      "description": "疑難雜症，均無解答"
+      "description": [
+        "問題皆獲高人指點"
+      ]
     },
     {
       "event": "網購",
-      "description": "錯過促銷"
+      "description": [
+        "心儀商品皆促銷"
+      ]
     },
     {
       "event": "放假",
-      "description": "隔日工作量倍增"
+      "description": [
+        "休息充電，明日再戰",
+        "減輕壓力",
+        "探索新興趣"
+      ]
     },
     {
-      "event": "晚睡",
-      "description": "失眠，明日精神渙散"
+      "event": "早睡",
+      "description": [
+        "好夢連連",
+        "調整生物鐘",
+        "減少壓力",
+        "提高免疫力",
+        "改善皮膚",
+        "提升工作效率"
+      ]
     },
     {
-      "event": "晚起",
-      "description": "整天都不順"
+      "event": "早起",
+      "description": [
+        "朝氣蓬勃，神采飛揚"
+      ]
     },
     {
       "event": "發文章",
-      "description": "搜索枯腸，不知所云"
+      "description": [
+        "瀏覽數暴增",
+        "增加影響力",
+        "促進交流"
+      ]
     },
     {
       "event": "點外賣",
-      "description": "路況壅塞，餐點冷掉"
+      "description": [
+        "準時到達",
+        "新鮮好吃",
+        "減少清理"
+      ]
     },
     {
-      "event": "喝咖啡",
-      "description": "晚上失眠"
+      "event": "做善事",
+      "description": [
+        "積善成福",
+        "助人為樂",
+        "培養同理心",
+        "心靈充實",
+        "增加幸福感"
+      ]
     },
     {
       "event": "散步",
-      "description": "被害蟲咬傷"
-    },
-    {
-      "event": "吃冰",
-      "description": "受寒感冒，咳嗽不止"
-    },
-    {
-      "event": "爬山",
-      "description": "遇到地震..."
+      "description": [
+        "空氣良好",
+        "放鬆身心"
+      ]
     },
     {
       "event": "觀星",
-      "description": "光害嚴重，烏雲密布"
+      "description": [
+        "欣賞星空",
+        "享受寧靜"
+      ]
+    },
+    {
+      "event": "野餐",
+      "description": [
+        "在大自然中享受美食"
+      ]
+    },
+    {
+      "event": "釣魚",
+      "description": [
+        "收穫滿滿"
+      ]
+    },
+    {
+      "event": "烹飪",
+      "description": [
+        "陶冶情操",
+        "養成飲食習慣"
+      ]
+    },
+    {
+      "event": "爬山",
+      "description": [
+        "跳戰自我",
+        "促進健康"
+      ]
+    }
+  ],
+  "badFortunes": [
+    {
+      "event": "體育鍛鍊",
+      "description": [
+        "不慎受傷"
+      ]
+    },
+    {
+      "event": "攝影",
+      "description": [
+        "照片全消失"
+      ]
+    },
+    {
+      "event": "出遊",
+      "description": [
+        "天氣不晴朗"
+      ]
+    },
+    {
+      "event": "吃大餐",
+      "description": [
+        "被要求請客"
+      ]
+    },
+    {
+      "event": "學新技能",
+      "description": [
+        "屢試不爽，始終不懂"
+      ]
+    },
+    {
+      "event": "唱歌",
+      "description": [
+        "嗓子發炎"
+      ]
+    },
+    {
+      "event": "洗澡",
+      "description": [
+        "水溫不穩"
+      ]
+    },
+    {
+      "event": "請教問題",
+      "description": [
+        "疑難雜症，均無解答"
+      ]
+    },
+    {
+      "event": "網購",
+      "description": [
+        "錯過促銷"
+      ]
+    },
+    {
+      "event": "放假",
+      "description": [
+        "隔日工作量倍增"
+      ]
+    },
+    {
+      "event": "晚睡",
+      "description": [
+        "失眠，明日精神渙散"
+      ]
+    },
+    {
+      "event": "晚起",
+      "description": [
+        "整天都不順"
+      ]
+    },
+    {
+      "event": "發文章",
+      "description": [
+        "搜索枯腸，不知所云"
+      ]
+    },
+    {
+      "event": "點外賣",
+      "description": [
+        "路況壅塞，餐點冷掉"
+      ]
+    },
+    {
+      "event": "喝咖啡",
+      "description": [
+        "晚上失眠"
+      ]
+    },
+    {
+      "event": "散步",
+      "description": [
+        "被害蟲咬傷"
+      ]
+    },
+    {
+      "event": "吃冰",
+      "description": [
+        "受寒感冒",
+        "咳嗽不止"
+      ]
+    },
+    {
+      "event": "爬山",
+      "description": [
+        "遇到地震...",
+        "不幸受傷"
+      ]
+    },
+    {
+      "event": "觀星",
+      "description": [
+        "光害嚴重",
+        "烏雲密布"
+      ]
     }
   ]
 }

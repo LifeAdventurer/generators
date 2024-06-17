@@ -219,14 +219,18 @@ function Appear() {
   } 
 
   // organize the stuffs below this line... 
+  const l1_desc_list = goodFortunes[l1].description;
+  const l2_desc_list = goodFortunes[l2].description;
+  const r1_desc_list = goodFortunes[r1].description;
+  const r2_desc_list = goodFortunes[r2].description;
   let l_1_event = good_span(goodFortunes[l1].event);
-  let l_1_desc = desc_span(goodFortunes[l1].description); 
+  let l_1_desc = desc_span(l1_desc_list[seed1 % l1_desc_list.length]);
   let l_2_event = good_span(goodFortunes[l2].event);
-  let l_2_desc = desc_span(goodFortunes[l2].description);
+  let l_2_desc = desc_span(l2_desc_list[seed2 % l2_desc_list.length]);
   let r_1_event = bad_span(badFortunes[r1].event);
-  let r_1_desc = desc_span(badFortunes[r1].description);
+  let r_1_desc = desc_span(r1_desc_list[seed1 % r1_desc_list.length]);
   let r_2_event = bad_span(badFortunes[r2].event);
-  let r_2_desc = desc_span(badFortunes[r2].description);
+  let r_2_desc = desc_span(r2_desc_list[seed2 % r2_desc_list.length]);
 
   if (special) {
     // instead clear variable name, use short variable name for here... cuz it's too repetitive
