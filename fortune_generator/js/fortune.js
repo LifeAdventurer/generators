@@ -221,8 +221,8 @@ function Appear() {
   // organize the stuffs below this line... 
   const l1_desc_list = goodFortunes[l1].description;
   const l2_desc_list = goodFortunes[l2].description;
-  const r1_desc_list = goodFortunes[r1].description;
-  const r2_desc_list = goodFortunes[r2].description;
+  const r1_desc_list = badFortunes[r1].description;
+  const r2_desc_list = badFortunes[r2].description;
   let l_1_event = good_span(goodFortunes[l1].event);
   let l_1_desc = desc_span(l1_desc_list[seed1 % l1_desc_list.length]);
   let l_2_event = good_span(goodFortunes[l2].event);
