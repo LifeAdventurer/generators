@@ -94,7 +94,7 @@ async function init_page() {
 
   // show date before button pressed
   const showMonth = `<span class="date-color" style="font-size:10vmin; -webkit-writing-mode:vertical-lr;"><b>${chineseMonth[month - 1] + "月"}</b></span>`;
-  const showDate = `<span class="date-color" style="font-size:25vmin;"><b>${("0" + date).substr(-2)}</b></span>`;
+  const showDate = `<span class="date-color" style="font-size:25vmin;"><b>${("0" + date).slice(-2)}</b></span>`;
   const showDay = `<span class="date-color" style="font-size:10vmin; -webkit-writing-mode:vertical-lr; margin-right:10%;"><b>${"星期" + week[day]}</b></span>`;
 
   $('#month').html(showMonth);
