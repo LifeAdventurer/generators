@@ -569,6 +569,63 @@
         "r_2_event": "",
         "r_2_desc": ""
       }
+    },
+    {
+      "event": "國際左撇子日",
+      "year": "2024",
+      "month": "8",
+      "date": "13",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "挑戰新事物",
+        "l_1_desc": "嘗試用左手完成任務",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界攝影日",
+      "year": "2024",
+      "month": "8",
+      "date": "19",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "拍攝照片",
+        "l_1_desc": "捕捉生活中的美好瞬間",
+        "l_2_event": "分享作品",
+        "l_2_desc": "展示您的攝影技巧"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際狗狗日",
+      "year": "2024",
+      "month": "8",
+      "date": "26",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "陪伴狗狗",
+        "l_1_desc": "帶狗狗散步或遊玩",
+        "l_2_event": "分享作品",
+        "l_2_desc": "展示您的攝影技巧"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
     }
   ]
 }
