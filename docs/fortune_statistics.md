@@ -25,4 +25,4 @@ The x-axis is the index value and the y-axis is the number of times.
 |------------------------------------------------|----------------------------------------------|
 | ![Good Fortune](./good_fortune_statistics.png) | ![Bad Fortune](./bad_fortune_statistics.png) |
 
-[Statistics code](./main.js)
+[Statistics code](../dev/main.js)
