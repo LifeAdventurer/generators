@@ -126,7 +126,7 @@
         "l_2_event": "大掃除",
         "l_2_desc": "新年新氣象"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
@@ -145,7 +145,7 @@
         "l_2_event": "祈禱",
         "l_2_desc": "獲得平安、信心"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
@@ -164,7 +164,7 @@
         "l_2_event": "安心",
         "l_2_desc": "事事順利、心想事成"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
@@ -183,7 +183,7 @@
         "l_2_event": "成功",
         "l_2_desc": "勢在必得"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
@@ -202,7 +202,7 @@
         "l_2_event": "注意隱私",
         "l_2_desc": "謹慎上網"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
@@ -221,7 +221,7 @@
         "l_2_event": "節能減碳",
         "l_2_desc": "延長資源壽命"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
@@ -240,7 +240,7 @@
         "l_2_event": "觀星",
         "l_2_desc": "仰望星空，共描明月"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
@@ -259,7 +259,7 @@
         "l_2_event": "節約用水",
         "l_2_desc": "保護生態系統穩定"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
@@ -278,7 +278,7 @@
         "l_2_event": "開派對",
         "l_2_desc": "組織有趣的活動和遊戲"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "冒犯他人",
         "r_1_desc": "避免製造觸怒人的笑話",
         "r_2_event": "惡作劇",
@@ -297,7 +297,7 @@
         "l_2_event": "開派對",
         "l_2_desc": "組織有趣的活動和遊戲"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
@@ -316,7 +316,7 @@
         "l_2_event": "運動鍛煉",
         "l_2_desc": "保持身體健康和活力"
       },
-      "badFortunes": {  
+      "badFortunes": {
         "r_1_event": "",
         "r_1_desc": "",
         "r_2_event": "",
@@ -543,6 +543,25 @@
         "l_1_desc": "一起嘻嘻哈哈",
         "l_2_event": "",
         "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際友誼日",
+      "year": "2024",
+      "month": "7",
+      "date": "30",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "與朋友聯絡",
+        "l_1_desc": "回憶美好時光",
+        "l_2_event": "一起出遊",
+        "l_2_desc": "增進彼此的感情"
       },
       "badFortunes": {
         "r_1_event": "",
