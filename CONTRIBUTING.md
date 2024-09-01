@@ -4,7 +4,18 @@
 
 ### Fortune Events and Descriptions
 
-1. Event Structure - Each fortune event should be added as new JSON object with the following structure:
+1. Fortune Type:
+    - Good fortunes
+        - These should be added under the `"goodFortunes"` section in the JSON file.
+        - Represent positive or beneficial events.
+    - Bad fortunes
+        - These should be added under the `"badFortunes"` section in the JSON file.
+        - Represent challenging or less favorable events.
+
+2. Unique Content:
+    - Ensure your event and descriptions are original and not repeated in existing entries.
+
+3. Event Structure - Each fortune event should be added as new JSON object with the following structure:
     ```json
     {
       "event": "Event Name",
@@ -45,6 +56,8 @@ Special events require a more detailed structure.
       }
     }
     ```
+
+2. Empty Fields: If there are no fortunes to add, leave the corresponding fields as empty strings (`""`).
 
 ## Quote Generator
 
