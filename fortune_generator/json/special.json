@@ -626,6 +626,82 @@
         "r_2_event": "",
         "r_2_desc": ""
       }
+    },
+    {
+      "event": "國際慈善日",
+      "year": "2024",
+      "month": "9",
+      "date": "5",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "捐贈物資",
+        "l_1_desc": "捐贈物資或金錢，幫助有需要的人",
+        "l_2_event": "參與志願活動",
+        "l_2_desc": "參加社區慈善活動，提升社會貢獻"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "中秋節",
+      "year": "2024",
+      "month": "9",
+      "date": "17",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "賞月",
+        "l_1_desc": "與家人一同賞月，增進感情",
+        "l_2_event": "吃月餅",
+        "l_2_desc": "與家人朋友分享月餅的美味"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際和平日",
+      "year": "2024",
+      "month": "9",
+      "date": "21",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "分享愛心",
+        "l_1_desc": "與他人分享關懷與愛心，促進和平",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "教師節",
+      "year": "2024",
+      "month": "9",
+      "date": "28",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "感謝老師",
+        "l_1_desc": "向老師表達感謝，增進師生情誼",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
     }
   ]
 }
