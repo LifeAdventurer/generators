@@ -702,6 +702,63 @@
         "r_2_event": "",
         "r_2_desc": ""
       }
+    },
+    {
+      "event": "世界糧食日",
+      "year": "2024",
+      "month": "10",
+      "date": "16",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "節約糧食",
+        "l_1_desc": "支持可持續的食物系統",
+        "l_2_event": "捐贈食品",
+        "l_2_desc": "捐贈食物給有需要的人，傳遞愛心"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "聯合國日",
+      "year": "2024",
+      "month": "10",
+      "date": "24",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "支持和平",
+        "l_1_desc": "參與促進世界和平的活動",
+        "l_2_event": "了解國際事務",
+        "l_2_desc": "增強全球視野"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "萬聖節",
+      "year": "2024",
+      "month": "10",
+      "date": "31",
+      "status_index": "4",
+      "goodFortunes": {
+        "l_1_event": "扮演角色",
+        "l_1_desc": "穿上喜愛的角色服裝，享受萬聖節的氛圍",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "忽略安全",
+        "r_2_desc": "活動時忽視安全措施可能帶來風險"
+      }
     }
   ]
 }
