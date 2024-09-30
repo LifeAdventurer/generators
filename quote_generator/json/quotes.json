@@ -1,5 +1,5 @@
 {
-  "quotes" : [
+  "quotes": [
     {
       "quote": "To AC is human. To AK divine.",
       "author": "Moon",
@@ -59,47 +59,47 @@
       "quote": "Beneath the winter, you can feel the bone structure of the landscape, and the whole story doesn't show.",
       "author": "Andrew Wyeth",
       "id": 12
-    }, 
+    },
     {
       "quote": "I had been educated in the rhythms of the mountain, in which change was never fundamental, only cyclical.",
       "author": "Tara Westover",
       "id": 13
-    }, 
+    },
     {
       "quote": "When you look at the stars, if feels like you are not from any particular piece of land, but from the solar system.",
       "author": "Kalpana Chawla",
       "id": 14
-    }, 
+    },
     {
       "quote": "Not all those who wander are lost.",
       "author": "J. R. R. Tolkien",
       "id": 15
-    }, 
+    },
     {
       "quote": "What then is time? If no one asks me, I know what it is. If I wish to explain it to him who asks, I do not know.",
       "author": "Saint Augustine",
       "id": 16
-    }, 
+    },
     {
       "quote": "Change your opinions, keep to your principles; change your leaves, keep intact your roots.",
       "author": "Victor Hugo",
       "id": 17
-    }, 
+    },
     {
       "quote": "Patience is not simply the ability to wait, it's how we behave while we're waiting.",
       "author": "Joyce Meyer",
       "id": 18
-    }, 
+    },
     {
       "quote": "A rolling stone gathers no moss, but it gains a certain polish.",
       "author": "Oliver Herford",
       "id": 19
-    }, 
+    },
     {
       "quote": "I decided to fly through the air, live in the sunlight and enjoy life as much as I could.",
       "author": "Evel Knievel",
       "id": 20
-    }, 
+    },
     {
       "quote": "Be a life long or short, its completeness depends on what it was lived for.",
       "author": "David Starr Jordan",
@@ -329,6 +329,51 @@
       "quote": "To live means to be aware, joyously, drunkenly, serenely, divinely aware.",
       "author": "Henry Miller",
       "id": 66
+    },
+    {
+      "quote": "The only limit to our realization of tomorrow is our doubts of today.",
+      "author": "Franklin D. Roosevelt",
+      "id": 67
+    },
+    {
+      "quote": "The choices you make from this day forward will lead you, step by step, to the future you deserve.",
+      "author": "Chris Murray",
+      "id": 68
+    },
+    {
+      "quote": "I am in the right place at the right time, and everything happens at the exactly right moment.",
+      "author": "Charlie Chaplin",
+      "id": 69
+    },
+    {
+      "quote": "I will not be \"famous,\" \"great.\" I will go on adventuring, changing, opening my mind and my eye.",
+      "author": "Virginia Woolf",
+      "id": 70
+    },
+    {
+      "quote": "When I am well-rested and focused on things that truly interest me, time often ceases to be an issue.",
+      "author": "James Clear",
+      "id": 71
+    },
+    {
+      "quote": "When you're no longer thinking ahead, each footstep isn't just a means to an end but an unique event in itself.",
+      "author": "Robert M. Pirsig",
+      "id": 72
+    },
+    {
+      "quote": "As long as the night lasts, I shall dance in the sky With all the dying fireworks of the light.",
+      "author": "Carl Sandburg",
+      "id": 73
+    },
+    {
+      "quote": "Your vision will become clear only when you can look into your own heart.",
+      "author": "Carl Jung",
+      "id": 74
+    },
+    {
+      "quote": "The goldenrod is yellow, the corn is turning brown, the trees in apple orchards with fruit are bending down.",
+      "author": "Helen Hunt Jackson",
+      "id": 75
     }
   ]
 }
