@@ -19,3 +19,7 @@ Please refer to [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 [Quote Generator]: https://lifeadventurer.github.io/generators/quote_generator
 [Fortune Generator]: https://lifeadventurer.github.io/generators/fortune_generator
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the [LICENSE](./LICENSE) file for more details.
