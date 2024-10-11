@@ -8,7 +8,7 @@ fetch("https://api.ipify.org?format=json").then(response => {
 }).then(res => {
   ip = res.ip;
 
-}).catch(error => {
+}).catch(_error => {
   if ('caches' in window) {
     caches.match('https://api.ipify.org?format=json').then(response => {
       if (response) {
@@ -101,8 +101,8 @@ async function init_page() {
   $('#date').html(showDate);
   $('#weekday').html(showDay);
   
-  let showSpecialEventCount = 2, eventIndexPtr = 0;
-  let eventIndexList = Array(showSpecialEventCount).fill(-1);
+  const showSpecialEventCount = 2, eventIndexPtr = 0;
+  const eventIndexList = Array(showSpecialEventCount).fill(-1);
   // check if there is special event today
   for (let i = 0; i < special_events.length; i++) {
     if (daysDiff(i) > 0) {
@@ -118,22 +118,22 @@ async function init_page() {
   // if there is upcoming event then show
   for (let eventIndex = 0; eventIndex < showSpecialEventCount; eventIndex++) {
     if (eventIndexList[eventIndex] != -1) {
-      let days = daysDiff(eventIndexList[eventIndex]);
-      let upcoming_event = `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${special_events[eventIndexList[eventIndex]].event}</b>還剩<b class="special-event">${days}</b>天</span>`; 
+      const days = daysDiff(eventIndexList[eventIndex]);
+      const upcoming_event = `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${special_events[eventIndexList[eventIndex]].event}</b>還剩<b class="special-event">${days}</b>天</span>`; 
       $(`#upcoming-event-${eventIndex + 1}`).html(upcoming_event)
     }
   }
 
   // show special event if today is a special day
   if (special) {
-    let special_event_today = `<span class="desc" style="font-size:9vmin;">今日是<b class="good-fortune">${special_events[special_events_index].event}</b></span>`;
+    const special_event_today = `<span class="desc" style="font-size:9vmin;">今日是<b class="good-fortune">${special_events[special_events_index].event}</b></span>`;
     $('#special-day').html(special_event_today);
   }
 
-  let last_date_str = localStorage.getItem('last_date');
+  const last_date_str = localStorage.getItem('last_date');
   if (last_date_str !== null && last_date_str !== undefined) {
-    let now_date = new Date();
-    let last_date = new Date(last_date_str);
+    const now_date = new Date();
+    const last_date = new Date(last_date_str);
     
     if (now_date.getFullYear() === last_date.getFullYear() && now_date.getMonth() === last_date.getMonth() && now_date.getDate() === last_date.getDate()) {
       fortune_generated = true;
@@ -167,10 +167,10 @@ function Appear() {
 
   if (!fortune_generated) {
     // transform ip to four numbers
-    let num = ip.split(".").map(num => parseInt(num));
+    const num = ip.split(".").map(num => parseInt(num));
 
     // TODO: improve the hash process
-    let hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + day - 1)) * (date << Math.log10(num[2] << day)))));
+    const hashDate = Math.round(Math.log10(year * ((month << (Math.log10(num[3]) + day - 1)) * (date << Math.log10(num[2] << day)))));
     seed1 = (num[0] >> hashDate) * (num[1] >> Math.min(hashDate, 2)) + (num[2] << 1) * (num[3] >> 3) + (date << 3) * (month << hashDate) + (year * day) >> 2;
     seed2 = (num[0] << (hashDate + 2)) * (num[1] << hashDate) + (num[2] << 1) * (num[3] << 2) + (date << (hashDate - 1)) * (month << 4) + year >> hashDate + (date * day) >> 1;
 
@@ -188,11 +188,11 @@ function Appear() {
     seed2 = parseInt(localStorage.getItem('last_seed2'));
   }
   
-  let status = `<span class=${textColorClass[status_index]} style="font-size:12vmin;"><b>§ ${fortuneStatus[status_index]} §</b></span>`;
+  const status = `<span class=${textColorClass[status_index]} style="font-size:12vmin;"><b>§ ${fortuneStatus[status_index]} §</b></span>`;
   
   if (special) {
     status_index = special_events[special_events_index].status_index;
-    let special_status = `<span class=${textColorClass[status_index]} style="font-size:12vmin;"><b>§ ${fortuneStatus[status_index]} §</b></span>`;
+    const special_status = `<span class=${textColorClass[status_index]} style="font-size:12vmin;"><b>§ ${fortuneStatus[status_index]} §</b></span>`;
     J_ip_to_fortune.html(special_status);
   }
   else {
@@ -200,8 +200,8 @@ function Appear() {
   }
 
   // make sure the events won't collide
-  let set = new Set();
-  let l1 = (seed1 % goodLen + goodLen) % goodLen;
+  const set = new Set();
+  const l1 = (seed1 % goodLen + goodLen) % goodLen;
   set.add(goodFortunes[l1].event);
   let l2 = (((seed1 << 1) + date) % goodLen + goodLen) % goodLen;
   while (set.has(goodFortunes[l2].event)) {
@@ -223,18 +223,18 @@ function Appear() {
   const l2_desc_list = goodFortunes[l2].description;
   const r1_desc_list = badFortunes[r1].description;
   const r2_desc_list = badFortunes[r2].description;
-  let l_1_event = good_span(goodFortunes[l1].event);
-  let l_1_desc = desc_span(l1_desc_list[Math.abs(seed1) % l1_desc_list.length]);
-  let l_2_event = good_span(goodFortunes[l2].event);
-  let l_2_desc = desc_span(l2_desc_list[Math.abs(seed2) % l2_desc_list.length]);
-  let r_1_event = bad_span(badFortunes[r1].event);
-  let r_1_desc = desc_span(r1_desc_list[Math.abs(seed1) % r1_desc_list.length]);
-  let r_2_event = bad_span(badFortunes[r2].event);
-  let r_2_desc = desc_span(r2_desc_list[Math.abs(seed2) % r2_desc_list.length]);
+  const l_1_event = good_span(goodFortunes[l1].event);
+  const l_1_desc = desc_span(l1_desc_list[Math.abs(seed1) % l1_desc_list.length]);
+  const l_2_event = good_span(goodFortunes[l2].event);
+  const l_2_desc = desc_span(l2_desc_list[Math.abs(seed2) % l2_desc_list.length]);
+  const r_1_event = bad_span(badFortunes[r1].event);
+  const r_1_desc = desc_span(r1_desc_list[Math.abs(seed1) % r1_desc_list.length]);
+  const r_2_event = bad_span(badFortunes[r2].event);
+  const r_2_desc = desc_span(r2_desc_list[Math.abs(seed2) % r2_desc_list.length]);
 
   if (special) {
     // instead clear variable name, use short variable name for here... cuz it's too repetitive
-    let Data = special_events[special_events_index];
+    const Data = special_events[special_events_index];
     if (status_index == 0) {
       J_r_1_event.html(allGood);
     } else {

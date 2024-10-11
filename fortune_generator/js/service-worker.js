@@ -1,5 +1,5 @@
-let pre_cache_file_version = 'pre-v1.1.0';
-let auto_cache_file_version = 'auto-v1.1.0'
+const pre_cache_file_version = 'pre-v1.1.0';
+const auto_cache_file_version = 'auto-v1.1.0'
 
 const ASSETS = [
   '/generators/images/lifeadventurer-192x192.png',
@@ -24,7 +24,7 @@ const NEED_UPDATE = [
   'https://api.ipify.org/?format=json',
 ]
 
-let limit_cache_size = (name, size) => {
+const limit_cache_size = (name, size) => {
   caches.open(name).then(cache => {
     cache.keys().then(keys => {
       if (keys.length > size) {
@@ -36,7 +36,7 @@ let limit_cache_size = (name, size) => {
   });
 };
 
-let is_in_array = (str, array) => {
+const is_in_array = (str, array) => {
   let path = '';
   
   // Check the request's domain is the same as the current domain.
@@ -93,7 +93,7 @@ self.addEventListener('fetch', event => {
 
         throw new Error("Network response was not ok.");
 
-      }).catch(async error => {
+      }).catch(async _error => {
         const cache = await caches.open(auto_cache_file_version);
         return cache.match(event.request.url);
       })

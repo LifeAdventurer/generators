@@ -1,4 +1,4 @@
-let darkModeIcon = document.querySelector('#dark-mode-icon');
+const darkModeIcon = document.querySelector('#dark-mode-icon');
 
 darkModeIcon.onclick = () => {
     darkModeIcon.classList.toggle('bx-sun');

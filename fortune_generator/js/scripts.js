@@ -7,7 +7,7 @@ darkModeIcon.onclick = () => {
 
 function copyResultImageToClipboard() {
   try {
-    let $title = $('#title').clone().wrap('<div class="row"></div>');
+    const $title = $('#title').clone().wrap('<div class="row"></div>');
     $('#result-page').prepend($title.parent());
 
     const backgroundColor = getComputedStyle($('.container')[0]).backgroundColor;

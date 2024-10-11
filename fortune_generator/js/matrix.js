@@ -25,7 +25,7 @@ function Update() {
   context.fillRect(0, 0, canvas.width, canvas.height);
   
   if (frame == 0) {
-    let a = parseInt(Math.random() * 255);
+    const a = parseInt(Math.random() * 255);
     str = `rgba(${a}, ${Math.abs(a - 127)}, ${Math.abs(a - 255)}, 0.9)`;
   }
   context.fillStyle = str;

@@ -14,14 +14,14 @@ async function get_generator_card_footer() {
   const repoOwner = 'LifeAdventurer'; 
   const repoName = 'generators'; 
   for (let folderIndex = 1; folderIndex <= folderPaths.length; folderIndex++) {
-    let folderPath = folderPaths[folderIndex - 1];
+    const folderPath = folderPaths[folderIndex - 1];
     const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?path=${folderPath}`;
 
     fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
       // the latest commit will be at the top of the list
-      let lastCommit = data[0].commit.author.date; 
+      const lastCommit = data[0].commit.author.date; 
       const commitTimeStamp = new Date(lastCommit).getTime() / 1000;
       const currentTimeStamp = Math.floor(new Date().getTime() / 1000);
       const timeDifference = currentTimeStamp - commitTimeStamp;
@@ -51,7 +51,7 @@ function format_time_difference(seconds) {
 
 get_generator_card_footer()
 
-let darkModeIcon = document.querySelector('#dark-mode-icon');
+const darkModeIcon = document.querySelector('#dark-mode-icon');
 
 darkModeIcon.onclick = () => {
     darkModeIcon.classList.toggle('bx-sun');
