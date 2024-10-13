@@ -101,8 +101,8 @@ async function init_page() {
   $('#date').html(showDate);
   $('#weekday').html(showDay);
   
-  const showSpecialEventCount = 2, eventIndexPtr = 0;
-  const eventIndexList = Array(showSpecialEventCount).fill(-1);
+  const showSpecialEventCount = 2;
+  let eventIndexPtr = 0, eventIndexList = Array(showSpecialEventCount).fill(-1);
   // check if there is special event today
   for (let i = 0; i < special_events.length; i++) {
     if (daysDiff(i) > 0) {
