@@ -5,11 +5,10 @@ const buttonElement = document.querySelector("button");
 let quotes = [];
 
 fetch("./json/quotes.json")
-.then(response => response.json())
-.then(data => {
-  quotes = data.quotes;
-});
-
+  .then((response) => response.json())
+  .then((data) => {
+    quotes = data.quotes;
+  });
 
 function Appear() {
   const index = Math.floor(Math.random() * quotes.length);
@@ -24,7 +23,6 @@ function Appear() {
   const numDarkImages = 0;
   const numLightImages = 0;
 
-
   if (numDarkImages && numLightImages) {
     const isDark = Math.random() < 0.5;
     let randomIndex, randomImage;
@@ -33,7 +31,7 @@ function Appear() {
     if (isDark) {
       randomIndex = Math.floor(Math.random() * numDarkImages) + 1;
       randomImage = folderPath + "dark/" + randomIndex + ".jpg";
-      darkModeIcon.onclick()
+      darkModeIcon.onclick();
     } else {
       randomIndex = Math.floor(Math.random() * numLightImages) + 1;
       randomImage = folderPath + "light/" + randomIndex + ".jpg";

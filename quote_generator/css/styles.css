@@ -1,5 +1,5 @@
 :root {
-  --button-color: #9DC4FF;
+  --button-color: #9dc4ff;
   --button-hover-color: #5ca8f3;
   --bg-color: #ffffffd7;
   --text-color: #000000;
@@ -18,7 +18,7 @@ html {
   height: 100%;
   text-align: center;
   overflow: hidden;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 24px;
 }
 
@@ -66,7 +66,7 @@ button {
   padding: 17px 20px;
   border-radius: 30px;
   cursor: pointer;
-  transition:  all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 button:hover {

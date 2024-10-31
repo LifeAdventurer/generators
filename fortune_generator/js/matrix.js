@@ -1,13 +1,14 @@
-const canvas = document.getElementById("Matrix")
-const context = canvas.getContext("2d")
+const canvas = document.getElementById("Matrix");
+const context = canvas.getContext("2d");
 
-canvas.height = window.innerHeight + 100;
-canvas.width = window.innerWidth + 5;
+canvas.height = globalThis.innerHeight + 100;
+canvas.width = globalThis.innerWidth + 5;
 
-const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./*-+#$%^@!~?><:;[]{}=_αβΓγΔδεζηΘθικΛλμΞξΠπρΣσςτυΦφχΨψΩω×≦≧≠∞≒≡～∩∠∪∟⊿∫∮∵∴＄￥〒￠￡℃€℉╩◢ⅩⅨⅧⅦⅥⅤⅣⅢⅡⅠあいうえおがぎぐげござじずぜぞだぢつでづどにぬのばひぴぶへぺぼみゃょァゐゎè";
+const chars =
+  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./*-+#$%^@!~?><:;[]{}=_αβΓγΔδεζηΘθικΛλμΞξΠπρΣσςτυΦφχΨψΩω×≦≧≠∞≒≡～∩∠∪∟⊿∫∮∵∴＄￥〒￠￡℃€℉╩◢ⅩⅨⅧⅦⅥⅤⅣⅢⅡⅠあいうえおがぎぐげござじずぜぞだぢつでづどにぬのばひぴぶへぺぼみゃょァゐゎè";
 
 const fontSize = 16;
-const columns = canvas.width / fontSize; 
+const columns = canvas.width / fontSize;
 
 const charArr = [];
 for (let i = 0; i < columns; i++) {
@@ -23,14 +24,14 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 function Update() {
   context.fillStyle = "rgba(0, 0, 0, 0.05)";
   context.fillRect(0, 0, canvas.width, canvas.height);
-  
+
   if (frame == 0) {
     const a = parseInt(Math.random() * 255);
     str = `rgba(${a}, ${Math.abs(a - 127)}, ${Math.abs(a - 255)}, 0.9)`;
   }
   context.fillStyle = str;
   context.font = fontSize + "px monospace";
-  
+
   for (let i = 0; i < columns; i++) {
     const text = chars[Math.floor(Math.random() * chars.length)];
     context.fillText(text, i * fontSize, charArr[i] * fontSize);
@@ -39,7 +40,7 @@ function Update() {
     }
     charArr[i]++;
   }
-  
+
   frame++;
   if (frame <= 40 * (Math.floor(Math.random() * 10) + 3)) {
     requestAnimationFrame(Update); // 40 frames a cycle

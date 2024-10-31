@@ -64,7 +64,7 @@ h5 {
 
 .card-footer {
   background-color: var(--card-footer-color);
-  color: var(--card-footer-text-color); 
+  color: var(--card-footer-text-color);
 }
 
 #footer-author {

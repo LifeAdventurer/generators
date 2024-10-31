@@ -1,13 +1,14 @@
-const canvas = document.getElementById("Matrix")
-const context = canvas.getContext("2d")
+const canvas = document.getElementById("Matrix");
+const context = canvas.getContext("2d");
 
-canvas.height = window.innerHeight + 100;
-canvas.width = window.innerWidth + 5;
+canvas.height = globalThis.innerHeight + 100;
+canvas.width = globalThis.innerWidth + 5;
 
-const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./*-+#$%^@!~?><:;[]{}=_αβΓγΔδεζηΘθικΛλμΞξΠπρΣσςτυΦφχΨψΩω×≦≧≠∞≒≡～∩∠∪∟⊿∫∮∵∴＄￥〒￠￡℃€℉╩◢ⅩⅨⅧⅦⅥⅤⅣⅢⅡⅠあいうえおがぎぐげござじずぜぞだぢつでづどにぬのばひぴぶへぺぼみゃょァゐゎè";
+const chars =
+  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./*-+#$%^@!~?><:;[]{}=_αβΓγΔδεζηΘθικΛλμΞξΠπρΣσςτυΦφχΨψΩω×≦≧≠∞≒≡～∩∠∪∟⊿∫∮∵∴＄￥〒￠￡℃€℉╩◢ⅩⅨⅧⅦⅥⅤⅣⅢⅡⅠあいうえおがぎぐげござじずぜぞだぢつでづどにぬのばひぴぶへぺぼみゃょァゐゎè";
 
 const fontSize = 16;
-const columns = canvas.width / fontSize; 
+const columns = canvas.width / fontSize;
 
 const charArr = [];
 for (let i = 0; i < columns; i++) {
@@ -30,7 +31,7 @@ function Update() {
   }
   context.fillStyle = str;
   context.font = fontSize + "px monospace";
-  
+
   for (let i = 0; i < columns; i++) {
     const text = chars[Math.floor(Math.random() * chars.length)];
     context.fillText(text, i * fontSize, charArr[i] * fontSize);

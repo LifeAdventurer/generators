@@ -1,14 +1,14 @@
 :root {
   --button-color: #73a3eb;
   --button-hover-color: #459aef;
-  --bg-color: #FFFFFF;
+  --bg-color: #ffffff;
   --good-fortune-color: #e74c3c;
   --bad-fortune-color: #000000bf;
   --middle-fortune-color: #5eb95e;
   --desc-color: #7f7f7f;
-  --date-color: #096e1bC9;
+  --date-color: #096e1bc9;
   --special-event-color: #3e4fbb;
-  --title-color: #000000CC;
+  --title-color: #000000cc;
 }
 
 .dark-mode {
@@ -24,7 +24,6 @@
   --dark-mode-icon-color: #ffffff;
   --title-color: #cdcdcd;
 }
-
 
 * {
   overflow: hidden;
