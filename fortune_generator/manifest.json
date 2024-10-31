@@ -1,32 +1,32 @@
 {
-    "short_name": "Fortune Generator",
-    "name": "Fortune Generator",
-    "description": "Get your daily fortune with just a click.",
-    "background_color": "#1a1b1e",
-    "theme_color": "#1a1b1e",
-    "icons": [
-        {
-            "src": "../images/lifeadventurer-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "../images/lifeadventurer-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        },
-        {
-            "src": "../images/lifeadventurer-180x180.png",
-            "sizes": "180x180",
-            "type": "image/png"
-        },
-        {
-            "src": "../images/lifeadventurer-270x270.png",
-            "sizes": "270x270",
-            "type": "image/png"
-        }
-    ],
-    "start_url": "/generators/fortune_generator/index.html",
-    "display": "standalone",
-    "orientation": "portrait"
+  "short_name": "Fortune Generator",
+  "name": "Fortune Generator",
+  "description": "Get your daily fortune with just a click.",
+  "background_color": "#1a1b1e",
+  "theme_color": "#1a1b1e",
+  "icons": [
+    {
+      "src": "../images/lifeadventurer-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../images/lifeadventurer-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "../images/lifeadventurer-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "../images/lifeadventurer-270x270.png",
+      "sizes": "270x270",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/fortune_generator/index.html",
+  "display": "standalone",
+  "orientation": "portrait"
 }

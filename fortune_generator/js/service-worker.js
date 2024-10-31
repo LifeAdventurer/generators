@@ -2,25 +2,25 @@ const pre_cache_file_version = 'pre-v1.1.0';
 const auto_cache_file_version = 'auto-v1.1.0'
 
 const ASSETS = [
-  '/generators/images/lifeadventurer-192x192.png',
-  '/generators/images/lifeadventurer-512x512.png',
-  '/generators/images/lifeadventurer-180x180.png',
-  '/generators/images/lifeadventurer-270x270.png',
-  '/generators/images/lifeadventurer.jpg',
+  '/images/lifeadventurer-192x192.png',
+  '/images/lifeadventurer-512x512.png',
+  '/images/lifeadventurer-180x180.png',
+  '/images/lifeadventurer-270x270.png',
+  '/images/lifeadventurer.jpg',
 
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css',
   'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'
 ];
 
 const NEED_UPDATE = [
-  '/generators/fortune_generator/',
-  '/generators/fortune_generator/index.html',
-  '/generators/fortune_generator/css/styles.css',
-  '/generators/fortune_generator/js/fortune.js',
-  '/generators/fortune_generator/js/matrix.js',
-  '/generators/fortune_generator/json/special.json',
-  '/generators/fortune_generator/json/fortune.json',
-  '/generators/fortune_generator/json/manifest.json',
+  '/fortune_generator/',
+  '/fortune_generator/index.html',
+  '/fortune_generator/css/styles.css',
+  '/fortune_generator/js/fortune.js',
+  '/fortune_generator/js/matrix.js',
+  '/fortune_generator/json/special.json',
+  '/fortune_generator/json/fortune.json',
+  '/fortune_generator/json/manifest.json',
   'https://api.ipify.org/?format=json',
 ]
 
