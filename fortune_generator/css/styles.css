@@ -126,6 +126,13 @@ button:hover {
   color: var(--title-color);
 }
 
+.color-preview-container {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 25px;
+}
+
 .color-preview {
   display: flex; /* Use flex to align dots in a row */
 }
