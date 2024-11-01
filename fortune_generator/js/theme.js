@@ -27,6 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
       themeName.textContent = theme.name;
       themeItem.appendChild(themeName);
 
+      // Add color dots for visual preview
+      const colorPreview = document.createElement("div");
+      colorPreview.className = "color-preview";
+      Object.values(theme.properties).slice(0, 3).forEach((color) => {
+        const colorDot = document.createElement("span");
+        colorDot.style.backgroundColor = color;
+        colorDot.className = "color-dot";
+        colorPreview.appendChild(colorDot);
+      });
+      themeItem.appendChild(colorPreview);
+
       // Apply theme on click
       themeItem.addEventListener("click", () => applyTheme(theme.properties));
 

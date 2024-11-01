@@ -125,3 +125,15 @@ button:hover {
   background-color: var(--bg-color);
   color: var(--title-color);
 }
+
+.color-preview {
+  display: flex; /* Use flex to align dots in a row */
+}
+
+.color-dot {
+  display: inline-block;
+  width: 12px; /* Dot size */
+  height: 12px; /* Dot size */
+  border-radius: 50%; /* Circular shape */
+  margin-left: 5px; /* Spacing between dots */
+}
