@@ -759,6 +759,44 @@
         "r_2_event": "忽略安全",
         "r_2_desc": "活動時忽視安全措施可能帶來風險"
       }
+    },
+    {
+      "event": "世界善心日",
+      "year": "2024",
+      "month": "11",
+      "date": "13",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "善待他人",
+        "l_1_desc": "在生活中多一些善意與寬容",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "感恩節",
+      "year": "2024",
+      "month": "11",
+      "date": "28",
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "家人團聚",
+        "l_1_desc": "共享寶貴時光",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
     }
   ]
 }
