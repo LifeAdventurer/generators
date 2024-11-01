@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const propertyKeys = Object.keys(theme.properties);
       colorPreivewContainer.style.backgroundColor =
-        theme.properties[propertyKeys[3]];
+        theme.properties[propertyKeys[5]];
 
       // Add color dots for visual preview
       const colorPreview = document.createElement("div");

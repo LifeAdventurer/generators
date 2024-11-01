@@ -6,15 +6,15 @@
         "bg-color": "#ffffff",
         "good-fortune-color": "#e74c3c",
         "bad-fortune-color": "#000000bf",
+        "middle-fortune-color": "#5eb95e",
+        "title-color": "#000000cc",
         "desc-color": "#7f7f7f",
         "button-color": "#73a3eb",
         "button-hover-color": "#459aef",
         "toggle-theme-button-color": "#000000",
         "copy-result-button-color": "#000000",
-        "middle-fortune-color": "#5eb95e",
         "date-color": "#096e1bc9",
-        "special-event-color": "#3e4fbb",
-        "title-color": "#000000cc"
+        "special-event-color": "#3e4fbb"
       }
     },
     {
@@ -23,15 +23,15 @@
         "bg-color": "#1e1d24",
         "good-fortune-color": "#e74c3c",
         "bad-fortune-color": "#d4d4d4d9",
+        "middle-fortune-color": "#57c857",
+        "title-color": "#cdcdcd",
         "desc-color": "#838282",
         "button-color": "#5d99f4",
         "button-hover-color": "#9ac6f1",
         "toggle-theme-button-color": "#ffffff",
         "copy-result-button-color": "#ffffff",
-        "middle-fortune-color": "#57c857",
         "date-color": "#0ed64aed",
-        "special-event-color": "#6477f3",
-        "title-color": "#cdcdcd"
+        "special-event-color": "#6477f3"
       }
     },
     {
@@ -40,15 +40,15 @@
         "bg-color": "#dce9ef",
         "good-fortune-color": "#1683b0",
         "bad-fortune-color": "#C57e4D",
+        "middle-fortune-color": "#cfbbc0",
+        "title-color": "#91c9df",
         "desc-color": "#726D63",
         "button-color": "#9577f8",
         "button-hover-color": "#9ac6f1",
         "toggle-theme-button-color": "#7c6543",
         "copy-result-button-color": "#63835f",
-        "middle-fortune-color": "#cfbbc0",
         "date-color": "#cc99ff",
-        "special-event-color": "#8ddbf2",
-        "title-color": "#91c9df"
+        "special-event-color": "#8ddbf2"
       }
     }
   ]
