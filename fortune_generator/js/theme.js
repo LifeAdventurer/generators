@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeListContainer = document.querySelector("#themeList");
   const root = document.documentElement;
 
+  // Apply the saved theme if it exists
+  applySavedTheme();
+
   async function fetchThemes() {
     try {
       const response = await fetch("./json/themes.json");
@@ -49,7 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
       themeItem.appendChild(colorPreivewContainer);
 
       // Apply theme on click
-      themeItem.addEventListener("click", () => applyTheme(theme.properties));
+      themeItem.addEventListener("click", () => {
+        applyTheme(theme.properties);
+        saveThemeToLocalStorage(theme.name);
+      });
 
       themeListContainer.appendChild(themeItem);
     });
@@ -60,6 +66,25 @@ document.addEventListener("DOMContentLoaded", () => {
     Object.entries(properties).forEach(([key, value]) => {
       root.style.setProperty(`--${key}`, value);
     });
+  }
+
+  function saveThemeToLocalStorage(themeName) {
+    localStorage.setItem("selectedTheme", themeName);
+  }
+
+  function applySavedTheme() {
+    const savedThemeName = localStorage.getItem("selectedTheme");
+    if (savedThemeName) {
+      fetch("./json/themes.json")
+        .then((response) => response.json())
+        .then((themes) => {
+          const theme = themes.themes.find((t) => t.name === savedThemeName);
+          if (theme) {
+            applyTheme(theme.properties);
+          }
+        })
+        .catch((error) => console.error("Error fetching themes:", error));
+    }
   }
 
   fetchThemes();
