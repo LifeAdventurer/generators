@@ -144,3 +144,7 @@ button:hover {
   border-radius: 50%; /* Circular shape */
   margin-left: 5px; /* Spacing between dots */
 }
+
+.color-preview .color-dot:first-child {
+  margin-left: 0; /* No margin on the left for the first dot */
+}
