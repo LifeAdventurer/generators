@@ -1,0 +1,38 @@
+{
+  "themes": [
+    {
+      "name": "light",
+      "properties": {
+        "bg-color": "#ffffff",
+        "good-fortune-color": "#e74c3c",
+        "bad-fortune-color": "#000000bf",
+        "desc-color": "#7f7f7f",
+        "button-color": "#73a3eb",
+        "button-hover-color": "#459aef",
+        "toggle-theme-button-color": "#000000",
+        "copy-result-button-color": "#000000",
+        "middle-fortune-color": "#5eb95e",
+        "date-color": "#096e1bc9",
+        "special-event-color": "#3e4fbb",
+        "title-color": "#000000cc"
+      }
+    },
+    {
+      "name": "dark",
+      "properties": {
+        "bg-color": "#1e1d24",
+        "good-fortune-color": "#e74c3c",
+        "bad-fortune-color": "#d4d4d4d9",
+        "desc-color": "#838282",
+        "button-color": "#5d99f4",
+        "button-hover-color": "#9ac6f1",
+        "toggle-theme-button-color": "#ffffff",
+        "copy-result-button-color": "#ffffff",
+        "middle-fortune-color": "#57c857",
+        "date-color": "#0ed64aed",
+        "special-event-color": "#6477f3",
+        "title-color": "#cdcdcd"
+      }
+    }
+  ]
+}

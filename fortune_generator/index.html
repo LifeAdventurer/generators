@@ -8,17 +8,11 @@
     <link rel="manifest" href="./manifest.json" />
     <!-- bootstrap -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <!-- box icons -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <!-- jquery -->
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     ></script>
@@ -40,6 +34,7 @@
       }
     </script>
   </head>
+
   <body>
     <div class="container">
       <div class="row">
@@ -116,15 +111,49 @@
       <!-- page after button click end -->
 
       <div class="row">
-        <i class="col-2 bx bx-moon" id="dark-mode-icon"></i>
+        <i
+          class="col-2 fas fa-palette"
+          id="toggle-theme-button"
+          data-bs-toggle="modal"
+          data-bs-target="#themeModal"
+        ></i>
         <button class="col-4 offset-2 bi bi-files" id="btn" onclick="getLuck()">
           點擊打卡
         </button>
         <i
           class="col-2 offset-2 fas fa-clone d-none"
-          id="copy-result"
+          id="copy-result-button"
           onclick="copyResultImageToClipboard()"
         ></i>
+      </div>
+    </div>
+
+    <!-- Theme Modal -->
+    <div
+      class="modal fade"
+      id="themeModal"
+      tabindex="-1"
+      aria-labelledby="themeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="themeModalLabel">Choose Theme</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group" id="themeList">
+              <!-- Theme items will be dynamically populated here -->
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -132,5 +161,17 @@
     <script src="./js/scripts.js"></script>
     <script src="./js/fortune.js"></script>
     <script src="./js/matrix.js"></script>
+    <script src="./js/theme.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

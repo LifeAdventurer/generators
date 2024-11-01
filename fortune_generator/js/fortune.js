@@ -373,7 +373,7 @@ function Appear() {
       J_l_2_desc.html(l_2_desc);
     }
   }
-  $("#copy-result").removeClass("d-none");
+  $("#copy-result-button").removeClass("d-none");
 }
 
 function getLuck() {
