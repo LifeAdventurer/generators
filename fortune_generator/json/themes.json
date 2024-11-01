@@ -33,6 +33,23 @@
         "special-event-color": "#6477f3",
         "title-color": "#cdcdcd"
       }
+    },
+    {
+      "name": "winter",
+      "properties": {
+        "bg-color": "#dce9ef",
+        "good-fortune-color": "#1683b0",
+        "bad-fortune-color": "#C57e4D",
+        "desc-color": "#726D63",
+        "button-color": "#9577f8",
+        "button-hover-color": "#9ac6f1",
+        "toggle-theme-button-color": "#7c6543",
+        "copy-result-button-color": "#63835f",
+        "middle-fortune-color": "#cfbbc0",
+        "date-color": "#cc99ff",
+        "special-event-color": "#8ddbf2",
+        "title-color": "#91c9df"
+      }
     }
   ]
 }
