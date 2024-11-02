@@ -63,6 +63,47 @@ Special events require a more detailed structure.
 2. Empty Fields: If there are no fortunes to add, leave the corresponding fields
    as empty strings (`""`).
 
+### Adding New Themes
+
+#### JSON Theme Structure
+
+When adding a new theme to `fortune_generator/json/themes.json`, follow this
+structure:
+
+```json
+{
+  "name": "theme_name",
+  "properties": {
+    "bg-color": "#hexcode",
+    "good-fortune-color": "#hexcode",
+    "bad-fortune-color": "#hexcode",
+    "middle-fortune-color": "#hexcode",
+    "title-color": "#hexcode",
+    "desc-color": "#hexcode",
+    "button-color": "#hexcode",
+    "button-hover-color": "#hexcode",
+    "toggle-theme-button-color": "#hexcode",
+    "copy-result-button-color": "#hexcode",
+    "date-color": "#hexcode",
+    "special-event-color": "#hexcode"
+  }
+}
+```
+
+#### Guidelines for Adding Themes
+
+1. Naming: Choose a unique and descriptive name for the theme.
+2. Properties:
+   - Ensure that all property values are in valid hexadecimal format (`#rrggbb`
+     or `#rrggbbaa` for transparency).
+   - Hex Format: Use lowercase for all hex color codes for consistency.
+   - Make sure the colors have sufficient contrast for readability.
+3. Consistency: Maintain a visually coherent set of colors.
+4. Testing: Preview your theme in the app to confirm that colors display as
+   expected and are user-friendly.
+5. Pull Request Naming:
+   - Use a clear PR name like `Impr(theme): Add {theme_name} theme`.
+
 ## Quote Generator
 
 ### Quotes
