@@ -1,7 +1,7 @@
 {
   "themes": [
     {
-      "name": "light",
+      "name": "Classic Light",
       "properties": {
         "bg-color": "#ffffff",
         "good-fortune-color": "#e74c3c",
@@ -18,7 +18,7 @@
       }
     },
     {
-      "name": "dark",
+      "name": "Classic Dark",
       "properties": {
         "bg-color": "#1e1d24",
         "good-fortune-color": "#e74c3c",
@@ -35,7 +35,7 @@
       }
     },
     {
-      "name": "winter",
+      "name": "Winter",
       "properties": {
         "bg-color": "#dce9ef",
         "good-fortune-color": "#91c9ef",
