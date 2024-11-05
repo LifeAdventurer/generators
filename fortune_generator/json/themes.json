@@ -67,6 +67,23 @@
         "date-color": "#ffe81f",
         "special-event-color": "#fc9c43"
       }
+    },
+    {
+      "name": "Catppuccin Dark",
+      "properties": {
+        "bg-color": "#1e1e2e",
+        "good-fortune-color": "#94e2d5",
+        "bad-fortune-color": "#f38ba8",
+        "middle-fortune-color": "#f9e2af",
+        "title-color": "#f5c2e7",
+        "desc-color": "#cdd6f4",
+        "button-color": "#b9fbc0",
+        "button-hover-color": "#a6e3a1",
+        "toggle-theme-button-color": "#f9e2af",
+        "copy-result-button-color": "#f38ba8",
+        "date-color": "#f5c2e7",
+        "special-event-color": "#fab387"
+      }
     }
   ]
 }
