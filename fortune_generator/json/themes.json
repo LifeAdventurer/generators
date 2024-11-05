@@ -84,6 +84,23 @@
         "date-color": "#f5c2e7",
         "special-event-color": "#fab387"
       }
+    },
+    {
+      "name": "Tokyo Night",
+      "properties": {
+        "bg-color": "#1a1b26",
+        "good-fortune-color": "#7dcfff",
+        "bad-fortune-color": "#ff5c8d",
+        "middle-fortune-color": "#e0af68",
+        "title-color": "#bb9af7",
+        "desc-color": "#c0caf5",
+        "button-color": "#6e6f8c",
+        "button-hover-color": "#5a5b7f",
+        "toggle-theme-button-color": "#7dcfff",
+        "copy-result-button-color": "#ff5c8d",
+        "date-color": "#ffbb93",
+        "special-event-color": "#f7768e"
+      }
     }
   ]
 }
