@@ -50,6 +50,23 @@
         "date-color": "#cc99ff",
         "special-event-color": "#8ddbf2"
       }
+    },
+    {
+      "name": "Star Wars",
+      "properties": {
+        "bg-color": "#262629",
+        "good-fortune-color": "#15f2fd",
+        "bad-fortune-color": "#ff212e",
+        "middle-fortune-color": "#f8ff2e",
+        "title-color": "#ffe81f",
+        "desc-color": "#c0c0c0",
+        "button-color": "#83e4e4",
+        "button-hover-color": "#449cbc",
+        "toggle-theme-button-color": "#15f2fd",
+        "copy-result-button-color": "#ff212e",
+        "date-color": "#ffe81f",
+        "special-event-color": "#fc9c43"
+      }
     }
   ]
 }
