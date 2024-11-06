@@ -126,6 +126,24 @@ button:hover {
   color: var(--title-color);
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--button-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover-color);
+}
+
 .color-preview-container {
   display: flex;
   align-items: center;
