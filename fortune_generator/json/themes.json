@@ -35,23 +35,6 @@
       }
     },
     {
-      "name": "Winter",
-      "properties": {
-        "bg-color": "#dce9ef",
-        "good-fortune-color": "#91c9ef",
-        "bad-fortune-color": "#c57e4d",
-        "middle-fortune-color": "#cfbbc0",
-        "title-color": "#ffc348",
-        "desc-color": "#726d63",
-        "button-color": "#7567b8aa",
-        "button-hover-color": "#7567b8dd",
-        "toggle-theme-button-color": "#7c6543",
-        "copy-result-button-color": "#63835f",
-        "date-color": "#cc99ff",
-        "special-event-color": "#8ddbf2"
-      }
-    },
-    {
       "name": "Star Wars",
       "properties": {
         "bg-color": "#262629",
@@ -117,6 +100,23 @@
         "copy-result-button-color": "#7a6e61",
         "date-color": "#e6b89c",
         "special-event-color": "#e8a87c"
+      }
+    },
+    {
+      "name": "Winter Wonderland",
+      "properties": {
+        "bg-color": "#e3f2fd",
+        "good-fortune-color": "#74b9ff",
+        "bad-fortune-color": "#6c5ce7",
+        "middle-fortune-color": "#81ecec",
+        "title-color": "#0984e3",
+        "desc-color": "#636e72",
+        "button-color": "#74b9ff",
+        "button-hover-color": "#a29bfe",
+        "toggle-theme-button-color": "#00b894",
+        "copy-result-button-color": "#0984e3",
+        "date-color": "#74b9ff",
+        "special-event-color": "#fdcb6e"
       }
     }
   ]
