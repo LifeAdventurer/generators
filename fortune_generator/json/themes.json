@@ -35,23 +35,6 @@
       }
     },
     {
-      "name": "Star Wars",
-      "properties": {
-        "bg-color": "#262629",
-        "good-fortune-color": "#15f2fd",
-        "bad-fortune-color": "#ff212e",
-        "middle-fortune-color": "#f8ff2e",
-        "title-color": "#ffe81f",
-        "desc-color": "#c0c0c0",
-        "button-color": "#83e4e4",
-        "button-hover-color": "#449cbc",
-        "toggle-theme-button-color": "#15f2fd",
-        "copy-result-button-color": "#ff212e",
-        "date-color": "#ffe81f",
-        "special-event-color": "#fc9c43"
-      }
-    },
-    {
       "name": "Catppuccin Dark",
       "properties": {
         "bg-color": "#1e1e2e",
@@ -185,6 +168,23 @@
         "copy-result-button-color": "#b56576",
         "date-color": "#d4d4dc",
         "special-event-color": "#ffb86c"
+      }
+    },
+    {
+      "name": "Galactic Glow",
+      "properties": {
+        "bg-color": "#1b1d2a",
+        "good-fortune-color": "#00eaff",
+        "bad-fortune-color": "#ff5555",
+        "middle-fortune-color": "#ffe347",
+        "title-color": "#ffe81f",
+        "desc-color": "#c4c7d1",
+        "button-color": "#3b3f58",
+        "button-hover-color": "#52577a",
+        "toggle-theme-button-color": "#00eaff",
+        "copy-result-button-color": "#ff5555",
+        "date-color": "#9aedfe",
+        "special-event-color": "#ffa07a"
       }
     }
   ]
