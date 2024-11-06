@@ -186,6 +186,23 @@
         "date-color": "#9aedfe",
         "special-event-color": "#ffa07a"
       }
+    },
+    {
+      "name": "Mystic Forest",
+      "properties": {
+        "bg-color": "#1c3b24",
+        "good-fortune-color": "#a1e887",
+        "bad-fortune-color": "#d94e3b",
+        "middle-fortune-color": "#83c5a3",
+        "title-color": "#e4f9e0",
+        "desc-color": "#b5c9b4",
+        "button-color": "#4a7a58",
+        "button-hover-color": "#6a9a76",
+        "toggle-theme-button-color": "#a1e887",
+        "copy-result-button-color": "#d94e3b",
+        "date-color": "#e4f9e0",
+        "special-event-color": "#9fd9b7"
+      }
     }
   ]
 }
