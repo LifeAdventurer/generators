@@ -220,6 +220,23 @@
         "date-color": "#7f6a5d",
         "special-event-color": "#c7ab93"
       }
+    },
+    {
+      "name": "Metallic Shine",
+      "properties": {
+        "bg-color": "#2c2f33",
+        "good-fortune-color": "#4e8c47",
+        "bad-fortune-color": "#d9534f",
+        "middle-fortune-color": "#f1c40f",
+        "title-color": "#bdc3c7",
+        "desc-color": "#95a5a6",
+        "button-color": "#3498db",
+        "button-hover-color": "#2980b9",
+        "toggle-theme-button-color": "#4e8c47",
+        "copy-result-button-color": "#d9534f",
+        "date-color": "#bdc3c7",
+        "special-event-color": "#f39c12"
+      }
     }
   ]
 }
