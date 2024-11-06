@@ -152,6 +152,23 @@
         "date-color": "#74b9ff",
         "special-event-color": "#fdcb6e"
       }
+    },
+    {
+      "name": "Moonlit Night",
+      "properties": {
+        "bg-color": "#1a1a2e",
+        "good-fortune-color": "#7ed6df",
+        "bad-fortune-color": "#ffeaa7",
+        "middle-fortune-color": "#8c94a6",
+        "title-color": "#ffffff",
+        "desc-color": "#a4b0be",
+        "button-color": "#30336b",
+        "button-hover-color": "#535c88",
+        "toggle-theme-button-color": "#7ed6df",
+        "copy-result-button-color": "#ffeaa7",
+        "date-color": "#dcdde1",
+        "special-event-color": "#ff9ff3"
+      }
     }
   ]
 }
