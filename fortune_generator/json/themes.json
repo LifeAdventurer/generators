@@ -86,6 +86,23 @@
       }
     },
     {
+      "name": "Spring Blossom",
+      "properties": {
+        "bg-color": "#f7f5f2",
+        "good-fortune-color": "#ff6f61",
+        "bad-fortune-color": "#6d597a",
+        "middle-fortune-color": "#86a77a",
+        "title-color": "#ff9f80",
+        "desc-color": "#5a5a5a",
+        "button-color": "#ffd166",
+        "button-hover-color": "#ffb347",
+        "toggle-theme-button-color": "#ff6f61",
+        "copy-result-button-color": "#6d597a",
+        "date-color": "#ff9f80",
+        "special-event-color": "#ffb6b9"
+      }
+    },
+    {
       "name": "Autumn Glow",
       "properties": {
         "bg-color": "#f4ede4",
