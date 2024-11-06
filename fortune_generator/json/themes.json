@@ -169,6 +169,23 @@
         "date-color": "#dcdde1",
         "special-event-color": "#ff9ff3"
       }
+    },
+    {
+      "name": "Lunar Eclipse",
+      "properties": {
+        "bg-color": "#0d0e1a",
+        "good-fortune-color": "#7289da",
+        "bad-fortune-color": "#b56576",
+        "middle-fortune-color": "#a0a8c1",
+        "title-color": "#e1e1e6",
+        "desc-color": "#8b8b97",
+        "button-color": "#494e6b",
+        "button-hover-color": "#646b8a",
+        "toggle-theme-button-color": "#7289da",
+        "copy-result-button-color": "#b56576",
+        "date-color": "#d4d4dc",
+        "special-event-color": "#ffb86c"
+      }
     }
   ]
 }
