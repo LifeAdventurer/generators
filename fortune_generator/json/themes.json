@@ -203,6 +203,23 @@
         "date-color": "#e4f9e0",
         "special-event-color": "#9fd9b7"
       }
+    },
+    {
+      "name": "Vintage Sepia",
+      "properties": {
+        "bg-color": "#f5e9da",
+        "good-fortune-color": "#d4a373",
+        "bad-fortune-color": "#8b5e3c",
+        "middle-fortune-color": "#c3a593",
+        "title-color": "#3f312b",
+        "desc-color": "#736357",
+        "button-color": "#a67a5b",
+        "button-hover-color": "#b98b6f",
+        "toggle-theme-button-color": "#8b5e3c",
+        "copy-result-button-color": "#d4a373",
+        "date-color": "#7f6a5d",
+        "special-event-color": "#c7ab93"
+      }
     }
   ]
 }
