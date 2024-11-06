@@ -103,6 +103,23 @@
       }
     },
     {
+      "name": "Sunny Vibes",
+      "properties": {
+        "bg-color": "#fffbeb",
+        "good-fortune-color": "#ff7e67",
+        "bad-fortune-color": "#ffcc29",
+        "middle-fortune-color": "#1fab89",
+        "title-color": "#ff8c42",
+        "desc-color": "#4a4a4a",
+        "button-color": "#ffa41b",
+        "button-hover-color": "#ff8500",
+        "toggle-theme-button-color": "#34ace0",
+        "copy-result-button-color": "#ffcc29",
+        "date-color": "#ffd32a",
+        "special-event-color": "#f7b731"
+      }
+    },
+    {
       "name": "Autumn Glow",
       "properties": {
         "bg-color": "#f4ede4",
