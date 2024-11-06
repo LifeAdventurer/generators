@@ -101,6 +101,23 @@
         "date-color": "#ffbb93",
         "special-event-color": "#f7768e"
       }
+    },
+    {
+      "name": "Autumn Glow",
+      "properties": {
+        "bg-color": "#f4ede4",
+        "good-fortune-color": "#e27d60",
+        "bad-fortune-color": "#a23b2b",
+        "middle-fortune-color": "#c7a17a",
+        "title-color": "#5a3d31",
+        "desc-color": "#7a6e61",
+        "button-color": "#c7a17a",
+        "button-hover-color": "#b9896e",
+        "toggle-theme-button-color": "#a74c3c",
+        "copy-result-button-color": "#7a6e61",
+        "date-color": "#e6b89c",
+        "special-event-color": "#e8a87c"
+      }
     }
   ]
 }
