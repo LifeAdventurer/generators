@@ -288,6 +288,23 @@
         "date-color": "#4f5049",
         "special-event-color": "#b7c7b5"
       }
+    },
+    {
+      "name": "Aurora Borealis",
+      "properties": {
+        "bg-color": "#0b0c1d",
+        "good-fortune-color": "#00d084",
+        "bad-fortune-color": "#455a64",
+        "middle-fortune-color": "#9c7ae0",
+        "title-color": "#d9e9f0",
+        "desc-color": "#95a5b3",
+        "button-color": "#608fcf",
+        "button-hover-color": "#5072b3",
+        "toggle-theme-button-color": "#00d084",
+        "copy-result-button-color": "#455a64",
+        "date-color": "#cfd8dc",
+        "special-event-color": "#a1d6ff"
+      }
     }
   ]
 }
