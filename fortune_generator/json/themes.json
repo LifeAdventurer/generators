@@ -305,6 +305,23 @@
         "date-color": "#cfd8dc",
         "special-event-color": "#a1d6ff"
       }
+    },
+    {
+      "name": "Cyberwave",
+      "properties": {
+        "bg-color": "#1a1a2e",
+        "good-fortune-color": "#00f5d4",
+        "bad-fortune-color": "#293462",
+        "middle-fortune-color": "#adff2f",
+        "title-color": "#f8f8ff",
+        "desc-color": "#adb5bd",
+        "button-color": "#0077b6",
+        "button-hover-color": "#005f87",
+        "toggle-theme-button-color": "#00f5d4",
+        "copy-result-button-color": "#293462",
+        "date-color": "#72efdd",
+        "special-event-color": "#72ddf7"
+      }
     }
   ]
 }
