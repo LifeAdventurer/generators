@@ -237,6 +237,23 @@
         "date-color": "#bdc3c7",
         "special-event-color": "#f39c12"
       }
+    },
+    {
+      "name": "Tropical Paradise",
+      "properties": {
+        "bg-color": "#ffdf80",
+        "good-fortune-color": "#00bfae",
+        "bad-fortune-color": "#ff6347",
+        "middle-fortune-color": "#3eb489",
+        "title-color": "#2e8b57",
+        "desc-color": "#708090",
+        "button-color": "#ff4500",
+        "button-hover-color": "#ff6347",
+        "toggle-theme-button-color": "#00bfae",
+        "copy-result-button-color": "#ff6347",
+        "date-color": "#2e8b57",
+        "special-event-color": "#ff8c00"
+      }
     }
   ]
 }
