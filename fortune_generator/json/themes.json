@@ -271,6 +271,23 @@
         "date-color": "#cf63a1",
         "special-event-color": "#f6c6d4"
       }
+    },
+    {
+      "name": "Zen Garden",
+      "properties": {
+        "bg-color": "#f4f1e1",
+        "good-fortune-color": "#8c9f6f",
+        "bad-fortune-color": "#e18e8b",
+        "middle-fortune-color": "#b7c7b5",
+        "title-color": "#4f5049",
+        "desc-color": "#78756f",
+        "button-color": "#c1c0b2",
+        "button-hover-color": "#b0b098",
+        "toggle-theme-button-color": "#8c9f6f",
+        "copy-result-button-color": "#e18e8b",
+        "date-color": "#4f5049",
+        "special-event-color": "#b7c7b5"
+      }
     }
   ]
 }
