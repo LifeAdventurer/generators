@@ -254,6 +254,23 @@
         "date-color": "#2e8b57",
         "special-event-color": "#ff8c00"
       }
+    },
+    {
+      "name": "Abstract Art",
+      "properties": {
+        "bg-color": "#f4e1d2",
+        "good-fortune-color": "#e1b1e3",
+        "bad-fortune-color": "#c93f36",
+        "middle-fortune-color": "#bde7e0",
+        "title-color": "#cf63a1",
+        "desc-color": "#7b6362",
+        "button-color": "#fc7b6d",
+        "button-hover-color": "#fc4f48",
+        "toggle-theme-button-color": "#e1b1e3",
+        "copy-result-button-color": "#c93f36",
+        "date-color": "#cf63a1",
+        "special-event-color": "#f6c6d4"
+      }
     }
   ]
 }
