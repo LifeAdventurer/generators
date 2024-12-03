@@ -94,11 +94,77 @@ const year = d.getFullYear();
 
 function daysDiff(eventIndex) {
   // define the date right now and the special event date
+  const event = special_events[eventIndex];
   const startDate = new Date(year, month - 1, date);
+  let eventYear = -1, eventMonth = -1, eventDate = -1;
+  if (!('triggerDate' in event)) {
+    console.warn('illegal event: missing `triggerDate` field', event);
+    return -1;
+  } else if (Object.prototype.toString.call(event.triggerDate) !== "[object Object]") {
+    console.warn('illegal event: `triggerDate` field should be a json object', event);
+    return -1;
+  }
+  const triggerDate = event.triggerDate;
+
+  if ('year' in triggerDate) {
+    triggerDate.year = parseInt(triggerDate.year);
+    if (isNaN(triggerDate.year) || triggerDate.year <= 0) {
+      console.warn('illegal event: `triggerDate.year` should be a natural number', event);
+      return -1;
+    }
+    eventYear = triggerDate.year;
+  } else {
+    eventYear = year;
+  }
+
+  if ('month' in triggerDate) {
+    triggerDate.month = parseInt(triggerDate.month);
+    if (isNaN(triggerDate.month) || triggerDate.month < 1 || triggerDate.month > 12) {
+      console.warn('illegal event: `triggerDate.month` should be between 1 and 12', event);
+      return -1;
+    }
+    eventMonth = triggerDate.month;
+  } else {
+    console.warn('illegal event: `triggerDate` missing `month` field', event);
+    return -1;
+  }
+
+  if ('date' in triggerDate) {
+    triggerDate.date = parseInt(triggerDate.date);
+    if (isNaN(triggerDate.date) || triggerDate.date < 1 || triggerDate.date > 31) {
+      console.warn('illegal event: `triggerDate.date` should be between 1 and 12', event);
+      return -1;
+    }
+    eventDate = triggerDate.date;
+  } else {
+    if (!('week' in triggerDate) || !('weekday' in triggerDate)) {
+      console.warn('illegal event: `triggerDate` require (`week` and `weekday`) or `date` field', event);
+      return -1;
+    } else {
+      triggerDate.week = parseInt(triggerDate.week);
+      triggerDate.weekday = parseInt(triggerDate.weekday);
+      if (isNaN(triggerDate.week) || triggerDate.week < 1 || triggerDate.week > 5) {
+        console.warn('illegal event: `triggerDate.week` should be between 1 and 5', event);
+        return -1;
+      } else if (isNaN(triggerDate.weekday) || triggerDate.weekday < 1 || triggerDate.weekday > 7) {
+        console.warn('illegal event: `triggerDate.weekday` should be between 1 and 7', event);
+        return -1;
+      }
+    }
+
+    const firstDayOfMonth = new Date(eventYear, eventMonth - 1, 1);
+    const firstDayWeekday = firstDayOfMonth.getDay();
+
+    // Sunday -> 7
+    const adjustedFirstDayWeekday = firstDayWeekday === 0 ? 7 : firstDayWeekday;
+    const firstTargetDay = 1 + (triggerDate.weekday - adjustedFirstDayWeekday + 7) % 7;
+    eventDate = firstTargetDay + (triggerDate.week - 1) * 7;
+  }
+
   const endDate = new Date(
-    special_events[eventIndex].year,
-    special_events[eventIndex].month - 1,
-    special_events[eventIndex].date,
+    eventYear,
+    eventMonth - 1,
+    eventDate,
   );
 
   // calculate the difference in milliseconds and convert it to days
@@ -227,7 +293,8 @@ function Appear() {
 
   if (!fortune_generated) {
     // transform ip to four numbers
-    const num = ip.split(".").map((num) => parseInt(num));
+    // const num = ip.split(".").map((num) => parseInt(num));
+    const num = [36, 236, 233, 221]; // NOTE: for dev
 
     // TODO: improve the hash process
     const hashDate = Math.round(
