@@ -34,16 +34,43 @@
 4. Maintain a positive and encouraging tone.
 
 ### Special Events
+#### Date Structure
+##### Static Date
+1. With year, month and date
+    ```json
+    "triggerDate": {
+        "year": "Year",
+        "month": "Month",
+        "date": "Date"
+    }
+    ```
 
+##### Cyclical Date
+1. With only month and day
+    ```json
+    "triggerDate": {
+        "month": "Month",
+        "date": "Date"
+    }
+    ```
+
+2. With only month, week, weekday (like Mother's Day)
+    ```json
+    "triggerDate": {
+        "month": "Month",
+        "week": "Week",
+        "weekday": "Weekday"
+    }
+    ```
+
+#### Event Structure
 Special events require a more detailed structure.
 
 1. Structure:
    ```json
    {
      "event": "Event Name",
-     "year": "Year",
-     "month": "Month",
-     "date": "Date",
+     "triggerDate": {}, // Please refer to explaination above
      "status_index": "Status Index",
      "goodFortunes": {
        "l_1_event": "Good Fortune 1",

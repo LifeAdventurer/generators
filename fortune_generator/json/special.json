@@ -2,9 +2,11 @@
   "special_events": [
     {
       "event": "感恩節",
-      "year": "2023",
-      "month": "11",
-      "date": "23",
+      "triggerDate": {
+        "month": "11",
+        "week": "4",
+        "weekday": "4"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "家人團聚",
@@ -21,9 +23,10 @@
     },
     {
       "event": "棉花糖日",
-      "year": "2023",
-      "month": "12",
-      "date": "07",
+      "triggerDate": {
+        "month": "12",
+        "date": "07"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "吃棉花糖",
@@ -40,9 +43,10 @@
     },
     {
       "event": "貓奴日",
-      "year": "2023",
-      "month": "12",
-      "date": "15",
+      "triggerDate": {
+        "month": "12",
+        "date": "15"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "嚕貓",
@@ -59,9 +63,10 @@
     },
     {
       "event": "冬至",
-      "year": "2023",
-      "month": "12",
-      "date": "22",
+      "triggerDate": {
+        "month": "12",
+        "date": "22"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "吃湯圓",
@@ -78,9 +83,10 @@
     },
     {
       "event": "平安夜",
-      "year": "2023",
-      "month": "12",
-      "date": "24",
+      "triggerDate": {
+        "month": "12",
+        "date": "24"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "除舊佈新",
@@ -97,9 +103,10 @@
     },
     {
       "event": "聖誕節",
-      "year": "2023",
-      "month": "12",
-      "date": "25",
+      "triggerDate": {
+        "month": "12",
+        "date": "25"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "家庭聚會",
@@ -116,9 +123,10 @@
     },
     {
       "event": "元旦",
-      "year": "2024",
-      "month": "1",
-      "date": "1",
+      "triggerDate": {
+        "month": "1",
+        "date": "1"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "早起",
@@ -134,67 +142,11 @@
       }
     },
     {
-      "event": "學測 Day 1",
-      "year": "2024",
-      "month": "1",
-      "date": "20",
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "考試",
-        "l_1_desc": "如願以償，金榜題名",
-        "l_2_event": "祈禱",
-        "l_2_desc": "獲得平安、信心"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "學測 Day 2",
-      "year": "2024",
-      "month": "1",
-      "date": "21",
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "參加測驗",
-        "l_1_desc": "天道酬勤",
-        "l_2_event": "安心",
-        "l_2_desc": "事事順利、心想事成"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "學測 Day 3",
-      "year": "2024",
-      "month": "1",
-      "date": "22",
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "決戰巔峰",
-        "l_1_desc": "縱橫考場斬關將",
-        "l_2_event": "成功",
-        "l_2_desc": "勢在必得"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
       "event": "國際資料隱私日",
-      "year": "2024",
-      "month": "1",
-      "date": "28",
+      "triggerDate": {
+        "month": "1",
+        "date": "28"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "整理資料",
@@ -211,9 +163,10 @@
     },
     {
       "event": "植樹節",
-      "year": "2024",
-      "month": "3",
-      "date": "12",
+      "triggerDate": {
+        "month": "3",
+        "date": "12"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "植樹造林",
@@ -230,9 +183,10 @@
     },
     {
       "event": "白色情人節",
-      "year": "2024",
-      "month": "3",
-      "date": "14",
+      "triggerDate": {
+        "month": "3",
+        "date": "14"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "送禮物",
@@ -249,9 +203,10 @@
     },
     {
       "event": "世界森林日",
-      "year": "2024",
-      "month": "3",
-      "date": "21",
+      "triggerDate": {
+        "month": "3",
+        "date": "21"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "環境教育",
@@ -268,9 +223,10 @@
     },
     {
       "event": "愚人節",
-      "year": "2024",
-      "month": "4",
-      "date": "1",
+      "triggerDate": {
+        "month": "4",
+        "date": "1"
+      },
       "status_index": "3",
       "goodFortunes": {
         "l_1_event": "喜笑顏開",
@@ -287,9 +243,10 @@
     },
     {
       "event": "兒童節",
-      "year": "2024",
-      "month": "4",
-      "date": "4",
+      "triggerDate": {
+        "month": "4",
+        "date": "4"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "喜笑顏開",
@@ -306,9 +263,10 @@
     },
     {
       "event": "世界健康日",
-      "year": "2024",
-      "month": "4",
-      "date": "7",
+      "triggerDate": {
+        "month": "4",
+        "date": "7"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "健康飲食",
@@ -325,9 +283,10 @@
     },
     {
       "event": "世界地球日",
-      "year": "2024",
-      "month": "4",
-      "date": "22",
+      "triggerDate": {
+        "month": "4",
+        "date": "22"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "環保行動",
@@ -344,9 +303,10 @@
     },
     {
       "event": "世界閱讀日",
-      "year": "2024",
-      "month": "4",
-      "date": "23",
+      "triggerDate": {
+        "month": "4",
+        "date": "23"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "推廣閱讀",
@@ -363,9 +323,10 @@
     },
     {
       "event": "世界智慧財產權日",
-      "year": "2024",
-      "month": "4",
-      "date": "26",
+      "triggerDate": {
+        "month": "4",
+        "date": "26"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "保護創意",
@@ -382,9 +343,10 @@
     },
     {
       "event": "星際大戰日",
-      "year": "2024",
-      "month": "5",
-      "date": "04",
+      "triggerDate": {
+        "month": "5",
+        "date": "04"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "電影馬拉松",
@@ -401,9 +363,10 @@
     },
     {
       "event": "世界微笑日",
-      "year": "2024",
-      "month": "5",
-      "date": "08",
+      "triggerDate": {
+        "month": "5",
+        "date": "08"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "微笑",
@@ -420,9 +383,11 @@
     },
     {
       "event": "母親節",
-      "year": "2024",
-      "month": "5",
-      "date": "12",
+      "triggerDate": {
+        "month": "5",
+        "week": "2",
+        "weekday": "7"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "家庭聚餐",
@@ -439,9 +404,10 @@
     },
     {
       "event": "世界環境日",
-      "year": "2024",
-      "month": "6",
-      "date": "05",
+      "triggerDate": {
+        "month": "6",
+        "date": "05"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "少用塑膠",
@@ -458,9 +424,10 @@
     },
     {
       "event": "世界獻血者日",
-      "year": "2024",
-      "month": "6",
-      "date": "14",
+      "triggerDate": {
+        "month": "6",
+        "date": "14"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "捐血",
@@ -477,9 +444,11 @@
     },
     {
       "event": "夏至",
-      "year": "2024",
-      "month": "6",
-      "date": "20",
+      "triggerDate": {
+        "year": "2024",
+        "month": "6",
+        "date": "20"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "觀賞日出和日落",
@@ -496,9 +465,10 @@
     },
     {
       "event": "巧克力日",
-      "year": "2024",
-      "month": "7",
-      "date": "07",
+      "triggerDate": {
+        "month": "7",
+        "date": "07"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "送巧克力",
@@ -515,9 +485,10 @@
     },
     {
       "event": "宅宅日",
-      "year": "2024",
-      "month": "7",
-      "date": "13",
+      "triggerDate": {
+        "month": "7",
+        "date": "13"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "觀影",
@@ -534,9 +505,10 @@
     },
     {
       "event": "國際冷笑話日",
-      "year": "2024",
-      "month": "7",
-      "date": "24",
+      "triggerDate": {
+        "month": "7",
+        "date": "24"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "講冷笑話",
@@ -553,9 +525,10 @@
     },
     {
       "event": "國際友誼日",
-      "year": "2024",
-      "month": "7",
-      "date": "30",
+      "triggerDate": {
+        "month": "7",
+        "date": "30"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "與朋友聯絡",
@@ -572,9 +545,10 @@
     },
     {
       "event": "國際左撇子日",
-      "year": "2024",
-      "month": "8",
-      "date": "13",
+      "triggerDate": {
+        "month": "8",
+        "date": "13"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "挑戰新事物",
@@ -591,9 +565,10 @@
     },
     {
       "event": "世界攝影日",
-      "year": "2024",
-      "month": "8",
-      "date": "19",
+      "triggerDate": {
+        "month": "8",
+        "date": "19"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "拍攝照片",
@@ -610,9 +585,10 @@
     },
     {
       "event": "國際狗狗日",
-      "year": "2024",
-      "month": "8",
-      "date": "26",
+      "triggerDate": {
+        "month": "8",
+        "date": "26"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "陪伴狗狗",
@@ -629,9 +605,10 @@
     },
     {
       "event": "國際慈善日",
-      "year": "2024",
-      "month": "9",
-      "date": "5",
+      "triggerDate": {
+        "month": "9",
+        "date": "5"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "捐贈物資",
@@ -648,9 +625,11 @@
     },
     {
       "event": "中秋節",
-      "year": "2024",
-      "month": "9",
-      "date": "17",
+      "triggerDate": {
+        "year": "2024",
+        "month": "9",
+        "date": "17"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "賞月",
@@ -667,9 +646,10 @@
     },
     {
       "event": "國際和平日",
-      "year": "2024",
-      "month": "9",
-      "date": "21",
+      "triggerDate": {
+        "month": "9",
+        "date": "21"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "分享愛心",
@@ -686,9 +666,10 @@
     },
     {
       "event": "教師節",
-      "year": "2024",
-      "month": "9",
-      "date": "28",
+      "triggerDate": {
+        "month": "9",
+        "date": "28"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "感謝老師",
@@ -705,9 +686,10 @@
     },
     {
       "event": "世界糧食日",
-      "year": "2024",
-      "month": "10",
-      "date": "16",
+      "triggerDate": {
+        "month": "10",
+        "date": "16"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "節約糧食",
@@ -724,9 +706,10 @@
     },
     {
       "event": "聯合國日",
-      "year": "2024",
-      "month": "10",
-      "date": "24",
+      "triggerDate": {
+        "month": "10",
+        "date": "24"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "支持和平",
@@ -743,9 +726,10 @@
     },
     {
       "event": "萬聖節",
-      "year": "2024",
-      "month": "10",
-      "date": "31",
+      "triggerDate": {
+        "month": "10",
+        "date": "31"
+      },
       "status_index": "4",
       "goodFortunes": {
         "l_1_event": "扮演角色",
@@ -762,32 +746,14 @@
     },
     {
       "event": "世界善心日",
-      "year": "2024",
-      "month": "11",
-      "date": "13",
+      "triggerDate": {
+        "month": "11",
+        "date": "13"
+      },
       "status_index": "0",
       "goodFortunes": {
         "l_1_event": "善待他人",
         "l_1_desc": "在生活中多一些善意與寬容",
-        "l_2_event": "",
-        "l_2_desc": ""
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "感恩節",
-      "year": "2024",
-      "month": "11",
-      "date": "28",
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "家人團聚",
-        "l_1_desc": "共享寶貴時光",
         "l_2_event": "",
         "l_2_desc": ""
       },
