@@ -4,7 +4,8 @@
       "event": "感恩節",
       "triggerDate": {
         "month": "11",
-        "date": "23"
+        "week": "4",
+        "weekday": "4"
       },
       "status_index": "0",
       "goodFortunes": {
@@ -753,26 +754,6 @@
       "goodFortunes": {
         "l_1_event": "善待他人",
         "l_1_desc": "在生活中多一些善意與寬容",
-        "l_2_event": "",
-        "l_2_desc": ""
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "感恩節",
-      "triggerDate": {
-        "month": "11",
-        "date": "28"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "家人團聚",
-        "l_1_desc": "共享寶貴時光",
         "l_2_event": "",
         "l_2_desc": ""
       },
