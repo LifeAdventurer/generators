@@ -141,69 +141,6 @@
       }
     },
     {
-      "event": "學測 Day 1",
-      "triggerDate": {
-        "year": "2024",
-        "month": "1",
-        "date": "20"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "考試",
-        "l_1_desc": "如願以償，金榜題名",
-        "l_2_event": "祈禱",
-        "l_2_desc": "獲得平安、信心"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "學測 Day 2",
-      "triggerDate": {
-        "year": "2024",
-        "month": "1",
-        "date": "21"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "參加測驗",
-        "l_1_desc": "天道酬勤",
-        "l_2_event": "安心",
-        "l_2_desc": "事事順利、心想事成"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "學測 Day 3",
-      "triggerDate": {
-        "year": "2024",
-        "month": "1",
-        "date": "22"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "決戰巔峰",
-        "l_1_desc": "縱橫考場斬關將",
-        "l_2_event": "成功",
-        "l_2_desc": "勢在必得"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
       "event": "國際資料隱私日",
       "triggerDate": {
         "month": "1",
