@@ -92,6 +92,27 @@ const day = d.getDay();
 const month = d.getMonth() + 1;
 const year = d.getFullYear();
 
+function validateNumber(value, min, max, fieldName, event) {
+  value = parseInt(value);
+  if (isNaN(value) || value < min || value > max) {
+      console.warn(`illegal event: ${fieldName} should be between ${min} and ${max}`, event);
+      return null;
+  }
+  return value;
+}
+
+function isLeapYear(year) {
+  if (year % 400 === 0) return true;
+  if (year % 100 === 0) return false;
+  if (year % 4 === 0) return true;
+  return false;
+}
+
+const daysPerMonth = [
+  0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+];
+const maxDate = new Date(8640000000000000);
+
 function daysDiff(eventIndex) {
   // define the date right now and the special event date
   const event = special_events[eventIndex];
@@ -106,50 +127,41 @@ function daysDiff(eventIndex) {
   }
   const triggerDate = event.triggerDate;
 
+  eventYear = year;
   if ('year' in triggerDate) {
-    triggerDate.year = parseInt(triggerDate.year);
-    if (isNaN(triggerDate.year) || triggerDate.year <= 0) {
-      console.warn('illegal event: `triggerDate.year` should be a natural number', event);
+    eventYear = validateNumber(triggerDate.year, 1, maxDate.getFullYear(), 'triggerDate.year', event);
+    if (eventYear === null) {
       return -1;
     }
-    eventYear = triggerDate.year;
-  } else {
-    eventYear = year;
   }
 
-  if ('month' in triggerDate) {
-    triggerDate.month = parseInt(triggerDate.month);
-    if (isNaN(triggerDate.month) || triggerDate.month < 1 || triggerDate.month > 12) {
-      console.warn('illegal event: `triggerDate.month` should be between 1 and 12', event);
-      return -1;
-    }
-    eventMonth = triggerDate.month;
-  } else {
+  if (!('month' in triggerDate)) {
     console.warn('illegal event: `triggerDate` missing `month` field', event);
+    return -1;
+  }
+  eventMonth = validateNumber(triggerDate.month, 1, 12, 'triggerDate.Month', event);
+  if (eventMonth === null) {
+    return -1;
+  }
+
+  if (!('date' in triggerDate) && (!('week' in triggerDate) || !('weekday' in triggerDate))) {
+    console.warn('illegal event: `triggerDate` require (`week` and `weekday`) or `date` field', event);
     return -1;
   }
 
   if ('date' in triggerDate) {
-    triggerDate.date = parseInt(triggerDate.date);
-    if (isNaN(triggerDate.date) || triggerDate.date < 1 || triggerDate.date > 31) {
-      console.warn('illegal event: `triggerDate.date` should be between 1 and 12', event);
+    let days = daysPerMonth[eventMonth];
+    if (isLeapYear(eventYear) && eventMonth == 2) days += 1;
+    eventDate = validateNumber(triggerDate.date, 1, days, 'triggerDate.date', event);
+    if (eventDate === null) {
       return -1;
     }
-    eventDate = triggerDate.date;
   } else {
-    if (!('week' in triggerDate) || !('weekday' in triggerDate)) {
-      console.warn('illegal event: `triggerDate` require (`week` and `weekday`) or `date` field', event);
+
+    triggerDate.week = validateNumber(triggerDate.week, 1, 5, 'triggerDate.week', event);
+    triggerDate.weekday = validateNumber(triggerDate.weekday, 1, 7, 'triggerDate.weekday', event);
+    if (triggerDate.week === null || triggerDate.weekday === null) {
       return -1;
-    } else {
-      triggerDate.week = parseInt(triggerDate.week);
-      triggerDate.weekday = parseInt(triggerDate.weekday);
-      if (isNaN(triggerDate.week) || triggerDate.week < 1 || triggerDate.week > 5) {
-        console.warn('illegal event: `triggerDate.week` should be between 1 and 5', event);
-        return -1;
-      } else if (isNaN(triggerDate.weekday) || triggerDate.weekday < 1 || triggerDate.weekday > 7) {
-        console.warn('illegal event: `triggerDate.weekday` should be between 1 and 7', event);
-        return -1;
-      }
     }
 
     const firstDayOfMonth = new Date(eventYear, eventMonth - 1, 1);
@@ -293,8 +305,7 @@ function Appear() {
 
   if (!fortune_generated) {
     // transform ip to four numbers
-    // const num = ip.split(".").map((num) => parseInt(num));
-    const num = [36, 236, 233, 221]; // NOTE: for dev
+    const num = ip.split(".").map((num) => parseInt(num));
 
     // TODO: improve the hash process
     const hashDate = Math.round(
