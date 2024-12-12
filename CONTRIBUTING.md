@@ -33,7 +33,7 @@
 
 4. Maintain a positive and encouraging tone.
 
-### Special Events
+### Custom Special Events
 #### Date Structure
 ##### Static Date
 1. With year, month and date
@@ -65,6 +65,8 @@
 
 #### Event Structure
 Special events require a more detailed structure.
+
+Based on `triggerDate` type, we will place the **static date** events in the `fortune_generator/json/custom_static_special.json` and the **cyclical date** events in the `fortune_generator/json/custom_cyclical_special.json`.
 
 1. Structure:
    ```json
