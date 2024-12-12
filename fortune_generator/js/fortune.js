@@ -43,10 +43,9 @@ async function fetch_data() {
       });
   }
 
-  await fetch_events("./json/custom_static_special.json");
-  await fetch_events("./json/custom_cyclical_special.json");
-  await fetch_events("./json/default_static_special.json");
-  await fetch_events("./json/default_cyclical_special.json");
+  await fetch_events("./json/custom_special.json");
+  await fetch_events("./json/static_special.json");
+  await fetch_events("./json/cyclical_special.json");
 }
 
 const textColorClass = [
