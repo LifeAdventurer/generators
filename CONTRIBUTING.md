@@ -45,6 +45,8 @@
     }
     ```
 
+    We should place events of this type in the `fortune_generator/json/custom_special.json`.
+
 ##### Cyclical Date
 1. With only month and day
     ```json
@@ -53,6 +55,8 @@
         "date": "Date"
     }
     ```
+
+    We should place events of this type in the `fortune_generator/json/static_special.json`.
 
 2. With only month, week, weekday (like Mother's Day)
     ```json
@@ -63,10 +67,10 @@
     }
     ```
 
+    We should place events of this type in the `fortune_generator/json/cyclical_special.json`.
+
 #### Event Structure
 Special events require a more detailed structure.
-
-Based on `triggerDate` type, we will place the **static date** events in the `fortune_generator/json/custom_static_special.json` and the **cyclical date** events in the `fortune_generator/json/custom_cyclical_special.json`.
 
 1. Structure:
    ```json
