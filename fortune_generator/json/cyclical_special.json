@@ -1,127 +1,6 @@
 {
   "special_events": [
     {
-      "event": "感恩節",
-      "triggerDate": {
-        "month": "11",
-        "week": "4",
-        "weekday": "4"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "家人團聚",
-        "l_1_desc": "分享寶貴時光",
-        "l_2_event": "吃火雞大餐",
-        "l_2_desc": "Happy Thanksgiving!"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "棉花糖日",
-      "triggerDate": {
-        "month": "12",
-        "date": "07"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "吃棉花糖",
-        "l_1_desc": "慶祝棉花糖日",
-        "l_2_event": "",
-        "l_2_desc": ""
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "貓奴日",
-      "triggerDate": {
-        "month": "12",
-        "date": "15"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "嚕貓",
-        "l_1_desc": "撫平傷心的心情",
-        "l_2_event": "喝咖啡",
-        "l_2_desc": "到貓咪咖啡店去喝咖啡"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "冬至",
-      "triggerDate": {
-        "month": "12",
-        "date": "22"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "吃湯圓",
-        "l_1_desc": "團團圓圓",
-        "l_2_event": "保暖",
-        "l_2_desc": "冬至到了"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "平安夜",
-      "triggerDate": {
-        "month": "12",
-        "date": "24"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "除舊佈新",
-        "l_1_desc": "平安祥和",
-        "l_2_event": "交換禮物",
-        "l_2_desc": "獲得真心的祝福"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
-      "event": "聖誕節",
-      "triggerDate": {
-        "month": "12",
-        "date": "25"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "家庭聚會",
-        "l_1_desc": "一起團圓吃火雞大餐",
-        "l_2_event": "注意保暖",
-        "l_2_desc": "冬至到了"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
       "event": "元旦",
       "triggerDate": {
         "month": "1",
@@ -443,27 +322,6 @@
       }
     },
     {
-      "event": "夏至",
-      "triggerDate": {
-        "year": "2024",
-        "month": "6",
-        "date": "20"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "觀賞日出和日落",
-        "l_1_desc": "享受一年最長的白天",
-        "l_2_event": "",
-        "l_2_desc": ""
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
       "event": "巧克力日",
       "triggerDate": {
         "month": "7",
@@ -624,27 +482,6 @@
       }
     },
     {
-      "event": "中秋節",
-      "triggerDate": {
-        "year": "2024",
-        "month": "9",
-        "date": "17"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "賞月",
-        "l_1_desc": "與家人一同賞月，增進感情",
-        "l_2_event": "吃月餅",
-        "l_2_desc": "與家人朋友分享月餅的美味"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
       "event": "國際和平日",
       "triggerDate": {
         "month": "9",
@@ -756,6 +593,127 @@
         "l_1_desc": "在生活中多一些善意與寬容",
         "l_2_event": "",
         "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "感恩節",
+      "triggerDate": {
+        "month": "11",
+        "week": "4",
+        "weekday": "4"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "家人團聚",
+        "l_1_desc": "分享寶貴時光",
+        "l_2_event": "吃火雞大餐",
+        "l_2_desc": "Happy Thanksgiving!"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "棉花糖日",
+      "triggerDate": {
+        "month": "12",
+        "date": "07"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "吃棉花糖",
+        "l_1_desc": "慶祝棉花糖日",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "貓奴日",
+      "triggerDate": {
+        "month": "12",
+        "date": "15"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "嚕貓",
+        "l_1_desc": "撫平傷心的心情",
+        "l_2_event": "喝咖啡",
+        "l_2_desc": "到貓咪咖啡店去喝咖啡"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "冬至",
+      "triggerDate": {
+        "month": "12",
+        "date": "22"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "吃湯圓",
+        "l_1_desc": "團團圓圓",
+        "l_2_event": "保暖",
+        "l_2_desc": "冬至到了"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "平安夜",
+      "triggerDate": {
+        "month": "12",
+        "date": "24"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "除舊佈新",
+        "l_1_desc": "平安祥和",
+        "l_2_event": "交換禮物",
+        "l_2_desc": "獲得真心的祝福"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "聖誕節",
+      "triggerDate": {
+        "month": "12",
+        "date": "25"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "家庭聚會",
+        "l_1_desc": "一起團圓吃火雞大餐",
+        "l_2_event": "注意保暖",
+        "l_2_desc": "冬至到了"
       },
       "badFortunes": {
         "r_1_event": "",

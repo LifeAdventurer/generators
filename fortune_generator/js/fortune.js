@@ -35,11 +35,17 @@ async function fetch_data() {
       badFortunes = data.badFortunes;
     });
 
-  await fetch("./json/special.json")
-    .then((response) => response.json())
-    .then((data) => {
-      special_events = data.special_events;
-    });
+  async function fetch_events(path) {
+    await fetch(path)
+      .then((response) => response.json())
+      .then((data) => {
+        special_events.push(...data.special_events);
+      });
+  }
+
+  await fetch_events("./json/custom_special.json");
+  await fetch_events("./json/static_special.json");
+  await fetch_events("./json/cyclical_special.json");
 }
 
 const textColorClass = [
@@ -92,13 +98,91 @@ const day = d.getDay();
 const month = d.getMonth() + 1;
 const year = d.getFullYear();
 
+function validateNumber(value, min, max, fieldName, event) {
+  value = parseInt(value);
+  if (isNaN(value) || value < min || value > max) {
+      console.warn(`illegal event: ${fieldName} should be between ${min} and ${max}`, event);
+      return null;
+  }
+  return value;
+}
+
+function isLeapYear(year) {
+  if (year % 400 === 0) return true;
+  if (year % 100 === 0) return false;
+  if (year % 4 === 0) return true;
+  return false;
+}
+
+const daysPerMonth = [
+  0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+];
+const maxDate = new Date(8640000000000000);
+
 function daysDiff(eventIndex) {
   // define the date right now and the special event date
+  const event = special_events[eventIndex];
   const startDate = new Date(year, month - 1, date);
+  let eventYear = -1, eventMonth = -1, eventDate = -1;
+  if (!('triggerDate' in event)) {
+    console.warn('illegal event: missing `triggerDate` field', event);
+    return -1;
+  } else if (Object.prototype.toString.call(event.triggerDate) !== "[object Object]") {
+    console.warn('illegal event: `triggerDate` field should be a json object', event);
+    return -1;
+  }
+  const triggerDate = event.triggerDate;
+
+  eventYear = year;
+  if ('year' in triggerDate) {
+    eventYear = validateNumber(triggerDate.year, 1, maxDate.getFullYear(), 'triggerDate.year', event);
+    if (eventYear === null) {
+      return -1;
+    }
+  }
+
+  if (!('month' in triggerDate)) {
+    console.warn('illegal event: `triggerDate` missing `month` field', event);
+    return -1;
+  }
+  eventMonth = validateNumber(triggerDate.month, 1, 12, 'triggerDate.Month', event);
+  if (eventMonth === null) {
+    return -1;
+  }
+
+  if (!('date' in triggerDate) && (!('week' in triggerDate) || !('weekday' in triggerDate))) {
+    console.warn('illegal event: `triggerDate` require (`week` and `weekday`) or `date` field', event);
+    return -1;
+  }
+
+  if ('date' in triggerDate) {
+    let days = daysPerMonth[eventMonth];
+    if (isLeapYear(eventYear) && eventMonth == 2) days += 1;
+    eventDate = validateNumber(triggerDate.date, 1, days, 'triggerDate.date', event);
+    if (eventDate === null) {
+      return -1;
+    }
+  } else {
+
+    triggerDate.week = validateNumber(triggerDate.week, 1, 5, 'triggerDate.week', event);
+    triggerDate.weekday = validateNumber(triggerDate.weekday, 1, 7, 'triggerDate.weekday', event);
+    if (triggerDate.week === null || triggerDate.weekday === null) {
+      return -1;
+    }
+
+    const firstDayOfMonth = new Date(eventYear, eventMonth - 1, 1);
+    const firstDayWeekday = firstDayOfMonth.getDay();
+
+    // Sunday -> 7
+    const adjustedFirstDayWeekday = firstDayWeekday === 0 ? 7 : firstDayWeekday;
+    const firstTargetDay = 1 + (triggerDate.weekday - adjustedFirstDayWeekday + 7) % 7;
+    eventDate = firstTargetDay + (triggerDate.week - 1) * 7;
+  }
+
   const endDate = new Date(
-    special_events[eventIndex].year,
-    special_events[eventIndex].month - 1,
-    special_events[eventIndex].date,
+    eventYear,
+    eventMonth - 1,
+    eventDate,
   );
 
   // calculate the difference in milliseconds and convert it to days
@@ -146,18 +230,23 @@ async function init_page() {
   $("#weekday").html(showDay);
 
   const showSpecialEventCount = 2;
-  let eventIndexPtr = 0, eventIndexList = Array(showSpecialEventCount).fill(-1);
+  let eventIndexList = Array(showSpecialEventCount).fill(-1);
+  let eventDiffDaysIndexList = Array(showSpecialEventCount).fill(Number.MAX_SAFE_INTEGER);
+
   // check if there is special event today
   for (let i = 0; i < special_events.length; i++) {
-    if (daysDiff(i) > 0) {
-      if (
-        eventIndexPtr < showSpecialEventCount &&
-        eventIndexList[eventIndexPtr] == -1
-      ) {
-        eventIndexList[eventIndexPtr] = i;
-        eventIndexPtr++;
+    let diffCount = daysDiff(i);
+    if (diffCount > 0) {
+      let j = 0;
+      for (; j < showSpecialEventCount; j++) {
+        if (diffCount < eventDiffDaysIndexList[j]) {
+          break;
+        }
       }
-    } else if (daysDiff(i) == 0) {
+
+      eventDiffDaysIndexList[j] = diffCount;
+      eventIndexList[j] = i;
+    } else if (diffCount === 0) {
       special = true;
       special_events_index = i;
     }
