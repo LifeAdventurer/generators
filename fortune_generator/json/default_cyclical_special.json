@@ -1,0 +1,726 @@
+{
+  "special_events": [
+    {
+      "event": "元旦",
+      "triggerDate": {
+        "month": "1",
+        "date": "1"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "早起",
+        "l_1_desc": "心情愉悅迎接新年",
+        "l_2_event": "大掃除",
+        "l_2_desc": "新年新氣象"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際資料隱私日",
+      "triggerDate": {
+        "month": "1",
+        "date": "28"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "整理資料",
+        "l_1_desc": "注意在線資料安全",
+        "l_2_event": "注意隱私",
+        "l_2_desc": "謹慎上網"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "植樹節",
+      "triggerDate": {
+        "month": "3",
+        "date": "12"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "植樹造林",
+        "l_1_desc": "保護生態、美化環境",
+        "l_2_event": "節能減碳",
+        "l_2_desc": "延長資源壽命"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "白色情人節",
+      "triggerDate": {
+        "month": "3",
+        "date": "14"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "送禮物",
+        "l_1_desc": "表達愛意和感激之情",
+        "l_2_event": "觀星",
+        "l_2_desc": "仰望星空，共描明月"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界森林日",
+      "triggerDate": {
+        "month": "3",
+        "date": "21"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "環境教育",
+        "l_1_desc": "提升對自然的敬重",
+        "l_2_event": "節約用水",
+        "l_2_desc": "保護生態系統穩定"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "愚人節",
+      "triggerDate": {
+        "month": "4",
+        "date": "1"
+      },
+      "status_index": "3",
+      "goodFortunes": {
+        "l_1_event": "喜笑顏開",
+        "l_1_desc": "與親朋好友分享快樂",
+        "l_2_event": "開派對",
+        "l_2_desc": "組織有趣的活動和遊戲"
+      },
+      "badFortunes": {
+        "r_1_event": "冒犯他人",
+        "r_1_desc": "避免製造觸怒人的笑話",
+        "r_2_event": "惡作劇",
+        "r_2_desc": "注意避免不必要的麻煩"
+      }
+    },
+    {
+      "event": "兒童節",
+      "triggerDate": {
+        "month": "4",
+        "date": "4"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "喜笑顏開",
+        "l_1_desc": "與親朋好友分享快樂",
+        "l_2_event": "開派對",
+        "l_2_desc": "組織有趣的活動和遊戲"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界健康日",
+      "triggerDate": {
+        "month": "4",
+        "date": "7"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "健康飲食",
+        "l_1_desc": "多攝取水果、蔬菜和全穀食品",
+        "l_2_event": "運動鍛煉",
+        "l_2_desc": "保持身體健康和活力"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界地球日",
+      "triggerDate": {
+        "month": "4",
+        "date": "22"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "環保行動",
+        "l_1_desc": "參與植樹造林或垃圾回收等環保行動",
+        "l_2_event": "節能減排",
+        "l_2_desc": "選擇環保型交通工具"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界閱讀日",
+      "triggerDate": {
+        "month": "4",
+        "date": "23"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "推廣閱讀",
+        "l_1_desc": "激發對知識的渴望",
+        "l_2_event": "書籍分享",
+        "l_2_desc": "與他人分享你的書單"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界智慧財產權日",
+      "triggerDate": {
+        "month": "4",
+        "date": "26"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "保護創意",
+        "l_1_desc": "尊重他人的創意和智慧財產權，共同維護創作人的權益",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "星際大戰日",
+      "triggerDate": {
+        "month": "5",
+        "date": "04"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "電影馬拉松",
+        "l_1_desc": "播放所有星際大戰電影",
+        "l_2_event": "感受原力",
+        "l_2_desc": "May the force be with you, always."
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界微笑日",
+      "triggerDate": {
+        "month": "5",
+        "date": "08"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "微笑",
+        "l_1_desc": "用微笑向世界問好",
+        "l_2_event": "放慢腳步",
+        "l_2_desc": "觀察四周的美好事物"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "母親節",
+      "triggerDate": {
+        "month": "5",
+        "week": "2",
+        "weekday": "7"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "家庭聚餐",
+        "l_1_desc": "表達對媽媽的感恩之心",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界環境日",
+      "triggerDate": {
+        "month": "6",
+        "date": "05"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "少用塑膠",
+        "l_1_desc": "選擇可重複使用的替代品",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界獻血者日",
+      "triggerDate": {
+        "month": "6",
+        "date": "14"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "捐血",
+        "l_1_desc": "捐出血液和血漿，分享生命要時常",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "巧克力日",
+      "triggerDate": {
+        "month": "7",
+        "date": "07"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "送巧克力",
+        "l_1_desc": "共享巧克力盛宴",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "宅宅日",
+      "triggerDate": {
+        "month": "7",
+        "date": "13"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "觀影",
+        "l_1_desc": "看心愛的電影或影集",
+        "l_2_event": "閱讀",
+        "l_2_desc": "享受片刻的寧靜"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際冷笑話日",
+      "triggerDate": {
+        "month": "7",
+        "date": "24"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "講冷笑話",
+        "l_1_desc": "一起嘻嘻哈哈",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際友誼日",
+      "triggerDate": {
+        "month": "7",
+        "date": "30"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "與朋友聯絡",
+        "l_1_desc": "回憶美好時光",
+        "l_2_event": "一起出遊",
+        "l_2_desc": "增進彼此的感情"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際左撇子日",
+      "triggerDate": {
+        "month": "8",
+        "date": "13"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "挑戰新事物",
+        "l_1_desc": "嘗試用左手完成任務",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界攝影日",
+      "triggerDate": {
+        "month": "8",
+        "date": "19"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "拍攝照片",
+        "l_1_desc": "捕捉生活中的美好瞬間",
+        "l_2_event": "分享作品",
+        "l_2_desc": "展示您的攝影技巧"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際狗狗日",
+      "triggerDate": {
+        "month": "8",
+        "date": "26"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "陪伴狗狗",
+        "l_1_desc": "帶狗狗散步或遊玩",
+        "l_2_event": "分享作品",
+        "l_2_desc": "展示您的攝影技巧"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際慈善日",
+      "triggerDate": {
+        "month": "9",
+        "date": "5"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "捐贈物資",
+        "l_1_desc": "捐贈物資或金錢，幫助有需要的人",
+        "l_2_event": "參與志願活動",
+        "l_2_desc": "參加社區慈善活動，提升社會貢獻"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際和平日",
+      "triggerDate": {
+        "month": "9",
+        "date": "21"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "分享愛心",
+        "l_1_desc": "與他人分享關懷與愛心，促進和平",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "教師節",
+      "triggerDate": {
+        "month": "9",
+        "date": "28"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "感謝老師",
+        "l_1_desc": "向老師表達感謝，增進師生情誼",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界糧食日",
+      "triggerDate": {
+        "month": "10",
+        "date": "16"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "節約糧食",
+        "l_1_desc": "支持可持續的食物系統",
+        "l_2_event": "捐贈食品",
+        "l_2_desc": "捐贈食物給有需要的人，傳遞愛心"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "聯合國日",
+      "triggerDate": {
+        "month": "10",
+        "date": "24"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "支持和平",
+        "l_1_desc": "參與促進世界和平的活動",
+        "l_2_event": "了解國際事務",
+        "l_2_desc": "增強全球視野"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "萬聖節",
+      "triggerDate": {
+        "month": "10",
+        "date": "31"
+      },
+      "status_index": "4",
+      "goodFortunes": {
+        "l_1_event": "扮演角色",
+        "l_1_desc": "穿上喜愛的角色服裝，享受萬聖節的氛圍",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "忽略安全",
+        "r_2_desc": "活動時忽視安全措施可能帶來風險"
+      }
+    },
+    {
+      "event": "世界善心日",
+      "triggerDate": {
+        "month": "11",
+        "date": "13"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "善待他人",
+        "l_1_desc": "在生活中多一些善意與寬容",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "感恩節",
+      "triggerDate": {
+        "month": "11",
+        "week": "4",
+        "weekday": "4"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "家人團聚",
+        "l_1_desc": "分享寶貴時光",
+        "l_2_event": "吃火雞大餐",
+        "l_2_desc": "Happy Thanksgiving!"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "棉花糖日",
+      "triggerDate": {
+        "month": "12",
+        "date": "07"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "吃棉花糖",
+        "l_1_desc": "慶祝棉花糖日",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "貓奴日",
+      "triggerDate": {
+        "month": "12",
+        "date": "15"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "嚕貓",
+        "l_1_desc": "撫平傷心的心情",
+        "l_2_event": "喝咖啡",
+        "l_2_desc": "到貓咪咖啡店去喝咖啡"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "冬至",
+      "triggerDate": {
+        "month": "12",
+        "date": "22"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "吃湯圓",
+        "l_1_desc": "團團圓圓",
+        "l_2_event": "保暖",
+        "l_2_desc": "冬至到了"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "平安夜",
+      "triggerDate": {
+        "month": "12",
+        "date": "24"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "除舊佈新",
+        "l_1_desc": "平安祥和",
+        "l_2_event": "交換禮物",
+        "l_2_desc": "獲得真心的祝福"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "聖誕節",
+      "triggerDate": {
+        "month": "12",
+        "date": "25"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "家庭聚會",
+        "l_1_desc": "一起團圓吃火雞大餐",
+        "l_2_event": "注意保暖",
+        "l_2_desc": "冬至到了"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    }
+  ]
+}

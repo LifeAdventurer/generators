@@ -35,11 +35,18 @@ async function fetch_data() {
       badFortunes = data.badFortunes;
     });
 
-  await fetch("./json/special.json")
-    .then((response) => response.json())
-    .then((data) => {
-      special_events = data.special_events;
-    });
+  async function fetch_events(path) {
+    await fetch(path)
+      .then((response) => response.json())
+      .then((data) => {
+        special_events.push(...data.special_events);
+      });
+  }
+
+  await fetch_events("./json/custom_static_special.json");
+  await fetch_events("./json/custom_cyclical_special.json");
+  await fetch_events("./json/default_static_special.json");
+  await fetch_events("./json/default_cyclical_special.json");
 }
 
 const textColorClass = [
@@ -224,18 +231,23 @@ async function init_page() {
   $("#weekday").html(showDay);
 
   const showSpecialEventCount = 2;
-  let eventIndexPtr = 0, eventIndexList = Array(showSpecialEventCount).fill(-1);
+  let eventIndexList = Array(showSpecialEventCount).fill(-1);
+  let eventDiffDaysIndexList = Array(showSpecialEventCount).fill(Number.MAX_SAFE_INTEGER);
+
   // check if there is special event today
   for (let i = 0; i < special_events.length; i++) {
-    if (daysDiff(i) > 0) {
-      if (
-        eventIndexPtr < showSpecialEventCount &&
-        eventIndexList[eventIndexPtr] == -1
-      ) {
-        eventIndexList[eventIndexPtr] = i;
-        eventIndexPtr++;
+    let diffCount = daysDiff(i);
+    if (diffCount > 0) {
+      let j = 0;
+      for (; j < showSpecialEventCount; j++) {
+        if (diffCount < eventDiffDaysIndexList[j]) {
+          break;
+        }
       }
-    } else if (daysDiff(i) == 0) {
+
+      eventDiffDaysIndexList[j] = diffCount;
+      eventIndexList[j] = i;
+    } else if (diffCount === 0) {
       special = true;
       special_events_index = i;
     }
