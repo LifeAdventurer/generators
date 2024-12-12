@@ -33,9 +33,8 @@
 
 4. Maintain a positive and encouraging tone.
 
-### Custom Special Events
+### Special Events
 #### Date Structure
-##### Static Date
 1. With year, month and date
     ```json
     "triggerDate": {
@@ -47,8 +46,13 @@
 
     We should place events of this type in the `fortune_generator/json/custom_special.json`.
 
-##### Cyclical Date
-1. With only month and day
+    For one-time or irregular events, or events with complex date calculations (like the Moon Festival in the lunar calendar).
+
+    **NOTE: Any special event that does not fit into either**
+    - Static events (fixed date every year)
+    - Cyclical events (recurring on a pattern like "fourth Thursday")
+
+2. With only month and day
     ```json
     "triggerDate": {
         "month": "Month",
@@ -58,7 +62,9 @@
 
     We should place events of this type in the `fortune_generator/json/static_special.json`.
 
-2. With only month, week, weekday (like Mother's Day)
+    For events with fixed dates.
+
+3. With only month, week, weekday (like Mother's Day)
     ```json
     "triggerDate": {
         "month": "Month",
@@ -68,6 +74,8 @@
     ```
 
     We should place events of this type in the `fortune_generator/json/cyclical_special.json`.
+
+    For recurring events (e.g., holidays like Thanksgiving and Mother's Day).
 
 #### Event Structure
 Special events require a more detailed structure.
