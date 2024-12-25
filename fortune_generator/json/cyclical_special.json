@@ -663,26 +663,6 @@
       }
     },
     {
-      "event": "冬至",
-      "triggerDate": {
-        "month": "12",
-        "date": "22"
-      },
-      "status_index": "0",
-      "goodFortunes": {
-        "l_1_event": "吃湯圓",
-        "l_1_desc": "團團圓圓",
-        "l_2_event": "保暖",
-        "l_2_desc": "冬至到了"
-      },
-      "badFortunes": {
-        "r_1_event": "",
-        "r_1_desc": "",
-        "r_2_event": "",
-        "r_2_desc": ""
-      }
-    },
-    {
       "event": "平安夜",
       "triggerDate": {
         "month": "12",

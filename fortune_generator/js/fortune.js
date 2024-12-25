@@ -133,12 +133,14 @@ function daysDiff(eventIndex) {
   }
   const triggerDate = event.triggerDate;
 
+  let isCustomEvent = false;
   eventYear = year;
   if ('year' in triggerDate) {
     eventYear = validateNumber(triggerDate.year, 1, maxDate.getFullYear(), 'triggerDate.year', event);
     if (eventYear === null) {
       return -1;
     }
+    isCustomEvent = true;
   }
 
   if (!('month' in triggerDate)) {
@@ -179,11 +181,16 @@ function daysDiff(eventIndex) {
     eventDate = firstTargetDay + (triggerDate.week - 1) * 7;
   }
 
+  if (!isCustomEvent && (month > eventMonth || (month == eventMonth && date > eventDate))) {
+    eventYear += 1;
+  }
+
   const endDate = new Date(
     eventYear,
     eventMonth - 1,
     eventDate,
   );
+
 
   // calculate the difference in milliseconds and convert it to days
   const timeDiff = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
