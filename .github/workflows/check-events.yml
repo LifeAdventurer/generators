@@ -1,0 +1,30 @@
+name: Check special events
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - '**'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v5
+      - name: Check Custom Special Events
+        run: |
+          python3 dev/check-events.py fortune_generator/json/custom_special.json custom
+
+      - name: Check Static Special Events
+        run: |
+          python3 dev/check-events.py fortune_generator/json/static_special.json static
+
+      - name: Check Cyclical Special Events
+        run: |
+          python3 dev/check-events.py fortune_generator/json/cyclical_special.json cyclical
