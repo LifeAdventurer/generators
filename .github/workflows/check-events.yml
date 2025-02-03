@@ -24,12 +24,12 @@ jobs:
       - uses: actions/setup-python@v5
       - name: Check Custom Special Events
         run: |
-          python3 dev/check-events.py fortune_generator/json/custom_special.json custom
+          python3 scripts/check-events.py fortune_generator/json/custom_special.json custom
 
       - name: Check Static Special Events
         run: |
-          python3 dev/check-events.py fortune_generator/json/static_special.json static
+          python3 scripts/check-events.py fortune_generator/json/static_special.json static
 
       - name: Check Cyclical Special Events
         run: |
-          python3 dev/check-events.py fortune_generator/json/cyclical_special.json cyclical
+          python3 scripts/check-events.py fortune_generator/json/cyclical_special.json cyclical
