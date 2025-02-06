@@ -21,6 +21,46 @@
       }
     },
     {
+      "event": "世界邏輯日",
+      "triggerDate": {
+        "month": "1",
+        "date": "14"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "思維訓練",
+        "l_1_desc": "提高自身邏輯能力",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "陷入死胡同",
+        "r_1_desc": "記得適當休息",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際擁抱日",
+      "triggerDate": {
+        "month": "1",
+        "date": "21"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "擁抱親朋好友",
+        "l_1_desc": "讓愛流動，增進情感連結",
+        "l_2_event": "送上擁抱",
+        "l_2_desc": "透過擁抱表達支持與愛意"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
       "event": "國際資料隱私日",
       "triggerDate": {
         "month": "1",
@@ -32,6 +72,166 @@
         "l_1_desc": "注意在線資料安全",
         "l_2_event": "注意隱私",
         "l_2_desc": "謹慎上網"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界濕地日",
+      "triggerDate": {
+        "month": "2",
+        "date": "2"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "參與保護濕地活動",
+        "l_1_desc": "重視濕地，參與保護",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界癌症日",
+      "triggerDate": {
+        "month": "2",
+        "date": "4"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "認識癌症",
+        "l_1_desc": "知道癌症並不可怕",
+        "l_2_event": "宣導健康生活",
+        "l_2_desc": "健康飲食運動，預防癌症"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界和平日",
+      "triggerDate": {
+        "month": "2",
+        "date": "5"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "參加和平遊行",
+        "l_1_desc": "支持和平，傳遞非暴力",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際比薩日",
+      "triggerDate": {
+        "month": "2",
+        "date": "9"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "品嚐各式比薩",
+        "l_1_desc": "共享比薩，樂享時光",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際氣象節",
+      "triggerDate": {
+        "month": "2",
+        "date": "10"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "了解氣候變化",
+        "l_1_desc": "認識氣候變遷，保護地球家園",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "世界社會正義日",
+      "triggerDate": {
+        "month": "2",
+        "date": "20"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "提升社會意識",
+        "l_1_desc": "關注不平等，參與正義行動",
+        "l_2_event": "支持弱勢群體",
+        "l_2_desc": "投身於公益事業，支持弱勢族群"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "國際母語日",
+      "triggerDate": {
+        "month": "2",
+        "date": "21"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "傳播母語",
+        "l_1_desc": "延續母語的使用，保護文化傳承",
+        "l_2_event": "",
+        "l_2_desc": ""
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
+      "event": "和平紀念日",
+      "triggerDate": {
+        "month": "2",
+        "date": "28"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "參與和平紀念活動",
+        "l_1_desc": "緬懷歷史，尊重和平的價值",
+        "l_2_event": "",
+        "l_2_desc": ""
       },
       "badFortunes": {
         "r_1_event": "",
