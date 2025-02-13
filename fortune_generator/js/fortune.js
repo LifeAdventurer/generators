@@ -213,7 +213,7 @@ let special_events_index = 0;
 
 // init page
 async function init_page() {
-  // fetch fortune.json and special.json
+  // fetch data from `fortune.json`
   await fetch_data();
 
   // hide the elements of show fortune page
