@@ -181,6 +181,26 @@
       }
     },
     {
+      "event": "情人節",
+      "triggerDate": {
+        "month": "2",
+        "date": "14"
+      },
+      "status_index": "0",
+      "goodFortunes": {
+        "l_1_event": "表達愛意",
+        "l_1_desc": "與愛人共享溫馨時光",
+        "l_2_event": "送禮物",
+        "l_2_desc": "透過心意滿滿的禮物傳遞深情"
+      },
+      "badFortunes": {
+        "r_1_event": "",
+        "r_1_desc": "",
+        "r_2_event": "",
+        "r_2_desc": ""
+      }
+    },
+    {
       "event": "世界社會正義日",
       "triggerDate": {
         "month": "2",
