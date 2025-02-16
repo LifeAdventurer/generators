@@ -374,7 +374,7 @@ for idx, event in enumerate(special_events["special_events"]):
 if errors:
     logging.error(args.path)
     for idx, error_msgs in errors.items():
-        logging.error(json.dumps(special_events["special_events"][idx], indent=4))
+        logging.error(json.dumps(special_events["special_events"][idx], indent=4, ensure_ascii=False))
         for msg in error_msgs:
             logging.error(msg)
     exit(-1)
