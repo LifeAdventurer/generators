@@ -324,8 +324,7 @@ function Appear() {
   if (!fortune_generated) {
     // transform ip to four numbers
     const num = ip.split(".").map((num) => parseInt(num));
-
-    // TODO: improve the hash process
+    
     const hashDate = Math.round(
       Math.log10(
         year *
