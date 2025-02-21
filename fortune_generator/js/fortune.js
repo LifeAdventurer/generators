@@ -342,7 +342,21 @@ function Appear() {
       hashDate + (date * day) >> 1;
 
     // decide the status
-    status_index = ((seed1 + seed2) % statusLen + statusLen) % statusLen;
+    let seedMagic = 0;
+    if (seed1 > seed2) {
+      seedMagic = (seed1 ^ seed2) + parseInt(seed1.toString().split('').reverse().join(''));
+    } else if (seed1 < seed2) {
+      let collatzLen = 0;
+      let temp = Math.abs(seed1 - seed2);
+      while (temp !== 1) {
+          temp = temp % 2 === 0 ? temp / 2 : 3 * temp + 1;
+          collatzLen++;
+      }
+      seedMagic = collatzLen + seed2.toString(2).replace(/0/g, '').length;
+    } else {
+      seedMagic = seed1 + seed2;
+    }
+    status_index = ((seedMagic) % statusLen + statusLen) % statusLen;
 
     // update last record
     localStorage.setItem("last_date", d.toISOString());
