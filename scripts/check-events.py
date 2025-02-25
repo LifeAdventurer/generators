@@ -169,7 +169,11 @@ event_names = set()
 event_dates = set()
 
 
-def check_structure(event: dict, idx: int):
+def check_structure(event, idx: int):
+    if not isinstance(event, dict):
+        errors[idx].append("should be a dict")
+        return False
+
     if not require_field_check(
         event,
         idx,
