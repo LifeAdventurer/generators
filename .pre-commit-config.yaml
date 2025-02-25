@@ -42,3 +42,11 @@ repos:
         files: fortune_generator/json/fortune.json
         types: [json]
         pass_filenames: false
+
+    -   id: check-theme
+        name: check-theme
+        entry: python3 scripts/check-theme.py fortune_generator/json/themes.json
+        language: python
+        files: fortune_generator/json/themes.json
+        types: [json]
+        pass_filenames: false
