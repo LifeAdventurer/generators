@@ -34,3 +34,11 @@ repos:
         files: fortune_generator/json/static_special.json
         types: [json]
         pass_filenames: false
+
+    -   id: check-fortune
+        name: check-fortune
+        entry: python3 scripts/check-fortune.py fortune_generator/json/fortune.json
+        language: python
+        files: fortune_generator/json/fortune.json
+        types: [json]
+        pass_filenames: false
