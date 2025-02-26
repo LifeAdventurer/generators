@@ -101,8 +101,11 @@ const year = d.getFullYear();
 function validateNumber(value, min, max, fieldName, event) {
   value = parseInt(value);
   if (isNaN(value) || value < min || value > max) {
-      console.warn(`illegal event: ${fieldName} should be between ${min} and ${max}`, event);
-      return null;
+    console.warn(
+      `illegal event: ${fieldName} should be between ${min} and ${max}`,
+      event,
+    );
+    return null;
   }
   return value;
 }
@@ -115,7 +118,19 @@ function isLeapYear(year) {
 }
 
 const daysPerMonth = [
-  0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+  0,
+  31,
+  28,
+  31,
+  30,
+  31,
+  30,
+  31,
+  31,
+  30,
+  31,
+  30,
+  31,
 ];
 const maxDate = new Date(8640000000000000);
 
@@ -124,50 +139,90 @@ function daysDiff(eventIndex) {
   const event = special_events[eventIndex];
   const startDate = new Date(year, month - 1, date);
   let eventYear = -1, eventMonth = -1, eventDate = -1;
-  if (!('triggerDate' in event)) {
-    console.warn('illegal event: missing `triggerDate` field', event);
+  if (!("triggerDate" in event)) {
+    console.warn("illegal event: missing `triggerDate` field", event);
     return -1;
-  } else if (Object.prototype.toString.call(event.triggerDate) !== "[object Object]") {
-    console.warn('illegal event: `triggerDate` field should be a json object', event);
+  } else if (
+    Object.prototype.toString.call(event.triggerDate) !== "[object Object]"
+  ) {
+    console.warn(
+      "illegal event: `triggerDate` field should be a json object",
+      event,
+    );
     return -1;
   }
   const triggerDate = event.triggerDate;
 
   let isCustomEvent = false;
   eventYear = year;
-  if ('year' in triggerDate) {
-    eventYear = validateNumber(triggerDate.year, 1, maxDate.getFullYear(), 'triggerDate.year', event);
+  if ("year" in triggerDate) {
+    eventYear = validateNumber(
+      triggerDate.year,
+      1,
+      maxDate.getFullYear(),
+      "triggerDate.year",
+      event,
+    );
     if (eventYear === null) {
       return -1;
     }
     isCustomEvent = true;
   }
 
-  if (!('month' in triggerDate)) {
-    console.warn('illegal event: `triggerDate` missing `month` field', event);
+  if (!("month" in triggerDate)) {
+    console.warn("illegal event: `triggerDate` missing `month` field", event);
     return -1;
   }
-  eventMonth = validateNumber(triggerDate.month, 1, 12, 'triggerDate.Month', event);
+  eventMonth = validateNumber(
+    triggerDate.month,
+    1,
+    12,
+    "triggerDate.Month",
+    event,
+  );
   if (eventMonth === null) {
     return -1;
   }
 
-  if (!('date' in triggerDate) && (!('week' in triggerDate) || !('weekday' in triggerDate))) {
-    console.warn('illegal event: `triggerDate` require (`week` and `weekday`) or `date` field', event);
+  if (
+    !("date" in triggerDate) &&
+    (!("week" in triggerDate) || !("weekday" in triggerDate))
+  ) {
+    console.warn(
+      "illegal event: `triggerDate` require (`week` and `weekday`) or `date` field",
+      event,
+    );
     return -1;
   }
 
-  if ('date' in triggerDate) {
+  if ("date" in triggerDate) {
     let days = daysPerMonth[eventMonth];
     if (isLeapYear(eventYear) && eventMonth == 2) days += 1;
-    eventDate = validateNumber(triggerDate.date, 1, days, 'triggerDate.date', event);
+    eventDate = validateNumber(
+      triggerDate.date,
+      1,
+      days,
+      "triggerDate.date",
+      event,
+    );
     if (eventDate === null) {
       return -1;
     }
   } else {
-
-    triggerDate.week = validateNumber(triggerDate.week, 1, 5, 'triggerDate.week', event);
-    triggerDate.weekday = validateNumber(triggerDate.weekday, 1, 7, 'triggerDate.weekday', event);
+    triggerDate.week = validateNumber(
+      triggerDate.week,
+      1,
+      5,
+      "triggerDate.week",
+      event,
+    );
+    triggerDate.weekday = validateNumber(
+      triggerDate.weekday,
+      1,
+      7,
+      "triggerDate.weekday",
+      event,
+    );
     if (triggerDate.week === null || triggerDate.weekday === null) {
       return -1;
     }
@@ -177,11 +232,15 @@ function daysDiff(eventIndex) {
 
     // Sunday -> 7
     const adjustedFirstDayWeekday = firstDayWeekday === 0 ? 7 : firstDayWeekday;
-    const firstTargetDay = 1 + (triggerDate.weekday - adjustedFirstDayWeekday + 7) % 7;
+    const firstTargetDay = 1 +
+      (triggerDate.weekday - adjustedFirstDayWeekday + 7) % 7;
     eventDate = firstTargetDay + (triggerDate.week - 1) * 7;
   }
 
-  if (!isCustomEvent && (month > eventMonth || (month == eventMonth && date > eventDate))) {
+  if (
+    !isCustomEvent &&
+    (month > eventMonth || (month == eventMonth && date > eventDate))
+  ) {
     eventYear += 1;
   }
 
@@ -190,7 +249,6 @@ function daysDiff(eventIndex) {
     eventMonth - 1,
     eventDate,
   );
-
 
   // calculate the difference in milliseconds and convert it to days
   const timeDiff = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
@@ -238,7 +296,9 @@ async function init_page() {
 
   const showSpecialEventCount = 2;
   let eventIndexList = Array(showSpecialEventCount).fill(-1);
-  let eventDiffDaysIndexList = Array(showSpecialEventCount).fill(Number.MAX_SAFE_INTEGER);
+  let eventDiffDaysIndexList = Array(showSpecialEventCount).fill(
+    Number.MAX_SAFE_INTEGER,
+  );
 
   // check if there is special event today
   for (let i = 0; i < special_events.length; i++) {
@@ -344,19 +404,20 @@ function Appear() {
     // decide the status
     let seedMagic = 0;
     if (seed1 > seed2) {
-      seedMagic = (seed1 ^ seed2) + parseInt(seed1.toString().split('').reverse().join(''));
+      seedMagic = (seed1 ^ seed2) +
+        parseInt(seed1.toString().split("").reverse().join(""));
     } else if (seed1 < seed2) {
       let collatzLen = 0;
       let temp = Math.abs(seed1 - seed2);
       while (temp !== 1) {
-          temp = temp % 2 === 0 ? temp / 2 : 3 * temp + 1;
-          collatzLen++;
+        temp = temp % 2 === 0 ? temp / 2 : 3 * temp + 1;
+        collatzLen++;
       }
-      seedMagic = collatzLen + seed2.toString(2).replace(/0/g, '').length;
+      seedMagic = collatzLen + seed2.toString(2).replace(/0/g, "").length;
     } else {
       seedMagic = seed1 + seed2;
     }
-    status_index = ((seedMagic) % statusLen + statusLen) % statusLen;
+    status_index = (seedMagic % statusLen + statusLen) % statusLen;
 
     // update last record
     localStorage.setItem("last_date", d.toISOString());
@@ -394,15 +455,33 @@ function Appear() {
     l2 = (l2 + 1) % goodLen;
   }
   set.add(goodFortunes[l2].event);
-  let r1 = (((seed1 >> 1) + (d.getMonth() << 3)) % badLen + badLen) % badLen;
+  let r1 =
+    (((seed1 >> 2) + ((month * 42 + year) << 3 + 3) + 19) % badLen + badLen) %
+    badLen;
+  if (
+    r1 == 0 &&
+    (Math.abs(seed1) % 2 === Math.abs(seed2) % 2 || seed1 % 2 === 0 ||
+      seed2 % 3 === 1)
+  ) {
+    r1 = (r1 + (Math.abs(seed1 - seed2) % 100) >> 4) % badLen;
+  }
   while (set.has(badFortunes[r1].event)) {
-    r1 = (r1 + 2) % badLen;
+    r1 = (r1 + 7) % badLen;
   }
   set.add(badFortunes[r1].event);
-  let r2 = ((((((seed1 << 3) + (d.getFullYear() >> 5) * (date << 2)) % badLen) *
-        seed2) >> 6) % badLen + badLen) % badLen;
+  let r2 = (((((seed1 << 3 + 7) + (year >> 5) * (date << 2 + 3)) *
+        seed2) >> 4 + seed2 % 42) % badLen + badLen) % badLen;
+  if (
+    r2 == 0 &&
+    (Math.abs(seed1) % 3 % 2 === Math.abs(seed2) % 3 % 2 ||
+      seed1 % 3 === seed2 % 2 || (month % 3 === 1 && year % 2 === 1) ||
+      month % 4 === 3 || date % 7 === 2)
+  ) {
+    r2 = ((r2 - (Math.abs(seed1 + seed2) % 10) >> 1) % badLen + badLen) %
+      badLen;
+  }
   while (set.has(badFortunes[r2].event)) {
-    r2 = (r2 + 1) % badLen;
+    r2 = (r2 + 17) % badLen;
   }
 
   // organize the stuffs below this line...
