@@ -350,7 +350,7 @@ async function init_page() {
       now_date.getDate() === last_date.getDate()
     ) {
       fortune_generated = true;
-      Appear();
+      Update();
     }
   }
 }
