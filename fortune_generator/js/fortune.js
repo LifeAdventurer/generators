@@ -24,7 +24,6 @@ fetch("https://api.ipify.org?format=json").then((response) => {
 let goodFortunes = [];
 let badFortunes = [];
 let special_events = [];
-let fortune_generated = false;
 
 // using async and await to prevent fetching the data too late...
 async function fetch_data() {
@@ -267,11 +266,30 @@ const J_r_2_desc = $("#r-2-desc");
 const J_ip_to_fortune = $("#ip-to-fortune");
 
 let special = false;
-let special_events_index = 0;
+let special_events_index = -1;
+let l1 = -1, l2 = -1, r1 = -1, r2 = -1;
+let status_index = -1;
+let seed1 = -1, seed2 = -1;
+let fortune_generated = false;
+let preview_result = false;
 let current_day_special_events = [];
 
 // init page
 async function init_page() {
+  let urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('fi') && urlParams.has('si') && urlParams.has('ei')) { // fortune_index, status_index, event_index
+    status_index = parseInt(urlParams.get('si'));
+    special_events_index = parseInt(urlParams.get('ei'));
+    [l1, l2, r1, r2] = urlParams.get('fi').split(':').map(num => parseInt(num));
+    if (isNaN(status_index) || isNaN(special_events_index) || isNaN(l1) || isNaN(l2) || isNaN(r1) || isNaN(r2)) {
+      special_events_index = -1;
+      l1 = -1, l2 = -1, r1 = -1, r2 = -1;
+      status_index = -1;
+    } else {
+      preview_result = true;
+      if (special_events_index != -1) special = true;
+    }
+  }
   // fetch data from `fortune.json`
   await fetch_data();
 
@@ -295,68 +313,71 @@ async function init_page() {
   $("#date").html(showDate);
   $("#weekday").html(showDay);
 
-  const showSpecialEventCount = 2;
-  let eventIndexList = Array(showSpecialEventCount).fill(-1);
-  let eventDiffDaysIndexList = Array(showSpecialEventCount).fill(
-    Number.MAX_SAFE_INTEGER,
-  );
+  if (preview_result) Appear();
+  if (!preview_result) {
+    const showSpecialEventCount = 2;
+    let eventIndexList = Array(showSpecialEventCount).fill(-1);
+    let eventDiffDaysIndexList = Array(showSpecialEventCount).fill(
+      Number.MAX_SAFE_INTEGER,
+    );
 
-  // check if there is special event today
-  for (let i = 0; i < special_events.length; i++) {
-    let diffCount = daysDiff(i);
-    if (diffCount > 0) {
-      let j = 0;
-      for (; j < showSpecialEventCount; j++) {
-        if (diffCount < eventDiffDaysIndexList[j]) {
-          break;
+    // check if there is special event today
+    for (let i = 0; i < special_events.length; i++) {
+      let diffCount = daysDiff(i);
+      if (diffCount > 0) {
+        let j = 0;
+        for (; j < showSpecialEventCount; j++) {
+          if (diffCount < eventDiffDaysIndexList[j]) {
+            break;
+          }
         }
+
+        eventDiffDaysIndexList[j] = diffCount;
+        eventIndexList[j] = i;
+      } else if (diffCount === 0) {
+        special = true;
+        current_day_special_events.push(i);
       }
-
-      eventDiffDaysIndexList[j] = diffCount;
-      eventIndexList[j] = i;
-    } else if (diffCount === 0) {
-      special = true;
-      current_day_special_events.push(i);
     }
-  }
 
-  special_events_index = ip.split(".").map(num => parseInt(num)).reduce((acc, cur) => acc + cur);
-  special_events_index %= current_day_special_events.length;
-  special_events_index = current_day_special_events[special_events_index];
+    special_events_index = ip.split(".").map(num => parseInt(num)).reduce((acc, cur) => acc + cur);
+    special_events_index %= current_day_special_events.length;
+    special_events_index = current_day_special_events[special_events_index];
 
-  // if there is upcoming event then show
-  for (let eventIndex = 0; eventIndex < showSpecialEventCount; eventIndex++) {
-    if (eventIndexList[eventIndex] != -1) {
-      const days = daysDiff(eventIndexList[eventIndex]);
-      const upcoming_event =
-        `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${
-          special_events[eventIndexList[eventIndex]].event
-        }</b>還剩<b class="special-event">${days}</b>天</span>`;
-      $(`#upcoming-event-${eventIndex + 1}`).html(upcoming_event);
+    // if there is upcoming event then show
+    for (let eventIndex = 0; eventIndex < showSpecialEventCount; eventIndex++) {
+      if (eventIndexList[eventIndex] != -1) {
+        const days = daysDiff(eventIndexList[eventIndex]);
+        const upcoming_event =
+          `<span class="desc" style="font-size:5vmin;">距離<b class="special-event">${
+            special_events[eventIndexList[eventIndex]].event
+          }</b>還剩<b class="special-event">${days}</b>天</span>`;
+        $(`#upcoming-event-${eventIndex + 1}`).html(upcoming_event);
+      }
     }
-  }
 
-  // show special event if today is a special day
-  if (special) {
-    const special_event_today =
-      `<span class="desc" style="font-size:9vmin;">今日是<b class="good-fortune">${
-        special_events[special_events_index].event
-      }</b></span>`;
-    $("#special-day").html(special_event_today);
-  }
+    // show special event if today is a special day
+    if (special) {
+      const special_event_today =
+        `<span class="desc" style="font-size:9vmin;">今日是<b class="good-fortune">${
+          special_events[special_events_index].event
+        }</b></span>`;
+      $("#special-day").html(special_event_today);
+    }
 
-  const last_date_str = localStorage.getItem("last_date");
-  if (last_date_str !== null && last_date_str !== undefined) {
-    const now_date = new Date();
-    const last_date = new Date(last_date_str);
+    const last_date_str = localStorage.getItem("last_date");
+    if (last_date_str !== null && last_date_str !== undefined) {
+      const now_date = new Date();
+      const last_date = new Date(last_date_str);
 
-    if (
-      now_date.getFullYear() === last_date.getFullYear() &&
-      now_date.getMonth() === last_date.getMonth() &&
-      now_date.getDate() === last_date.getDate()
-    ) {
-      fortune_generated = true;
-      Update();
+      if (
+        now_date.getFullYear() === last_date.getFullYear() &&
+        now_date.getMonth() === last_date.getMonth() &&
+        now_date.getDate() === last_date.getDate()
+      ) {
+        fortune_generated = true;
+        Update();
+      }
     }
   }
 }
@@ -383,11 +404,7 @@ function Appear() {
   const badLen = badFortunes.length;
   const statusLen = fortuneStatus.length;
 
-  let status_index = -1;
-  let seed1 = -1;
-  let seed2 = -1;
-
-  if (!fortune_generated) {
+  if (!fortune_generated && !preview_result) {
     // transform ip to four numbers
     const num = ip.split(".").map((num) => parseInt(num));
 
@@ -430,7 +447,7 @@ function Appear() {
     localStorage.setItem("last_status_index", status_index.toString());
     localStorage.setItem("last_seed1", seed1.toString());
     localStorage.setItem("last_seed2", seed2.toString());
-  } else {
+  } else if (!preview_result) {
     status_index = parseInt(localStorage.getItem("last_status_index"));
     seed1 = parseInt(localStorage.getItem("last_seed1"));
     seed2 = parseInt(localStorage.getItem("last_seed2"));
@@ -453,41 +470,43 @@ function Appear() {
   }
 
   // make sure the events won't collide
-  const set = new Set();
-  const l1 = (seed1 % goodLen + goodLen) % goodLen;
-  set.add(goodFortunes[l1].event);
-  let l2 = (((seed1 << 1) + date) % goodLen + goodLen) % goodLen;
-  while (set.has(goodFortunes[l2].event)) {
-    l2 = (l2 + 1) % goodLen;
-  }
-  set.add(goodFortunes[l2].event);
-  let r1 =
-    (((seed1 >> 2) + ((month * 42 + year) << 3 + 3) + 19) % badLen + badLen) %
-    badLen;
-  if (
-    r1 == 0 &&
-    (Math.abs(seed1) % 2 === Math.abs(seed2) % 2 || seed1 % 2 === 0 ||
-      seed2 % 3 === 1)
-  ) {
-    r1 = (r1 + (Math.abs(seed1 - seed2) % 100) >> 4) % badLen;
-  }
-  while (set.has(badFortunes[r1].event)) {
-    r1 = (r1 + 7) % badLen;
-  }
-  set.add(badFortunes[r1].event);
-  let r2 = (((((seed1 << 3 + 7) + (year >> 5) * (date << 2 + 3)) *
-        seed2) >> 4 + seed2 % 42) % badLen + badLen) % badLen;
-  if (
-    r2 == 0 &&
-    (Math.abs(seed1) % 3 % 2 === Math.abs(seed2) % 3 % 2 ||
-      seed1 % 3 === seed2 % 2 || (month % 3 === 1 && year % 2 === 1) ||
-      month % 4 === 3 || date % 7 === 2)
-  ) {
-    r2 = ((r2 - (Math.abs(seed1 + seed2) % 10) >> 1) % badLen + badLen) %
+  if (!preview_result) {
+    const set = new Set();
+    l1 = (seed1 % goodLen + goodLen) % goodLen;
+    set.add(goodFortunes[l1].event);
+    l2 = (((seed1 << 1) + date) % goodLen + goodLen) % goodLen;
+    while (set.has(goodFortunes[l2].event)) {
+      l2 = (l2 + 1) % goodLen;
+    }
+    set.add(goodFortunes[l2].event);
+    r1 =
+      (((seed1 >> 2) + ((month * 42 + year) << 3 + 3) + 19) % badLen + badLen) %
       badLen;
-  }
-  while (set.has(badFortunes[r2].event)) {
-    r2 = (r2 + 17) % badLen;
+    if (
+      r1 == 0 &&
+      (Math.abs(seed1) % 2 === Math.abs(seed2) % 2 || seed1 % 2 === 0 ||
+        seed2 % 3 === 1)
+    ) {
+      r1 = (r1 + (Math.abs(seed1 - seed2) % 100) >> 4) % badLen;
+    }
+    while (set.has(badFortunes[r1].event)) {
+      r1 = (r1 + 7) % badLen;
+    }
+    set.add(badFortunes[r1].event);
+    r2 = (((((seed1 << 3 + 7) + (year >> 5) * (date << 2 + 3)) *
+          seed2) >> 4 + seed2 % 42) % badLen + badLen) % badLen;
+    if (
+      r2 == 0 &&
+      (Math.abs(seed1) % 3 % 2 === Math.abs(seed2) % 3 % 2 ||
+        seed1 % 3 === seed2 % 2 || (month % 3 === 1 && year % 2 === 1) ||
+        month % 4 === 3 || date % 7 === 2)
+    ) {
+      r2 = ((r2 - (Math.abs(seed1 + seed2) % 10) >> 1) % badLen + badLen) %
+        badLen;
+    }
+    while (set.has(badFortunes[r2].event)) {
+      r2 = (r2 + 17) % badLen;
+    }
   }
 
   // organize the stuffs below this line...
