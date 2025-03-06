@@ -277,7 +277,7 @@ def check_static_date(event: dict, idx: int):
             idx, trigger_date["date"], 1, DAYSPERMONTH[month], "triggerDate.date"
         )
 
-    key = f'"{event_name}:{trigger_date["month"]}/{trigger_date["date"]}'
+    key = f'{event_name}:{trigger_date["month"]}/{trigger_date["date"]}'
     if key in event_dates:
         errors[idx].append(f"The `{key}` is repeated.")
 
@@ -315,7 +315,7 @@ def check_cyclical_date(event: dict, idx: int):
     validate_number(idx, trigger_date["week"], 1, 5, "triggerDate.week")
     validate_number(idx, trigger_date["weekday"], 1, 7, "triggerDate.weekday")
 
-    key = f'"{event_name}:{trigger_date["month"]}/{trigger_date["week"]}/{trigger_date["weekday"]}'
+    key = f'{event_name}:{trigger_date["month"]}/{trigger_date["week"]}/{trigger_date["weekday"]}'
     if key in event_dates:
         errors[idx].append(f"The `{key}` is repeated.")
 
@@ -369,7 +369,7 @@ def check_custom_date(event: dict, idx: int):
     if date is None:
         return
 
-    key = f'"{event_name}:{year}/{month}/{date}'
+    key = f'{event_name}:{year}/{month}/{date}'
     if key in event_dates:
         errors[idx].append(f"The `{key}` is repeated.")
 
