@@ -104,6 +104,9 @@ Special events require a more detailed structure.
 2. Empty Fields: If there are no fortunes to add, leave the corresponding fields
    as empty strings (`""`).
 
+3. We support adding multiple special events on the same day,
+   and the hash function will determine which event will be shown for that day.
+
 ### Adding New Themes
 
 #### JSON Theme Structure

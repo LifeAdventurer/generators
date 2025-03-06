@@ -268,6 +268,7 @@ const J_ip_to_fortune = $("#ip-to-fortune");
 
 let special = false;
 let special_events_index = 0;
+let current_day_special_events = [];
 
 // init page
 async function init_page() {
@@ -315,9 +316,14 @@ async function init_page() {
       eventIndexList[j] = i;
     } else if (diffCount === 0) {
       special = true;
-      special_events_index = i;
+      current_day_special_events.push(i);
     }
   }
+
+  special_events_index = ip.split(".").map(num => parseInt(num)).reduce((acc, cur) => acc + cur);
+  special_events_index %= current_day_special_events.length;
+  special_events_index = current_day_special_events[special_events_index];
+
   // if there is upcoming event then show
   for (let eventIndex = 0; eventIndex < showSpecialEventCount; eventIndex++) {
     if (eventIndexList[eventIndex] != -1) {
