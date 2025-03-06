@@ -26,8 +26,12 @@ let badFortunes = [];
 let special_events = [];
 
 // using async and await to prevent fetching the data too late...
-async function fetch_data() {
-  await fetch("./json/fortune.json")
+async function fetch_data(commit_hash) {
+  let prefix = "";
+  if (commit_hash) {
+    prefix = `https://raw.githubusercontent.com/LifeAdventurer/generators/${commit_hash}/fortune_generator/`;
+  }
+  await fetch(`${prefix}./json/fortune.json`)
     .then((response) => response.json())
     .then((data) => {
       goodFortunes = data.goodFortunes;
@@ -42,9 +46,9 @@ async function fetch_data() {
       });
   }
 
-  await fetch_events("./json/custom_special.json");
-  await fetch_events("./json/static_special.json");
-  await fetch_events("./json/cyclical_special.json");
+  await fetch_events(`${prefix}./json/custom_special.json`);
+  await fetch_events(`${prefix}./json/static_special.json`);
+  await fetch_events(`${prefix}./json/cyclical_special.json`);
 }
 
 const textColorClass = [
@@ -277,21 +281,24 @@ let current_day_special_events = [];
 // init page
 async function init_page() {
   let urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has('fi') && urlParams.has('si') && urlParams.has('ei')) { // fortune_index, status_index, event_index
+  let commit_hash = null;
+  if (urlParams.has('fi') && urlParams.has('si') && urlParams.has('ei'), urlParams.has('ch')) { // fortune_index, status_index, event_index, commit_hash
     status_index = parseInt(urlParams.get('si'));
     special_events_index = parseInt(urlParams.get('ei'));
     [l1, l2, r1, r2] = urlParams.get('fi').split(':').map(num => parseInt(num));
+    commit_hash = urlParams.get('ch');
     if (isNaN(status_index) || isNaN(special_events_index) || isNaN(l1) || isNaN(l2) || isNaN(r1) || isNaN(r2)) {
       special_events_index = -1;
       l1 = -1, l2 = -1, r1 = -1, r2 = -1;
       status_index = -1;
+      commit_hash = null;
     } else {
       preview_result = true;
       if (special_events_index != -1) special = true;
     }
   }
   // fetch data from `fortune.json`
-  await fetch_data();
+  await fetch_data(commit_hash);
 
   // hide the elements of show fortune page
   $("#result-page").hide();
