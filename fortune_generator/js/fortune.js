@@ -24,6 +24,7 @@ fetch("https://api.ipify.org?format=json").then((response) => {
 let goodFortunes = [];
 let badFortunes = [];
 let special_events = [];
+let commit_hash = "";
 
 // using async and await to prevent fetching the data too late...
 async function fetch_data(commit_hash) {
@@ -36,6 +37,11 @@ async function fetch_data(commit_hash) {
     .then((data) => {
       goodFortunes = data.goodFortunes;
       badFortunes = data.badFortunes;
+    });
+  await fetch('./json/commit_hash.json')
+    .then((response) => response.json())
+    .then((data) => {
+      commit_hash = data.commit_hash;
     });
 
   async function fetch_events(path) {
@@ -595,6 +601,14 @@ function Appear() {
     }
   }
   $("#copy-result-button").removeClass("d-none");
+  $("#copy-preview-result-url-button").removeClass("d-none");
+}
+
+function copyPreviewResultUrlToClipboard() {
+  let baseUrl = location.href.split("?")[0];
+  let url = `${baseUrl}?si=${status_index}&ei=${special_events_index}&fi=${[l1,l2,r1,r2].join(":")}&ch=${commit_hash.substr(0, 7)}`;
+  navigator.clipboard.writeText(url);
+  showCopiedNotice();
 }
 
 function getLuck() {
