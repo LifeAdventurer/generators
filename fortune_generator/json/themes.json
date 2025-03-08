@@ -13,6 +13,7 @@
         "button-hover-color": "#459aef",
         "toggle-theme-button-color": "#000000",
         "copy-result-button-color": "#000000",
+        "copy-preview-result-url-button-color": "#000000",
         "date-color": "#096e1bc9",
         "special-event-color": "#3e4fbb"
       }
@@ -30,6 +31,7 @@
         "button-hover-color": "#9ac6f1",
         "toggle-theme-button-color": "#ffffff",
         "copy-result-button-color": "#ffffff",
+        "copy-preview-result-url-button-color": "#ffffff",
         "date-color": "#0ed64aed",
         "special-event-color": "#6477f3"
       }
@@ -47,6 +49,7 @@
         "button-hover-color": "#a6e3a1",
         "toggle-theme-button-color": "#f9e2af",
         "copy-result-button-color": "#f38ba8",
+        "copy-preview-result-url-button-color": "#f38ba8",
         "date-color": "#f5c2e7",
         "special-event-color": "#fab387"
       }
@@ -64,6 +67,7 @@
         "button-hover-color": "#5a5b7f",
         "toggle-theme-button-color": "#7dcfff",
         "copy-result-button-color": "#ff5c8d",
+        "copy-preview-result-url-button-color": "#ff5c8d",
         "date-color": "#ffbb93",
         "special-event-color": "#f7768e"
       }
@@ -81,6 +85,7 @@
         "button-hover-color": "#ffb347",
         "toggle-theme-button-color": "#ff6f61",
         "copy-result-button-color": "#6d597a",
+        "copy-preview-result-url-button-color": "#6d597a",
         "date-color": "#ff9f80",
         "special-event-color": "#ffb6b9"
       }
@@ -98,6 +103,7 @@
         "button-hover-color": "#ff8500",
         "toggle-theme-button-color": "#34ace0",
         "copy-result-button-color": "#ffcc29",
+        "copy-preview-result-url-button-color": "#ffcc29",
         "date-color": "#ffd32a",
         "special-event-color": "#f7b731"
       }
@@ -115,6 +121,7 @@
         "button-hover-color": "#b9896e",
         "toggle-theme-button-color": "#a74c3c",
         "copy-result-button-color": "#7a6e61",
+        "copy-preview-result-url-button-color": "#7a6e61",
         "date-color": "#e6b89c",
         "special-event-color": "#e8a87c"
       }
@@ -132,6 +139,7 @@
         "button-hover-color": "#a29bfe",
         "toggle-theme-button-color": "#00b894",
         "copy-result-button-color": "#0984e3",
+        "copy-preview-result-url-button-color": "#0984e3",
         "date-color": "#74b9ff",
         "special-event-color": "#fdcb6e"
       }
@@ -149,6 +157,7 @@
         "button-hover-color": "#535c88",
         "toggle-theme-button-color": "#7ed6df",
         "copy-result-button-color": "#ffeaa7",
+        "copy-preview-result-url-button-color": "#ffeaa7",
         "date-color": "#dcdde1",
         "special-event-color": "#ff9ff3"
       }
@@ -166,6 +175,7 @@
         "button-hover-color": "#646b8a",
         "toggle-theme-button-color": "#7289da",
         "copy-result-button-color": "#b56576",
+        "copy-preview-result-url-button-color": "#b56576",
         "date-color": "#d4d4dc",
         "special-event-color": "#ffb86c"
       }
@@ -183,6 +193,7 @@
         "button-hover-color": "#52577a",
         "toggle-theme-button-color": "#00eaff",
         "copy-result-button-color": "#ff5555",
+        "copy-preview-result-url-button-color": "#ff5555",
         "date-color": "#9aedfe",
         "special-event-color": "#ffa07a"
       }
@@ -200,6 +211,7 @@
         "button-hover-color": "#6a9a76",
         "toggle-theme-button-color": "#a1e887",
         "copy-result-button-color": "#d94e3b",
+        "copy-preview-result-url-button-color": "#d94e3b",
         "date-color": "#e4f9e0",
         "special-event-color": "#9fd9b7"
       }
@@ -217,6 +229,7 @@
         "button-hover-color": "#b98b6f",
         "toggle-theme-button-color": "#8b5e3c",
         "copy-result-button-color": "#d4a373",
+        "copy-preview-result-url-button-color": "#d4a373",
         "date-color": "#7f6a5d",
         "special-event-color": "#c7ab93"
       }
@@ -234,6 +247,7 @@
         "button-hover-color": "#2980b9",
         "toggle-theme-button-color": "#4e8c47",
         "copy-result-button-color": "#d9534f",
+        "copy-preview-result-url-button-color": "#d9534f",
         "date-color": "#bdc3c7",
         "special-event-color": "#f39c12"
       }
@@ -251,6 +265,7 @@
         "button-hover-color": "#ff6347",
         "toggle-theme-button-color": "#00bfae",
         "copy-result-button-color": "#ff6347",
+        "copy-preview-result-url-button-color": "#ff6347",
         "date-color": "#2e8b57",
         "special-event-color": "#ff8c00"
       }
@@ -268,6 +283,7 @@
         "button-hover-color": "#fc4f48",
         "toggle-theme-button-color": "#e1b1e3",
         "copy-result-button-color": "#c93f36",
+        "copy-preview-result-url-button-color": "#c93f36",
         "date-color": "#cf63a1",
         "special-event-color": "#f6c6d4"
       }
@@ -285,6 +301,7 @@
         "button-hover-color": "#b0b098",
         "toggle-theme-button-color": "#8c9f6f",
         "copy-result-button-color": "#e18e8b",
+        "copy-preview-result-url-button-color": "#e18e8b",
         "date-color": "#4f5049",
         "special-event-color": "#b7c7b5"
       }
@@ -302,6 +319,7 @@
         "button-hover-color": "#5072b3",
         "toggle-theme-button-color": "#00d084",
         "copy-result-button-color": "#455a64",
+        "copy-preview-result-url-button-color": "#455a64",
         "date-color": "#cfd8dc",
         "special-event-color": "#a1d6ff"
       }
@@ -319,6 +337,7 @@
         "button-hover-color": "#005f87",
         "toggle-theme-button-color": "#00f5d4",
         "copy-result-button-color": "#293462",
+        "copy-preview-result-url-button-color": "#293462",
         "date-color": "#72efdd",
         "special-event-color": "#72ddf7"
       }

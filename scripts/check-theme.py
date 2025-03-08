@@ -117,6 +117,7 @@ def check_theme(theme, idx: int):
         ("button-hover-color", str),
         ("toggle-theme-button-color", str),
         ("copy-result-button-color", str),
+        ("copy-preview-result-url-button-color", str),
         ("date-color", str),
         ("special-event-color", str),
     ]
