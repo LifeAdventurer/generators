@@ -1,4 +1,4 @@
-name: Check special events
+name: Check fortune generator JSON files
 
 on:
   pull_request:
@@ -6,12 +6,16 @@ on:
       - 'fortune_generator/json/custom_special.json'
       - 'fortune_generator/json/static_special.json'
       - 'fortune_generator/json/cyclical_special.json'
+      - 'fortune_generator/json/fortune.json'
+      - 'fortune_generator/json/themes.json'
 
   push:
     paths:
       - 'fortune_generator/json/custom_special.json'
       - 'fortune_generator/json/static_special.json'
       - 'fortune_generator/json/cyclical_special.json'
+      - 'fortune_generator/json/fortune.json'
+      - 'fortune_generator/json/themes.json'
 
 permissions:
   contents: read
@@ -33,3 +37,11 @@ jobs:
       - name: Check Cyclical Special Events
         run: |
           python3 scripts/check-events.py fortune_generator/json/cyclical_special.json cyclical
+
+      - name: Check Fortune
+        run: |
+          python3 scripts/check-fortune.py fortune_generator/json/fortune.json
+
+      - name: Check Color Theme
+        run: |
+          python3 scripts/check-theme.py fortune_generator/json/themes.json
