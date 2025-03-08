@@ -1,4 +1,4 @@
-name: Check fortune generator json file
+name: Check fortune generator JSON files
 
 on:
   pull_request:
