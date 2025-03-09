@@ -3,6 +3,7 @@
   --button-hover-color: #459aef;
   --toggle-theme-button-color: #000000;
   --copy-result-button-color: #000000;
+  --copy-preview-result-url-button-color: #000000;
   --bg-color: #ffffff;
   --good-fortune-color: #e74c3c;
   --bad-fortune-color: #000000bf;
@@ -99,8 +100,14 @@ button:hover {
 
 #copy-result-button {
   margin-top: 20px;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   color: var(--copy-result-button-color);
+}
+
+#copy-preview-result-url-button {
+  margin-top: 20px;
+  font-size: 2.2rem;
+  color: var(--copy-preview-result-url-button-color);
 }
 
 #themeModal {
