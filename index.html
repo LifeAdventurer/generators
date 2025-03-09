@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generators</title>
+    <link rel="icon" href="./images/lifeadventurer_rounded_logo.png" />
+    <!-- bootstrap 5.3.2 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- jquery 3.7.1 -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    ></script>
+    <!-- box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="row">
+        <h1 class="col-md-4 col-sm-6 offset-md-4 offset-sm-3">
+          Generators Gallery
+        </h1>
+        <div
+          class="col-md-1 col-sm-1 offset-md-3 offset-sm-2 bx bx-moon"
+          id="dark-mode-icon"
+        >
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-3 border-0">
+              <img
+                class="card-img-top"
+                src="./images/fortune_generator_example.png"
+                alt="fortune generator example"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Fortune Generator</h4>
+                <p class="card-text">
+                  Get your daily fortune with just a click.
+                </p>
+                <a class="btn" href="./fortune_generator/">Check this out</a>
+              </div>
+              <div class="card-footer">
+                <div id="last-update-1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-3 border-0">
+              <img
+                class="card-img-top"
+                src="./images/quote_generator_example_(2).png"
+                alt="quote generator example"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Quote Generator</h4>
+                <p class="card-text">
+                  Generate inspiring and thought-provoking quotes effortlessly.
+                </p>
+                <a class="btn" href="./quote_generator/">Check this out</a>
+              </div>
+              <div class="card-footer">
+                <div id="last-update-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="row text-muted py-3 me-3 float-end" id="footer-author">
+        <h5>
+          Copyright © 2023-2025 LifeAdventurer | All Rights Reserved.
+          <a href="https://github.com/LifeAdventurer">
+            <img
+              id="footer-author-icon"
+              src="./images/lifeadventurer_rounded_logo.png"
+              alt="footer image"
+            />
+          </a>
+        </h5>
+      </div>
+    </footer>
+    <script src="./scripts.js"></script>
+  </body>
+</html>

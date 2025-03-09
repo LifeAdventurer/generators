@@ -1,0 +1,91 @@
+:root {
+  --bg-color: #ffffff;
+  --title-color: #363636;
+  /* button */
+  --button-color: #6c757d;
+  --button-hover-color: #565e64;
+  --button-text-color: #ffffff;
+  /* card-footer */
+  --card-bg-color: #212529;
+  --card-title-color: #ffffff;
+  --card-footer-color: #343a40;
+  --card-footer-text-color: #adb5bd;
+}
+
+.dark-mode {
+  --bg-color: #000000dd;
+  --title-color: #ffffffd8;
+  --dark-mode-icon-color: #efefef;
+  /* button */
+  --button-color: #9c9fa2ec;
+  --button-hover-color: #797d7fec;
+  --button-text-color: #121212;
+  /* card-footer */
+  --card-bg-color: #f8f8f8;
+  --card-title-color: #3a3a3a;
+  --card-footer-color: #e1e1e1;
+  --card-footer-text-color: #4c4c4c;
+}
+
+.btn {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+}
+
+.btn:hover {
+  background-color: var(--button-hover-color);
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+h1 {
+  align-items: center;
+  text-align: center;
+  color: var(--title-color);
+}
+
+h5 {
+  color: var(--title-color);
+}
+
+.card {
+  background-color: var(--card-bg-color);
+}
+
+.card-title, .card-text {
+  color: var(--card-title-color);
+}
+
+.container {
+  margin-top: 30px;
+}
+
+.card-footer {
+  background-color: var(--card-footer-color);
+  color: var(--card-footer-text-color);
+}
+
+#footer-author {
+  text-align: right;
+}
+
+#footer-author-icon {
+  width: 4%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+}
+
+#dark-mode-icon {
+  margin-left: 25px;
+  margin-top: 15px;
+  font-size: 2.4rem;
+  color: var(--dark-mode-icon-color);
+  cursor: pointer;
+  opacity: 85%;
+}

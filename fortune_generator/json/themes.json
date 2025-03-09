@@ -1,0 +1,346 @@
+{
+  "themes": [
+    {
+      "name": "Classic Light",
+      "properties": {
+        "bg-color": "#ffffff",
+        "good-fortune-color": "#e74c3c",
+        "bad-fortune-color": "#000000bf",
+        "middle-fortune-color": "#5eb95e",
+        "title-color": "#000000cc",
+        "desc-color": "#7f7f7f",
+        "button-color": "#73a3eb",
+        "button-hover-color": "#459aef",
+        "toggle-theme-button-color": "#000000",
+        "copy-result-button-color": "#000000",
+        "copy-preview-result-url-button-color": "#000000",
+        "date-color": "#096e1bc9",
+        "special-event-color": "#3e4fbb"
+      }
+    },
+    {
+      "name": "Classic Dark",
+      "properties": {
+        "bg-color": "#1e1d24",
+        "good-fortune-color": "#e74c3c",
+        "bad-fortune-color": "#d4d4d4d9",
+        "middle-fortune-color": "#57c857",
+        "title-color": "#cdcdcd",
+        "desc-color": "#838282",
+        "button-color": "#5d99f4",
+        "button-hover-color": "#9ac6f1",
+        "toggle-theme-button-color": "#ffffff",
+        "copy-result-button-color": "#ffffff",
+        "copy-preview-result-url-button-color": "#ffffff",
+        "date-color": "#0ed64aed",
+        "special-event-color": "#6477f3"
+      }
+    },
+    {
+      "name": "Catppuccin Dark",
+      "properties": {
+        "bg-color": "#1e1e2e",
+        "good-fortune-color": "#94e2d5",
+        "bad-fortune-color": "#f38ba8",
+        "middle-fortune-color": "#f9e2af",
+        "title-color": "#f5c2e7",
+        "desc-color": "#cdd6f4",
+        "button-color": "#b9fbc0",
+        "button-hover-color": "#a6e3a1",
+        "toggle-theme-button-color": "#f9e2af",
+        "copy-result-button-color": "#f38ba8",
+        "copy-preview-result-url-button-color": "#f38ba8",
+        "date-color": "#f5c2e7",
+        "special-event-color": "#fab387"
+      }
+    },
+    {
+      "name": "Tokyo Night",
+      "properties": {
+        "bg-color": "#1a1b26",
+        "good-fortune-color": "#7dcfff",
+        "bad-fortune-color": "#ff5c8d",
+        "middle-fortune-color": "#e0af68",
+        "title-color": "#bb9af7",
+        "desc-color": "#c0caf5",
+        "button-color": "#6e6f8c",
+        "button-hover-color": "#5a5b7f",
+        "toggle-theme-button-color": "#7dcfff",
+        "copy-result-button-color": "#ff5c8d",
+        "copy-preview-result-url-button-color": "#ff5c8d",
+        "date-color": "#ffbb93",
+        "special-event-color": "#f7768e"
+      }
+    },
+    {
+      "name": "Spring Blossom",
+      "properties": {
+        "bg-color": "#f7f5f2",
+        "good-fortune-color": "#ff6f61",
+        "bad-fortune-color": "#6d597a",
+        "middle-fortune-color": "#86a77a",
+        "title-color": "#ff9f80",
+        "desc-color": "#5a5a5a",
+        "button-color": "#ffd166",
+        "button-hover-color": "#ffb347",
+        "toggle-theme-button-color": "#ff6f61",
+        "copy-result-button-color": "#6d597a",
+        "copy-preview-result-url-button-color": "#6d597a",
+        "date-color": "#ff9f80",
+        "special-event-color": "#ffb6b9"
+      }
+    },
+    {
+      "name": "Sunny Vibes",
+      "properties": {
+        "bg-color": "#fffbeb",
+        "good-fortune-color": "#ff7e67",
+        "bad-fortune-color": "#ffcc29",
+        "middle-fortune-color": "#1fab89",
+        "title-color": "#ff8c42",
+        "desc-color": "#4a4a4a",
+        "button-color": "#ffa41b",
+        "button-hover-color": "#ff8500",
+        "toggle-theme-button-color": "#34ace0",
+        "copy-result-button-color": "#ffcc29",
+        "copy-preview-result-url-button-color": "#ffcc29",
+        "date-color": "#ffd32a",
+        "special-event-color": "#f7b731"
+      }
+    },
+    {
+      "name": "Autumn Glow",
+      "properties": {
+        "bg-color": "#f4ede4",
+        "good-fortune-color": "#e27d60",
+        "bad-fortune-color": "#a23b2b",
+        "middle-fortune-color": "#c7a17a",
+        "title-color": "#5a3d31",
+        "desc-color": "#7a6e61",
+        "button-color": "#c7a17a",
+        "button-hover-color": "#b9896e",
+        "toggle-theme-button-color": "#a74c3c",
+        "copy-result-button-color": "#7a6e61",
+        "copy-preview-result-url-button-color": "#7a6e61",
+        "date-color": "#e6b89c",
+        "special-event-color": "#e8a87c"
+      }
+    },
+    {
+      "name": "Winter Wonderland",
+      "properties": {
+        "bg-color": "#e3f2fd",
+        "good-fortune-color": "#74b9ff",
+        "bad-fortune-color": "#6c5ce7",
+        "middle-fortune-color": "#81ecec",
+        "title-color": "#0984e3",
+        "desc-color": "#636e72",
+        "button-color": "#74b9ff",
+        "button-hover-color": "#a29bfe",
+        "toggle-theme-button-color": "#00b894",
+        "copy-result-button-color": "#0984e3",
+        "copy-preview-result-url-button-color": "#0984e3",
+        "date-color": "#74b9ff",
+        "special-event-color": "#fdcb6e"
+      }
+    },
+    {
+      "name": "Moonlit Night",
+      "properties": {
+        "bg-color": "#1a1a2e",
+        "good-fortune-color": "#7ed6df",
+        "bad-fortune-color": "#ffeaa7",
+        "middle-fortune-color": "#8c94a6",
+        "title-color": "#ffffff",
+        "desc-color": "#a4b0be",
+        "button-color": "#30336b",
+        "button-hover-color": "#535c88",
+        "toggle-theme-button-color": "#7ed6df",
+        "copy-result-button-color": "#ffeaa7",
+        "copy-preview-result-url-button-color": "#ffeaa7",
+        "date-color": "#dcdde1",
+        "special-event-color": "#ff9ff3"
+      }
+    },
+    {
+      "name": "Lunar Eclipse",
+      "properties": {
+        "bg-color": "#0d0e1a",
+        "good-fortune-color": "#7289da",
+        "bad-fortune-color": "#b56576",
+        "middle-fortune-color": "#a0a8c1",
+        "title-color": "#e1e1e6",
+        "desc-color": "#8b8b97",
+        "button-color": "#494e6b",
+        "button-hover-color": "#646b8a",
+        "toggle-theme-button-color": "#7289da",
+        "copy-result-button-color": "#b56576",
+        "copy-preview-result-url-button-color": "#b56576",
+        "date-color": "#d4d4dc",
+        "special-event-color": "#ffb86c"
+      }
+    },
+    {
+      "name": "Galactic Glow",
+      "properties": {
+        "bg-color": "#1b1d2a",
+        "good-fortune-color": "#00eaff",
+        "bad-fortune-color": "#ff5555",
+        "middle-fortune-color": "#ffe347",
+        "title-color": "#ffe81f",
+        "desc-color": "#c4c7d1",
+        "button-color": "#3b3f58",
+        "button-hover-color": "#52577a",
+        "toggle-theme-button-color": "#00eaff",
+        "copy-result-button-color": "#ff5555",
+        "copy-preview-result-url-button-color": "#ff5555",
+        "date-color": "#9aedfe",
+        "special-event-color": "#ffa07a"
+      }
+    },
+    {
+      "name": "Mystic Forest",
+      "properties": {
+        "bg-color": "#1c3b24",
+        "good-fortune-color": "#a1e887",
+        "bad-fortune-color": "#d94e3b",
+        "middle-fortune-color": "#83c5a3",
+        "title-color": "#e4f9e0",
+        "desc-color": "#b5c9b4",
+        "button-color": "#4a7a58",
+        "button-hover-color": "#6a9a76",
+        "toggle-theme-button-color": "#a1e887",
+        "copy-result-button-color": "#d94e3b",
+        "copy-preview-result-url-button-color": "#d94e3b",
+        "date-color": "#e4f9e0",
+        "special-event-color": "#9fd9b7"
+      }
+    },
+    {
+      "name": "Vintage Sepia",
+      "properties": {
+        "bg-color": "#f5e9da",
+        "good-fortune-color": "#d4a373",
+        "bad-fortune-color": "#8b5e3c",
+        "middle-fortune-color": "#c3a593",
+        "title-color": "#3f312b",
+        "desc-color": "#736357",
+        "button-color": "#a67a5b",
+        "button-hover-color": "#b98b6f",
+        "toggle-theme-button-color": "#8b5e3c",
+        "copy-result-button-color": "#d4a373",
+        "copy-preview-result-url-button-color": "#d4a373",
+        "date-color": "#7f6a5d",
+        "special-event-color": "#c7ab93"
+      }
+    },
+    {
+      "name": "Metallic Shine",
+      "properties": {
+        "bg-color": "#2c2f33",
+        "good-fortune-color": "#4e8c47",
+        "bad-fortune-color": "#d9534f",
+        "middle-fortune-color": "#f1c40f",
+        "title-color": "#bdc3c7",
+        "desc-color": "#95a5a6",
+        "button-color": "#3498db",
+        "button-hover-color": "#2980b9",
+        "toggle-theme-button-color": "#4e8c47",
+        "copy-result-button-color": "#d9534f",
+        "copy-preview-result-url-button-color": "#d9534f",
+        "date-color": "#bdc3c7",
+        "special-event-color": "#f39c12"
+      }
+    },
+    {
+      "name": "Tropical Paradise",
+      "properties": {
+        "bg-color": "#ffdf80",
+        "good-fortune-color": "#00bfae",
+        "bad-fortune-color": "#ff6347",
+        "middle-fortune-color": "#3eb489",
+        "title-color": "#2e8b57",
+        "desc-color": "#708090",
+        "button-color": "#ff4500",
+        "button-hover-color": "#ff6347",
+        "toggle-theme-button-color": "#00bfae",
+        "copy-result-button-color": "#ff6347",
+        "copy-preview-result-url-button-color": "#ff6347",
+        "date-color": "#2e8b57",
+        "special-event-color": "#ff8c00"
+      }
+    },
+    {
+      "name": "Abstract Art",
+      "properties": {
+        "bg-color": "#f4e1d2",
+        "good-fortune-color": "#e1b1e3",
+        "bad-fortune-color": "#c93f36",
+        "middle-fortune-color": "#bde7e0",
+        "title-color": "#cf63a1",
+        "desc-color": "#7b6362",
+        "button-color": "#fc7b6d",
+        "button-hover-color": "#fc4f48",
+        "toggle-theme-button-color": "#e1b1e3",
+        "copy-result-button-color": "#c93f36",
+        "copy-preview-result-url-button-color": "#c93f36",
+        "date-color": "#cf63a1",
+        "special-event-color": "#f6c6d4"
+      }
+    },
+    {
+      "name": "Zen Garden",
+      "properties": {
+        "bg-color": "#f4f1e1",
+        "good-fortune-color": "#8c9f6f",
+        "bad-fortune-color": "#e18e8b",
+        "middle-fortune-color": "#b7c7b5",
+        "title-color": "#4f5049",
+        "desc-color": "#78756f",
+        "button-color": "#c1c0b2",
+        "button-hover-color": "#b0b098",
+        "toggle-theme-button-color": "#8c9f6f",
+        "copy-result-button-color": "#e18e8b",
+        "copy-preview-result-url-button-color": "#e18e8b",
+        "date-color": "#4f5049",
+        "special-event-color": "#b7c7b5"
+      }
+    },
+    {
+      "name": "Aurora Borealis",
+      "properties": {
+        "bg-color": "#0b0c1d",
+        "good-fortune-color": "#00d084",
+        "bad-fortune-color": "#455a64",
+        "middle-fortune-color": "#9c7ae0",
+        "title-color": "#d9e9f0",
+        "desc-color": "#95a5b3",
+        "button-color": "#608fcf",
+        "button-hover-color": "#5072b3",
+        "toggle-theme-button-color": "#00d084",
+        "copy-result-button-color": "#455a64",
+        "copy-preview-result-url-button-color": "#455a64",
+        "date-color": "#cfd8dc",
+        "special-event-color": "#a1d6ff"
+      }
+    },
+    {
+      "name": "Cyberwave",
+      "properties": {
+        "bg-color": "#1a1a2e",
+        "good-fortune-color": "#00f5d4",
+        "bad-fortune-color": "#293462",
+        "middle-fortune-color": "#adff2f",
+        "title-color": "#f8f8ff",
+        "desc-color": "#adb5bd",
+        "button-color": "#0077b6",
+        "button-hover-color": "#005f87",
+        "toggle-theme-button-color": "#00f5d4",
+        "copy-result-button-color": "#293462",
+        "copy-preview-result-url-button-color": "#293462",
+        "date-color": "#72efdd",
+        "special-event-color": "#72ddf7"
+      }
+    }
+  ]
+}

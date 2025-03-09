@@ -1,0 +1,52 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+
+-   repo: local
+    hooks:
+    -   id: check-cyclical-event
+        name: check-cyclical-event
+        entry: python3 scripts/check-events.py fortune_generator/json/cyclical_special.json cyclical
+        language: python
+        files: fortune_generator/json/cyclical_special.json
+        types: [json]
+        pass_filenames: false
+
+    -   id: check-custom-event
+        name: check-custom-event
+        entry: python3 scripts/check-events.py fortune_generator/json/custom_special.json custom
+        language: python
+        files: fortune_generator/json/custom_special.json
+        types: [json]
+        pass_filenames: false
+
+    -   id: check-static-event
+        name: check-static-event
+        entry: python3 scripts/check-events.py fortune_generator/json/static_special.json static
+        language: python
+        files: fortune_generator/json/static_special.json
+        types: [json]
+        pass_filenames: false
+
+    -   id: check-fortune
+        name: check-fortune
+        entry: python3 scripts/check-fortune.py fortune_generator/json/fortune.json
+        language: python
+        files: fortune_generator/json/fortune.json
+        types: [json]
+        pass_filenames: false
+
+    -   id: check-theme
+        name: check-theme
+        entry: python3 scripts/check-theme.py fortune_generator/json/themes.json
+        language: python
+        files: fortune_generator/json/themes.json
+        types: [json]
+        pass_filenames: false
