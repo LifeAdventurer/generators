@@ -128,6 +128,7 @@ structure:
     "button-hover-color": "#hexcode",
     "toggle-theme-button-color": "#hexcode",
     "copy-result-button-color": "#hexcode",
+    "copy-preview-result-url-button-color": "#hexcode",
     "date-color": "#hexcode",
     "special-event-color": "#hexcode"
   }
