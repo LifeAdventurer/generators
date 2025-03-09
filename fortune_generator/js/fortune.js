@@ -353,9 +353,11 @@ async function init_page() {
       }
     }
 
-    special_events_index = ip.split(".").map(num => parseInt(num)).reduce((acc, cur) => acc + cur);
-    special_events_index %= current_day_special_events.length;
-    special_events_index = current_day_special_events[special_events_index];
+    if (current_day_special_events.length) {
+      special_events_index = ip.split(".").map(num => parseInt(num)).reduce((acc, cur) => acc + cur);
+      special_events_index %= current_day_special_events.length;
+      special_events_index = current_day_special_events[special_events_index];
+    }
 
     // if there is upcoming event then show
     for (let eventIndex = 0; eventIndex < showSpecialEventCount; eventIndex++) {
