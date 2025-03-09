@@ -11,7 +11,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -35,7 +35,7 @@ jobs:
       - name: Write Commit Hash
         run: |
           cat << EOF | tee fortune_generator/json/commit_hash.json > /dev/null
-          {"commit_hash": "$(git rev-parse HEAD)"}
+          { "commit_hash": "$(git rev-parse HEAD)" }
           EOF
 
       - name: Deploy
