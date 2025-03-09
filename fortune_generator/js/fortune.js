@@ -27,10 +27,10 @@ let special_events = [];
 let commit_hash = "";
 
 // using async and await to prevent fetching the data too late...
-async function fetch_data(commit_hash) {
+async function fetch_data(requied_commit_hash) {
   let prefix = "";
-  if (commit_hash) {
-    prefix = `https://raw.githubusercontent.com/LifeAdventurer/generators/${commit_hash}/fortune_generator/`;
+  if (requied_commit_hash) {
+    prefix = `https://raw.githubusercontent.com/LifeAdventurer/generators/${requied_commit_hash}/fortune_generator/`;
   }
   await fetch(`${prefix}./json/fortune.json`)
     .then((response) => response.json())
