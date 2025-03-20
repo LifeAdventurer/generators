@@ -173,3 +173,12 @@ button:hover {
 .color-preview .color-dot:first-child {
   margin-left: 0; /* No margin on the left for the first dot */
 }
+
+.home-button {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 1000;
+  opacity: 0.8; /* Slightly transparent */
+  transition: opacity 0.3s;
+}

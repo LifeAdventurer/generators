@@ -80,3 +80,12 @@ button:hover {
   cursor: pointer;
   opacity: 85%;
 }
+
+.home-button {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 1000;
+  opacity: 0.8; /* Slightly transparent */
+  transition: opacity 0.3s;
+}
