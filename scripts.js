@@ -61,7 +61,7 @@ darkModeIcon.onclick = () => {
   document.body.classList.toggle("dark-mode");
 };
 
-// HACK
+// temporary
 let max_height = -1;
 document.querySelectorAll('.card-body').forEach(el => max_height = Math.max(max_height, el.offsetHeight));
 document.querySelectorAll('.card-body').forEach(el => el.style.height = `${max_height}px`);
