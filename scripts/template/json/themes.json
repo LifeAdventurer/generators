@@ -1,0 +1,26 @@
+{
+  "themes": [
+    {
+      "name": "Classic Light",
+      "properties": {
+        "title-color": "#000000cc",
+        "bg-color": "#ffffff",
+        "button-color": "#73a3eb",
+        "button-hover-color": "#459aef",
+        "toggle-theme-button-color": "#000000",
+        "copy-result-button-color": "#000000"
+      }
+    },
+    {
+      "name": "Classic Dark",
+      "properties": {
+        "title-color": "#cdcdcd",
+        "bg-color": "#1e1d24",
+        "button-color": "#5d99f4",
+        "button-hover-color": "#9ac6f1",
+        "toggle-theme-button-color": "#ffffff",
+        "copy-result-button-color": "#ffffff"
+      }
+    }
+  ]
+}
