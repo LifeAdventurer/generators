@@ -353,12 +353,6 @@ async function init_page() {
       }
     }
 
-    if (current_day_special_events.length) {
-      special_events_index = ip.split(".").map(num => parseInt(num)).reduce((acc, cur) => acc + cur);
-      special_events_index %= current_day_special_events.length;
-      special_events_index = current_day_special_events[special_events_index];
-    }
-
     // if there is upcoming event then show
     for (let eventIndex = 0; eventIndex < showSpecialEventCount; eventIndex++) {
       if (eventIndexList[eventIndex] != -1) {
@@ -369,15 +363,6 @@ async function init_page() {
           }</b>還剩<b class="special-event">${days}</b>天</span>`;
         $(`#upcoming-event-${eventIndex + 1}`).html(upcoming_event);
       }
-    }
-
-    // show special event if today is a special day
-    if (special) {
-      const special_event_today =
-        `<span class="desc" style="font-size:9vmin;">今日是<b class="good-fortune">${
-          special_events[special_events_index].event
-        }</b></span>`;
-      $("#special-day").html(special_event_today);
     }
 
     const last_date_str = localStorage.getItem("last_date");
@@ -391,8 +376,30 @@ async function init_page() {
         now_date.getDate() === last_date.getDate()
       ) {
         fortune_generated = true;
-        Update();
       }
+    }
+
+    if (fortune_generated) {
+      Update();
+      if (special) {
+        special_events_index = parseInt(localStorage.getItem("last_special_index"));
+      }
+    } else {
+      if (current_day_special_events.length) {
+        special_events_index = ip.split(".").map(num => parseInt(num)).reduce((acc, cur) => acc + cur);
+        special_events_index %= current_day_special_events.length;
+        special_events_index = current_day_special_events[special_events_index];
+        localStorage.setItem("last_special_index", special_events_index);
+      }
+    }
+
+    // show special event if today is a special day
+    if (special) {
+      const special_event_today =
+          `<span class="desc" style="font-size:9vmin;">今日是<b class="good-fortune">${
+          special_events[special_events_index].event
+          }</b></span>`;
+      $("#special-day").html(special_event_today);
     }
   }
 }
